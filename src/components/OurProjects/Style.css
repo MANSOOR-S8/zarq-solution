@@ -1,0 +1,26 @@
+/* Base card container */
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* Image wrapper */
+.img-wrapper {
+  position: relative;
+  height: 192px;
+  overflow: hidden;
+}
+
+/* Image */
+.img {
+  width: 100%;
+  height: auto;
+  transform: translateY(0);
+  transition: transform 4s ease-in-out;
+}
+
+.img:hover {
+  transform: translateY(-90%);
+  cursor: pointer;
+}
