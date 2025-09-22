@@ -8,7 +8,7 @@ import Projects from "../OurProjects/Projects";
 import Stages from "../OurProjects/Stages";
 import TechnologyCard from "../OurProjects/TechnologyCard";
 import Banner from "./Banner";
-import Slider from "./Slider.JSX";
+import Slider from "./Slider";
 
 function Home() {
   return (
