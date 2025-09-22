@@ -2,8 +2,7 @@ import React from "react";
 import Achievements from "../OurProjects/Achievements";
 import Stages from "../OurProjects/Stages";
 import Footer from "../Footer/Footer";
-import ChooseUs from "./Chooseus.JSx";
-
+import ChooseUs from "./ChooseUs";
 function About() {
   const cards = [
     {
