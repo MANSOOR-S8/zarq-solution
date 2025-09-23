@@ -1,13 +1,23 @@
 import React from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function ContactUs() {
+  const handleCaptchaChange = (value) => {
+    console.log("Captcha value:", value);
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-7xl bg-white rounded-lg shadow-md p-6 md:p-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Left - Contact Info */}
-        <div className="space-y-6 col-span-1">
+        <div className="md:col-span-3">
+          <h2 className="text-3xl font-bold text-[#0b80da] mb-6 text-center">
+            Request Free Consultation
+          </h2>
+        </div>
+
+        <div className="space-y-6 col-span-1 ">
           {/* Address */}
-          <div className="border border-gray-200 rounded-lg p-6 text-center  bg-white">
+          <div className="border border-gray-200 rounded-lg p-6 text-center   bg-white">
             <div className="flex justify-center mb-2">
               <div className="bg-blue-100 p-3 rounded-full">
                 <svg
@@ -69,9 +79,6 @@ function ContactUs() {
 
         {/* Right - Form Section */}
         <div className="md:col-span-2">
-          <h2 className="text-2xl font-bold text-[#0b80da] mb-6 text-center">
-            Request Free Consultation
-          </h2>
           <form className="space-y-4">
             {/* Name & Email */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -125,10 +132,14 @@ function ContactUs() {
 
             {/* reCAPTCHA (placeholder) */}
             <div className="flex items-center gap-2 mt-2">
-              <input type="checkbox" id="recaptcha" />
-              <label htmlFor="recaptcha" className="text-sm text-gray-600">
-                I'm not a robot
-              </label>
+              {import.meta.env.VITE_SITE_KEY ? (
+                <ReCAPTCHA
+                  sitekey={import.meta.env.VITE_SITE_KEY}
+                  onChange={handleCaptchaChange}
+                />
+              ) : (
+                <p style={{ color: "red" }}>⚠️ reCAPTCHA site key missing</p>
+              )}
             </div>
 
             {/* Submit */}

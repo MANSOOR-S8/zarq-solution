@@ -11,16 +11,16 @@ const NavbarData = [
   },
   {
     title: "Services",
-    href: "/Services",
+    href: "/Service",
     submenu: [
-      { title: "Web Development", href: "/Web " },
+      { title: "Web Development", href: "/" },
       { title: "Mobile App DEvelopment", href: "/" },
-      { title: "Customer Software Development", href: "CSD" },
-      { title: "E-Commerce Solution", href: "/Web " },
-      { title: "Cloud Solution & DevOps", href: "/Web " },
-      { title: "UI/UX Design", href: "/Web " },
-      { title: "Digital Marketing", href: "/Web " },
-      { title: "IT Consultancy & Support", href: "/Web " },
+      { title: "Customer Software Development", href: "" },
+      { title: "E-Commerce Solution", href: "/" },
+      { title: "Cloud Solution & DevOps", href: "/" },
+      { title: "UI/UX Design", href: "/" },
+      { title: "Digital Marketing", href: "/" },
+      { title: "IT Consultancy & Support", href: "/" },
     ],
   },
   {
@@ -29,7 +29,7 @@ const NavbarData = [
   },
   {
     title: "Contact Us",
-    href: "/ContactUs",
+    href: "/Consultation",
   },
 ];
 

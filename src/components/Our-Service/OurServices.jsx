@@ -73,10 +73,13 @@ function OurServices() {
     <section className="bg-[#f0f4f8] py-12 px-4">
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold text-[#0B80DA]  mb-2">
-          Our Services
+          We provide a wide range of Services
         </h2>
         <p className="text-gray-600">
-          Our Services: Innovating Digital Solutions for Your Success
+          We provide a comprehensive range of services, including web and mobile
+          development, software solutions, and IT consulting. Our expert team is
+          dedicated to delivering innovative, high-quality, and customized
+          solutions that drive business success and enhance digital experiences.
         </p>
       </div>
 

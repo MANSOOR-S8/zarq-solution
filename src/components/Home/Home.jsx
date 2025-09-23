@@ -1,12 +1,12 @@
 import "../../App.css";
 import ContactUS from "../ContactUS/ContactUs";
 import Footer from "../Footer/Footer";
-import OurServices from "../Our-Service/OurService";
+import OurServices from "../Our-Service/OurServices";
 import OurIntro from "../OurIntro/OutIntro";
-import Achievements from "../OurProjects/Achievements";
-import Projects from "../OurProjects/Projects";
-import Stages from "../OurProjects/Stages";
-import TechnologyCard from "../OurProjects/TechnologyCard";
+import Achievements from "../OurProjectsSec/Achievements";
+import OurProjects from "../OurProjectsSec/OurProjects";
+import Stages from "../OurProjectsSec/Stages";
+import TechnologyCard from "../OurProjectsSec/TechnologyCard";
 import Banner from "./Banner";
 import Slider from "./Slider";
 
@@ -19,7 +19,7 @@ function Home() {
       <Slider />
       <OurServices />
       <OurIntro />
-      <Projects />
+      <OurProjects />
       <Achievements />
       <Stages />
       <TechnologyCard />

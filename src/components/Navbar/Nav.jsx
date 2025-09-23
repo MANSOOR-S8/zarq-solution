@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+// src/components/Navbar/Nav.jsx
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import NavbarData from "./NavbarData";
 import { FaBars } from "react-icons/fa";
+import "./nav.css";
+import GsapAnimation from "./GsapAnimation";
 
 function Nav() {
   const logoImg = [
@@ -23,7 +26,7 @@ function Nav() {
     setOpenSubMenuIndex(openSubMenuIndex === index ? null : index);
   };
 
-  // ===== on scroll hide and show =====
+  // ===== Scroll Hide/Show Navbar =====
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -32,30 +35,48 @@ function Nav() {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setShowNavbar(false); // scroll down hide navbar
+        setShowNavbar(false);
       } else {
-        setShowNavbar(true); // scroll up show navbar
+        setShowNavbar(true);
       }
 
       setLastScrollY(currentScrollY);
     };
-    window.addEventListener("scroll", handleScroll);
 
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
-  //===============
+
+  // ===== GSAP Animation for Navbar =====
+  const navRef = useRef(null);
+
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     navRef.current,
+  //     { y: -100, opacity: 0 },
+  //     {
+  //       y: 0,
+  //       opacity: 1,
+  //       duration: 0.8,
+  //       delay: 0.3,
+  //       ease: "power2.out",
+  //     }
+  //   );
+  // }, []);
 
   return (
     <>
-      {/* nav */}
+      {/* <GsapAnimation targetRef={navRef} /> */}
+
       <nav
+        ref={navRef}
         className={`fixed top-0 left-0 w-full z-50 bg-[#eceff4] border-t-4 shadow-sm transition-transform duration-500 ${
           showNavbar ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           {/* Logo */}
-          <div className="w-[140px]">
+          <div className="w-[140px] logo-img">
             <img
               src={logoImg[0].img}
               alt="Logo"
@@ -63,13 +84,13 @@ function Nav() {
             />
           </div>
 
-          {/* Desktop Menu */}
+          {/* NAv Menu */}
           <ul className="hidden lg:flex space-x-10 items-center">
             {NavbarData.map((link, index) => (
               <li key={index} className="relative group">
                 <Link
                   to={link.href}
-                  className="text-[17px] font-medium text-gray-800 hover:text-blue-800 flex items-center transition"
+                  className="text-[17px] font-medium text-gray-800 nav-item flex items-center transition"
                 >
                   {link.title}
                   {link.submenu && <span className="ml-1">&#9662;</span>}

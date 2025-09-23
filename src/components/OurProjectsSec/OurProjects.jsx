@@ -1,5 +1,5 @@
 import "./Style.css";
-function Projects() {
+function OurProjects() {
   const projectCard = [
     {
       id: 1,
@@ -71,4 +71,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default OurProjects;
