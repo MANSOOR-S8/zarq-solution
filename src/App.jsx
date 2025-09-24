@@ -15,6 +15,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import SoftDev from "./Service/SoftDev";
 import ECommerce from "./Service/ECommerce";
+import Cloud from "./Service/Cloud";
+import DigitalMarket from "./Service/DigitalMarket";
+import ITSupport from "./Service/ITSupport";
+import OurUI from "./Service/OurUI";
 function App() {
   useEffect(() => {
     AOS.init({
@@ -39,6 +43,12 @@ function App() {
           <Route path="/SoftDev" element={<SoftDev />} />
           <Route path="/ECommerce" element={<ECommerce />} />
           <Route path="/Consultation" element={<Consultation />} />
+          <Route path="/Cloud" element={<Cloud />} />
+          <Route path="/OurUI" element={<OurUI />} />
+
+          <Route path="/DigitalMarket" element={<DigitalMarket />} />
+          <Route path="/ITSupport" element={<ITSupport />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
