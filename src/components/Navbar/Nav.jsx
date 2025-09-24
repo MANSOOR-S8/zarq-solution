@@ -1,10 +1,9 @@
 // src/components/Navbar/Nav.jsx
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NavbarData from "./NavbarData";
 import { FaBars } from "react-icons/fa";
 import "./nav.css";
-import GsapAnimation from "./GsapAnimation";
 
 function Nav() {
   const logoImg = [
@@ -48,7 +47,6 @@ function Nav() {
   }, [lastScrollY]);
 
   // ===== GSAP Animation for Navbar =====
-  const navRef = useRef(null);
 
   // useEffect(() => {
   //   gsap.fromTo(
@@ -69,7 +67,6 @@ function Nav() {
       {/* <GsapAnimation targetRef={navRef} /> */}
 
       <nav
-        ref={navRef}
         className={`fixed top-0 left-0 w-full z-50 bg-[#eceff4] border-t-4 shadow-sm transition-transform duration-500 ${
           showNavbar ? "translate-y-0" : "-translate-y-full"
         }`}
@@ -98,7 +95,7 @@ function Nav() {
 
                 {/* Desktop Dropdown */}
                 {link.submenu && (
-                  <ul className="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded mt-1 w-60 z-50">
+                  <ul className="absolute top-full left-0 hidden group-hover:block hover:block bg-white shadow-lg rounded  w-60 z-50">
                     {link.submenu.map((subLink, subIndex) => (
                       <li key={subIndex}>
                         <Link

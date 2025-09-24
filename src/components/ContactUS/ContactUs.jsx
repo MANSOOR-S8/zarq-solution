@@ -2,9 +2,9 @@ import React from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 function ContactUs() {
-  const handleCaptchaChange = (value) => {
-    console.log("Captcha value:", value);
-  };
+  // const handleCaptchaChange = (value) => {
+  //   console.log("Captcha value:", value);
+  // };
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-10">
@@ -130,8 +130,8 @@ function ContactUs() {
               ></textarea>
             </div>
 
-            {/* reCAPTCHA (placeholder) */}
-            <div className="flex items-center gap-2 mt-2">
+            {/* reCAPTCHA */}
+            {/* <div className="flex items-center gap-2 mt-2">
               {import.meta.env.VITE_SITE_KEY ? (
                 <ReCAPTCHA
                   sitekey={import.meta.env.VITE_SITE_KEY}
@@ -140,7 +140,7 @@ function ContactUs() {
               ) : (
                 <p style={{ color: "red" }}>⚠️ reCAPTCHA site key missing</p>
               )}
-            </div>
+            </div> */}
 
             {/* Submit */}
             <button

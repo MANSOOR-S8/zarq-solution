@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/Navbar/Nav";
@@ -7,8 +8,21 @@ import NotFound from "./components/NotFound";
 import Projects from "./components/Projects/Projects";
 import Service from "./Service/Service";
 import Consultation from "./Consultation/Consultation";
+import WebDevelopment from "./Service/WebDevelopment";
+import MobApp from "./Service/MobApp";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+import SoftDev from "./Service/SoftDev";
+import ECommerce from "./Service/ECommerce";
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, // animation duration (ms)
+      once: true, // animation only once
+    });
+  }, []);
+
   return (
     <>
       <BrowserRouter>
@@ -19,6 +33,11 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/service" element={<Service />} />
+          {/* sub menu of services start */}
+          <Route path="/WebDevelopment" element={<WebDevelopment />} />
+          <Route path="/MobApp" element={<MobApp />} />
+          <Route path="/SoftDev" element={<SoftDev />} />
+          <Route path="/ECommerce" element={<ECommerce />} />
           <Route path="/Consultation" element={<Consultation />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

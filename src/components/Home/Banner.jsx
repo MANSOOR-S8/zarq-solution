@@ -1,28 +1,43 @@
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import SplitText from "gsap/SplitText";
 import "../../App.css";
-// import { useGSAP } from "@gsap/react";
-// import gsap from "gsap";
-// import { useRef } from "react";
+
+// Register the plugin
+gsap.registerPlugin(SplitText);
 
 function Banner() {
-  // const container = useRef();
-  // useGSAP(
-  //   () => {
-  //     gsap.to(
-  //       ".hed-text",
-  //       { x: -80, opacity: 1 },
-  //       { x: 0, opacity: 0, duration: 1, delay: 0.3, ease: "power2.out" }
-  //     );
-  //   },
-  //   { scope: container }
-  // );
+  const textRef = useRef();
+
+  useEffect(() => {
+    // ye text ko split karta hy (alg) karta hy
+    const split = new SplitText(textRef.current, { type: "chars" });
+    gsap.from(split.chars, {
+      duration: 0.6,
+      opacity: 0,
+      y: 20,
+      stagger: 0.05,
+      ease: "power2.out",
+    });
+
+    return () => {
+      split.revert();
+    };
+  }, []);
+
   return (
     <section>
       <div className="banner-sec overflow-x-hidden bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h1 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[50px] text-center  font-bold break-words leading-tight max-w-3xl mx-auto hed-text">
-            Zarq Solution: Transforming Ideas into Reality with Innovative Web,
-            Mobile & UI/UX Solutions.
-          </h1>
+          <h2 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[47px] text-center   break-words leading-tight max-w-3xl mx-auto hed-text">
+            <span ref={textRef} className=" font-[900]  text-bold ">
+              Zarq Solution:
+            </span>{" "}
+            Transforming Ideas into Reality with Innovative Web, Mobile & UI/UX
+            Solutions.
+          </h2>
+
+          {/* <h1 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[50px] text-center  font-bold break-words leading-tight max-w-3xl mx-auto hed-text"></h1> */}
           <p className="text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-center pt-4 sm:pt-6 break-words leading-relaxed max-w-2xl mx-auto ">
             Zarq Solution is a global leader in software development, web
             design, and mobile app development, delivering innovative solutions
