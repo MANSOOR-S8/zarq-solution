@@ -1,6 +1,6 @@
 .banner-sec {
   position: relative;
-  overflow: hidden; /* Prevent horizontal scroll */
+  overflow: hidden;
   width: 100%;
   padding: 30px;
   display: flex;
@@ -10,7 +10,7 @@
   text-align: center;
   z-index: 1;
   color: #000;
-  box-sizing: border-box; /* Ensure padding doesn’t cause overflow */
+  box-sizing: border-box;
 }
 
 .banner-sec::before {
@@ -18,14 +18,14 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0; /* added */
-  bottom: 0; /* added */
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, #d3c1ff, #bae1ff, #ffd6f9);
   background-size: 200% 200%;
   animation: gradient 15s ease infinite;
-  z-index: -1;
+  z-index: -2;
 }
 
 .banner-sec::after {
@@ -33,12 +33,12 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0; /* added */
-  bottom: 0; /* added */
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   background-color: rgb(0, 0, 0, 0.05);
-  z-index: 0;
+  z-index: -1;
 }
 
 @keyframes gradient {
@@ -53,7 +53,56 @@
   }
 }
 
-/* Extra safety: Prevent body from horizontal scroll */
+/* 🔹 Particles */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(114, 112, 112, 0.15);
+  animation: float linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-800px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.tech-icon {
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  backdrop-filter: blur(5px);
+}
+
+@keyframes slow-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px); /* bounce height */
+  }
+}
+
+.slow-bounce {
+  animation: slow-bounce 8s infinite ease-in-out; /* duration 3s */
+}
+
 html,
 body {
   max-width: 100%;
