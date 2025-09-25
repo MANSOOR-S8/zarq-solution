@@ -8,7 +8,7 @@ import figma from "../../assets/Figma.png";
 import flutter from "../../assets/Flutter.png";
 import java from "../../assets/Java.png";
 import photoshop from "../../assets/Photoshop.png";
-import react from "../../assets/react.png";
+import react from "../../assets/React.png";
 import node from "../../assets/Node.png";
 import php from "../../assets/Php.png";
 
