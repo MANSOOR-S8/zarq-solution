@@ -1,10 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Achievements = () => {
+  const [startCount, setStartCount] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    // Init AOS for fade/zoom animations
+    AOS.init({ duration: 1000, once: true });
+
+    // IntersectionObserver use howa hy jab scroll 50% screen  per jay gi
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setStartCount(true); // start counter
+        }
+      },
+      { threshold: 0.5 } // 50% visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  //  Counter Component
   const Counter = ({ target, duration }) => {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
+      if (!startCount) return;
+
       let start = 0;
       const increment = target / (duration / 30);
       const timer = setInterval(() => {
@@ -18,13 +51,19 @@ const Achievements = () => {
       }, 30);
 
       return () => clearInterval(timer);
-    }, [target, duration]);
+    }, [target, duration, startCount]);
 
-    return <span className="text-4xl md:text-5xl font-bold">{count}+</span>;
+    return (
+      <span className="text-4xl md:text-5xl font-bold block">{count}+</span>
+    );
   };
 
   return (
-    <section className="bg-[#0B80DA] text-white py-12 px-6">
+    <section
+      ref={sectionRef}
+      className="bg-[#0B80DA] text-white py-12 px-6"
+      data-aos="zoom-in" // fade+zoom from AOS
+    >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
         {/* Left Side - Heading */}
         <div className="md:w-1/3 text-center md:text-left">
@@ -38,19 +77,19 @@ const Achievements = () => {
 
         {/* Right Side - Counters */}
         <div className="grid grid-cols-2 gap-x-8 gap-y-8 justify-center md:grid-cols-4 mt-8 md:mt-0">
-          <div className="text-center">
+          <div className="text-center" data-aos="fade-up">
             <Counter target={50} duration={2000} />
             <p className="mt-1 text-sm md:text-base">Satisfied Clients</p>
           </div>
-          <div className="text-center">
+          <div className="text-center" data-aos="fade-up" data-aos-delay="200">
             <Counter target={60} duration={2000} />
             <p className="mt-1 text-sm md:text-base">Projects Completed</p>
           </div>
-          <div className="text-center">
+          <div className="text-center" data-aos="fade-up" data-aos-delay="400">
             <Counter target={15} duration={2000} />
             <p className="mt-1 text-sm md:text-base">Ongoing Projects</p>
           </div>
-          <div className="text-center">
+          <div className="text-center" data-aos="fade-up" data-aos-delay="600">
             <Counter target={35} duration={2000} />
             <p className="mt-1 text-sm md:text-base">Our Success Partners</p>
           </div>

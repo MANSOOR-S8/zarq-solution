@@ -83,7 +83,10 @@ function OurServices() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto">
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto"
+        data-aos="flip-left"
+      >
         {services.map((service) => (
           <div
             key={service.id}

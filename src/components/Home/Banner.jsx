@@ -68,15 +68,13 @@ function Banner() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
           <div className="text-left">
-            <h2
-              ref={textRef}
-              className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[47px] font-[900] leading-tight max-w-3xl"
-            >
-              Zarq Solution:
+            <h2 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[46px] font-[900] leading-tight max-w-3xl ">
+              <span className="text-[#0B80DA]" ref={textRef}>
+                Zarq Solution:
+              </span>
+              Transforming Ideas into Reality
             </h2>
-            <p className="text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px] mt-4 leading-relaxed max-w-2xl">
-              Innovative Web, Mobile & UI/UX — From Idea to Impact.
-            </p>
+            {/* <p className="text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px] mt-4 leading-relaxed max-w-2xl"></p> */}
             <p className="text-gray-700 mt-3 text-sm sm:text-base md:text-lg max-w-xl">
               Zarq Solution is a global name in software, web, and mobile
               development — delivering smart, scalable solutions that drive

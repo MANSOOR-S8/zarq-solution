@@ -13,12 +13,12 @@ import Slider from "./Slider";
 function Home() {
   return (
     <>
-      <div className="pt-12">
+      <div className="">
         <Banner />
       </div>
       <Slider />
-      <OurServices />
       <OurIntro />
+      <OurServices />
       <OurProjects />
       <Achievements />
       <Stages />

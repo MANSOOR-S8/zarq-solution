@@ -42,7 +42,13 @@ function OurProjects() {
   return (
     <section className="bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-[#0B80DA] mb-10">
+          Our Recent Works
+        </h2>
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          data-aos="fade-up"
+        >
           {projectCard.map((pCard) => (
             <div
               key={pCard.id}

@@ -37,11 +37,15 @@ function Stages() {
   return (
     <section className="py-12 bg-[#eceff4] ">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-[#0B80DA] mb-10">
           Stages of Working With Us
         </h2>
         {/* Cards */}
-        <div className="grid md:grid-cols-3 ">
+        <div
+          className="grid md:grid-cols-3 "
+          data-aos="fade-up"
+          data-aos-duration="3000"
+        >
           {steps.map((step, index) => (
             <div
               key={index}

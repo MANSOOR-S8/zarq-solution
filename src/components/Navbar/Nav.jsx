@@ -3,16 +3,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NavbarData from "./NavbarData";
 import { FaBars } from "react-icons/fa";
+import logo from "../../assets/Toplogo.png";
 import "./nav.css";
 
 function Nav() {
-  const logoImg = [
-    {
-      id: 1,
-      img: "https://zarqsolution.com/wp-content/uploads/2025/03/Frame-47337-3.svg",
-    },
-  ];
-
   const [toggle, setToggle] = useState(false);
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState(null);
 
@@ -67,7 +61,7 @@ function Nav() {
       {/* <GsapAnimation targetRef={navRef} /> */}
 
       <nav
-        className={`fixed top-0 left-0 w-full z-50 bg-[#eceff4] border-t-4 shadow-sm transition-transform duration-500 ${
+        className={`fixed top-0 left-0 w-full z-50 bg-[#eceff4]  shadow-sm bg-transparent transition-transform duration-500 ${
           showNavbar ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -75,7 +69,7 @@ function Nav() {
           {/* Logo */}
           <div className="w-[140px] logo-img">
             <img
-              src={logoImg[0].img}
+              src={logo}
               alt="Logo"
               className="w-full h-auto object-contain"
             />
@@ -87,7 +81,7 @@ function Nav() {
               <li key={index} className="relative group">
                 <Link
                   to={link.href}
-                  className="text-[17px] font-medium text-gray-800 nav-item flex items-center transition"
+                  className="text-[19px] font-[500] text-black nav-item flex items-center transition"
                 >
                   {link.title}
                   {link.submenu && <span className="ml-1">&#9662;</span>}
@@ -100,7 +94,7 @@ function Nav() {
                       <li key={subIndex}>
                         <Link
                           to={subLink.href}
-                          className="block px-6 py-2 hover:bg-gray-100 text-sm text-gray-700"
+                          className="block px-6 py-2 text-[16px] font-bold-[600] hover:bg-gray-100 text-gray-700"
                         >
                           {subLink.title}
                         </Link>
@@ -149,7 +143,7 @@ function Nav() {
                   onClick={() =>
                     link.submenu ? handleSubmenuToggle(index) : toggleNav()
                   }
-                  className="flex justify-between items-center px-2 py-2 cursor-pointer hover:text-blue-900 text-[16px] font-medium transition"
+                  className="flex justify-between items-center px-2 py-2 cursor-pointer hover:text-blue-900 text-[16px] font-[600] transition"
                 >
                   <Link to={link.href}>{link.title}</Link>
                   {link.submenu && <span className="ml-2">&#9662;</span>}
@@ -162,7 +156,7 @@ function Nav() {
                       <li key={subIndex}>
                         <Link
                           to={subLink.href}
-                          className="block px-2 py-1 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                          className="block px-2 py-1 text-[16px] font-[600] text-gray-700 hover:bg-gray-100 rounded"
                           onClick={toggleNav}
                         >
                           {subLink.title}
