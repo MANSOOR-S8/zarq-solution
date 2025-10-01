@@ -37,7 +37,7 @@ const img =
   "https://zarqsolution.com/wp-content/uploads/2020/01/why-choose-us.jpg";
 
 function ChooseUs() {
-  const [activeIndex, setActiveIndex] = useState(null); // null means none is open
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleItem = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -47,7 +47,7 @@ function ChooseUs() {
     <section className="bg-[#eceff4] py-12 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Image Section */}
-        <div>
+        <div data-aos="fade-right">
           <img
             src={img}
             alt="Why Choose Us"
@@ -56,7 +56,7 @@ function ChooseUs() {
         </div>
 
         {/* Text Section */}
-        <div>
+        <div data-aos="fade-up">
           <h2 className="text-2xl md:text-3xl font-bold text-[#0B80DA] mb-3">
             Why Choose Us?
           </h2>

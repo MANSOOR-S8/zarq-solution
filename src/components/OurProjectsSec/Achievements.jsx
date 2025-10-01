@@ -59,11 +59,7 @@ const Achievements = () => {
   };
 
   return (
-    <section
-      ref={sectionRef}
-      className="bg-[#0B80DA] text-white py-12 px-6"
-      data-aos="zoom-in" // fade+zoom from AOS
-    >
+    <section ref={sectionRef} className="bg-[#0B80DA] text-white py-12 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
         {/* Left Side - Heading */}
         <div className="md:w-1/3 text-center md:text-left">
@@ -77,19 +73,19 @@ const Achievements = () => {
 
         {/* Right Side - Counters */}
         <div className="grid grid-cols-2 gap-x-8 gap-y-8 justify-center md:grid-cols-4 mt-8 md:mt-0">
-          <div className="text-center" data-aos="fade-up">
+          <div className="text-center">
             <Counter target={50} duration={2000} />
             <p className="mt-1 text-sm md:text-base">Satisfied Clients</p>
           </div>
-          <div className="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div className="text-center">
             <Counter target={60} duration={2000} />
             <p className="mt-1 text-sm md:text-base">Projects Completed</p>
           </div>
-          <div className="text-center" data-aos="fade-up" data-aos-delay="400">
+          <div className="text-center">
             <Counter target={15} duration={2000} />
             <p className="mt-1 text-sm md:text-base">Ongoing Projects</p>
           </div>
-          <div className="text-center" data-aos="fade-up" data-aos-delay="600">
+          <div className="text-center">
             <Counter target={35} duration={2000} />
             <p className="mt-1 text-sm md:text-base">Our Success Partners</p>
           </div>

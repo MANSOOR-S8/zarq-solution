@@ -6,10 +6,14 @@ import Footer from "../components/Footer/Footer";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 
-import { FaQrcode, FaPaintBrush } from "react-icons/fa";
-import { IoCode } from "react-icons/io5";
-import { MdDeveloperMode, MdOutlineSupportAgent } from "react-icons/md";
-import { DiGitBranch } from "react-icons/di";
+import { IoSearchOutline } from "react-icons/io5";
+import { BsQrCodeScan } from "react-icons/bs";
+import { PiDeviceMobileLight } from "react-icons/pi";
+import { MdOutlineWeb } from "react-icons/md";
+import { FaNetworkWired } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
+import { FaRegCheckCircle } from "react-icons/fa";
+import { IoColorPaletteSharp } from "react-icons/io5";
 
 const services = [
   {
@@ -17,56 +21,56 @@ const services = [
     title: " User Research & Analysis ",
     description:
       "We conduct in-depth research on user behavior, market trends, and competitor analysis to create data-driven designs that align with customer needs and expectations. ",
-    icon: <IoCode className="text-3xl text-[#0B80DA] " />,
+    icon: <IoSearchOutline className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 2,
     title: "Dashboard UI Design ",
     description:
       "We create intuitive dashboards and user interfaces for SaaS applications, making complex data visualization and user interactions easy and efficient. ",
-    icon: <FaQrcode className="text-3xl text-[#0B80DA] " />,
+    icon: <BsQrCodeScan className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 3,
     title: "Mobile App UI/UX Design ",
     description:
       "We design visually appealing, user-friendly mobile app interfaces that provide a seamless experience across Android and iOS platforms, enhancing user retention and engagement. ",
-    icon: <MdDeveloperMode className="text-3xl text-[#0B80DA] " />,
+    icon: <PiDeviceMobileLight className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 4,
     title: "Web UI/UX Design ",
     description:
       "Our team crafts modern, responsive, and aesthetically pleasing website designs that prioritize usability, ensuring smooth navigation and a great user experience across all devices. ",
-    icon: <FaPaintBrush className="text-3xl text-[#0B80DA] " />,
+    icon: <MdOutlineWeb className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 5,
     title: "Wireframing & Prototyping ",
     description:
       " Using low and high-fidelity wireframes, we create structured layouts and interactive prototypes, allowing stakeholders to visualize user flows before development begins.",
-    icon: <DiGitBranch className="text-3xl text-[#0B80DA] " />,
+    icon: <FaNetworkWired className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 6,
     title: "E-Commerce UI/UX Design ",
     description:
       "Optimized for conversions, our e-commerce UI/UX designs focus on creating a smooth shopping experience with engaging product displays, easy navigation, and secure checkout flows. ",
-    icon: <MdOutlineSupportAgent className="text-3xl text-[#0B80DA] " />,
+    icon: <FaShoppingCart className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 7,
     title: "Usability Testing & Optimization ",
     description:
       "We conduct rigorous usability testing to identify pain points and refine the design, ensuring an intuitive and frictionless user experience. ",
-    icon: <DiGitBranch className="text-3xl text-[#0B80DA] " />,
+    icon: <FaRegCheckCircle className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 8,
     title: "Design System & Branding ",
     description:
       "We establish cohesive design systems, including typography, color palettes, UI components, and brand identity guidelines, ensuring consistency across all digital platforms.  ",
-    icon: <MdOutlineSupportAgent className="text-3xl text-[#0B80DA] " />,
+    icon: <IoColorPaletteSharp className="text-4xl text-[#0B80DA] " />,
   },
 ];
 
@@ -227,7 +231,10 @@ function OurUI() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto"
+          data-aos="fade-up"
+        >
           {services.map((service) => (
             <div
               key={service.id}
@@ -264,7 +271,10 @@ function OurUI() {
             </p>
           </div>
 
-          <div className="bg-white rounded-lg shadow-md p-5 space-y-4">
+          <div
+            className="bg-white rounded-lg shadow-md p-5 space-y-4"
+            data-aos="fade-down"
+          >
             {features.map((item, index) => {
               const isOpen = index === activeIndex;
 

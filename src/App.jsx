@@ -37,7 +37,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/service" element={<Service />} />
-          {/* sub menu of services start */}
+          {/* Services sub menu  */}
           <Route path="/WebDevelopment" element={<WebDevelopment />} />
           <Route path="/MobApp" element={<MobApp />} />
           <Route path="/SoftDev" element={<SoftDev />} />

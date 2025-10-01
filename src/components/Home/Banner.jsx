@@ -11,6 +11,8 @@ import photoshop from "../../assets/Photoshop.png";
 import react from "../../assets/React.png";
 import node from "../../assets/Node.png";
 import php from "../../assets/Php.png";
+import { Link } from "react-router";
+import Consultation from "../../Consultation/Consultation";
 
 gsap.registerPlugin(SplitText);
 
@@ -68,7 +70,7 @@ function Banner() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
           <div className="text-left">
-            <h2 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[46px] font-[900] leading-tight max-w-3xl ">
+            <h2 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[46px] font-[600] leading-tight max-w-3xl ">
               <span className="text-[#0B80DA]" ref={textRef}>
                 Zarq Solution:
               </span>
@@ -81,9 +83,11 @@ function Banner() {
               digital growth.
             </p>
             <div className="mt-6 sm:mt-10">
-              <button className="bg-[#0B80DA] px-6 py-3 rounded text-white text-sm sm:text-base hover:bg-blue-600 transition-all">
-                Get Free Consultation
-              </button>
+              <Link to="/Consultation">
+                <button className="bg-[#0B80DA] px-6 py-3 rounded text-white text-sm cursor-pointer sm:text-base hover:bg-blue-600 transition-all">
+                  Get Free Consultation
+                </button>
+              </Link>
             </div>
           </div>
 

@@ -7,8 +7,11 @@ import SplitText from "gsap/SplitText";
 
 import { FaQrcode, FaPaintBrush } from "react-icons/fa";
 import { IoCode } from "react-icons/io5";
-import { MdDeveloperMode, MdOutlineSupportAgent } from "react-icons/md";
-import { DiGitBranch } from "react-icons/di";
+import {
+  MdDeveloperMode,
+  MdOutlineSupportAgent,
+  MdWebhook,
+} from "react-icons/md";
 
 const services = [
   {
@@ -16,42 +19,42 @@ const services = [
     title: "Custom Website Development ",
     description:
       "We design and develop fully customized websites that reflect your brand identity and meet your business objectives. Our solutions ensure a seamless user experience, high performance, and strong security for long-term success. ",
-    icon: <IoCode className="text-3xl text-[#0B80DA] " />,
+    icon: <IoCode className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 2,
     title: "CMS Development ",
     description:
       "Our CMS solutions empower businesses with easy-to-use, flexible, and scalable platforms like WordPress, Shopify, and Joomla, allowing you to manage website content effortlessly without coding knowledge. ",
-    icon: <FaQrcode className="text-3xl text-[#0B80DA] " />,
+    icon: <FaQrcode className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 3,
     title: "Progressive Web Apps (PWA) ",
     description:
       "We develop cutting-edge Progressive Web Apps that combine the best of websites and mobile apps, offering fast loading speeds, offline functionality, and an app-like user experience without requiring installation. ",
-    icon: <MdDeveloperMode className="text-3xl text-[#0B80DA] " />,
+    icon: <MdDeveloperMode className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 4,
     title: "Website Redesign & Optimization ",
     description:
       "Transform your outdated website with a modern, visually appealing design, faster load times, and an improved user experience that boosts engagement, conversions, and search engine rankings. ",
-    icon: <FaPaintBrush className="text-3xl text-[#0B80DA] " />,
+    icon: <FaPaintBrush className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 5,
     title: "API Development & Integration ",
     description:
       "Enhance your website’s functionality by integrating third-party services, payment gateways, and custom APIs, ensuring smooth data exchange and automation between different platforms. ",
-    icon: <DiGitBranch className="text-3xl text-[#0B80DA] " />,
+    icon: <MdWebhook className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 6,
     title: "Website Maintenance & Support",
     description:
       "We provide ongoing technical support, performance monitoring, security updates, and regular maintenance to keep your website running smoothly, securely, and efficiently. ",
-    icon: <MdOutlineSupportAgent className="text-3xl text-[#0B80DA] " />,
+    icon: <MdOutlineSupportAgent className="text-4xl text-[#0B80DA] " />,
   },
 ];
 

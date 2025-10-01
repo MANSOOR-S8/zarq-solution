@@ -75,7 +75,7 @@ function OurServices() {
         <h2 className="text-3xl font-bold text-[#0B80DA]  mb-2">
           We provide a wide range of Services
         </h2>
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-left max-w-4xl mx-auto ">
           We provide a comprehensive range of services, including web and mobile
           development, software solutions, and IT consulting. Our expert team is
           dedicated to delivering innovative, high-quality, and customized
@@ -85,7 +85,9 @@ function OurServices() {
 
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto"
-        data-aos="flip-left"
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
       >
         {services.map((service) => (
           <div

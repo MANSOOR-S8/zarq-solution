@@ -51,7 +51,7 @@ function Stages() {
               key={index}
               className="bg-white border-1 border-gray-300  p-12 relative"
             >
-              <span className="text-7xl font-extrabold text-gray-300 absolute top-5 left-5">
+              <span className="text-7xl font-[800] text-gray-200 absolute top-5 left-5">
                 {step.number}
               </span>
 

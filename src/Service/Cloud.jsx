@@ -5,49 +5,71 @@ import Footer from "../components/Footer/Footer";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 
-import { FaQrcode, FaPaintBrush } from "react-icons/fa";
-import { IoCode } from "react-icons/io5";
-import { MdDeveloperMode, MdOutlineSupportAgent } from "react-icons/md";
-import { DiGitBranch } from "react-icons/di";
+import { CiCloudOn } from "react-icons/ci";
+import { LuDownload } from "react-icons/lu";
+import { MdOutlineCloudSync } from "react-icons/md";
+import { FaCube } from "react-icons/fa6";
+import { RiCodeView } from "react-icons/ri";
+import { TbTransformFilled } from "react-icons/tb";
+import { RiFlashlightLine } from "react-icons/ri";
+import { IoMdTrendingUp } from "react-icons/io";
 
 const services = [
   {
     id: 1,
-    title: "Cloud Assessment & Strategy ",
+    title: "Cloud Consulting & Strategy",
     description:
-      "Evaluating cloud readiness and defining a tailored migration plan.",
-    icon: <IoCode className="text-3xl text-[#0B80DA] " />,
+      "Guiding businesses in cloud adoption, architecture design, and migration strategies for optimal performance.",
+    icon: <CiCloudOn className="text-4xl text-[#0B80DA]" />,
   },
   {
     id: 2,
-    title: "Cloud Architecture & Deployment",
-    description: "Designing and deploying scalable cloud infrastructure.",
-    icon: <FaQrcode className="text-3xl text-[#0B80DA] " />,
+    title: "Cloud Migration & Deployment",
+    description:
+      "Seamlessly migrating applications, data, and infrastructure to AWS, Azure, or Google Cloud.",
+    icon: <LuDownload className="text-4xl text-[#0B80DA]" />,
   },
   {
     id: 3,
-    title: "CI/CD Pipeline Setup",
-    description: "Automating development, testing, and deployment workflows.",
-    icon: <MdDeveloperMode className="text-3xl text-[#0B80DA] " />,
+    title: "Multi-Cloud & Hybrid Cloud Solutions",
+    description:
+      "Implementing flexible cloud strategies that combine on-premises, private, and public cloud environments.",
+    icon: <MdOutlineCloudSync className="text-4xl text-[#0B80DA]" />,
   },
   {
     id: 4,
-    title: "Containerization & Orchestration",
+    title: "Containerization & Kubernetes",
     description:
-      "Implementing Docker and Kubernetes for scalable applications.",
-    icon: <FaPaintBrush className="text-3xl text-[#0B80DA] " />,
+      "Using Docker and Kubernetes to enable containerized applications for faster deployment and scalability.",
+    icon: <FaCube className="text-4xl text-[#0B80DA]" />,
   },
   {
     id: 5,
-    title: "Security & Compliance Implementation ",
-    description: "Ensuring cloud environments meet industry standards.",
-    icon: <DiGitBranch className="text-3xl text-[#0B80DA] " />,
+    title: "Infrastructure as Code (IaC)",
+    description:
+      "Automating infrastructure provisioning using Terraform, Ansible, and CloudFormation.",
+    icon: <RiCodeView className="text-4xl text-[#0B80DA]" />,
   },
   {
     id: 6,
-    title: "Continuous Monitoring & Optimization",
-    description: "Managing performance, cost efficiency, and automation. ",
-    icon: <MdOutlineSupportAgent className="text-3xl text-[#0B80DA] " />,
+    title: "CI/CD Pipeline Implementation",
+    description:
+      "Developing continuous integration and delivery pipelines to streamline software deployment.",
+    icon: <TbTransformFilled className="text-4xl text-[#0B80DA]" />,
+  },
+  {
+    id: 7,
+    title: "Serverless Computing & Microservices",
+    description:
+      "Building serverless applications and microservices architectures for cost efficiency and scalability.",
+    icon: <RiFlashlightLine className="text-4xl text-[#0B80DA]" />,
+  },
+  {
+    id: 8,
+    title: "DevOps Automation & Monitoring",
+    description:
+      "Implementing real-time monitoring, logging, and automated workflows for high availability.",
+    icon: <IoMdTrendingUp className="text-4xl text-[#0B80DA]" />,
   },
 ];
 
@@ -173,7 +195,10 @@ function Cloud() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto h-auto">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto"
+          data-aos="fade-up"
+        >
           {services.map((service) => (
             <div
               key={service.id}
@@ -211,7 +236,10 @@ function Cloud() {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          <div
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+            data-aos="fade-right"
+          >
             {technologies.map((tech) => (
               <div
                 key={tech.id}
@@ -235,7 +263,7 @@ function Cloud() {
             Our UI/UX Design Process
           </h2>
           {/* Cards */}
-          <div className="grid md:grid-cols-3 ">
+          <div className="grid md:grid-cols-3 " data-aos="fade-up">
             {steps.map((step, index) => (
               <div
                 key={index}

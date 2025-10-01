@@ -1,4 +1,3 @@
-// src/components/Navbar/Nav.jsx
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NavbarData from "./NavbarData";
@@ -19,63 +18,59 @@ function Nav() {
     setOpenSubMenuIndex(openSubMenuIndex === index ? null : index);
   };
 
-  // ===== Scroll Hide/Show Navbar =====
+  // Scroll hide / show
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+  // New: track whether navbar should have background / blur
+  const [scrolledPastBanner, setScrolledPastBanner] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
+      // Hide / show logic
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
         setShowNavbar(false);
       } else {
         setShowNavbar(true);
       }
-
       setLastScrollY(currentScrollY);
+
+      // Transparent -> blur logic ye check karta hy k agar navbar ki height less then 400px tho transparent ho nahi tho blur
+      const bannerHeight = 400; // match your banner height
+      if (currentScrollY > bannerHeight) {
+        setScrolledPastBanner(true);
+      } else {
+        setScrolledPastBanner(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // ===== GSAP Animation for Navbar =====
-
-  // useEffect(() => {
-  //   gsap.fromTo(
-  //     navRef.current,
-  //     { y: -100, opacity: 0 },
-  //     {
-  //       y: 0,
-  //       opacity: 1,
-  //       duration: 0.8,
-  //       delay: 0.3,
-  //       ease: "power2.out",
-  //     }
-  //   );
-  // }, []);
-
   return (
     <>
-      {/* <GsapAnimation targetRef={navRef} /> */}
-
       <nav
-        className={`fixed top-0 left-0 w-full z-50 bg-[#eceff4]  shadow-sm bg-transparent transition-transform duration-500 ${
+        className={`fixed top-0 left-0 w-full z-50 transition-transform duration-500 ${
           showNavbar ? "translate-y-0" : "-translate-y-full"
+        } ${
+          scrolledPastBanner
+            ? "bg-white/30 backdrop-blur-md shadow-sm"
+            : "bg-transparent"
         }`}
       >
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          {/* Logo */}
-          <div className="w-[140px] logo-img">
-            <img
-              src={logo}
-              alt="Logo"
-              className="w-full h-auto object-contain"
-            />
+          <div className="w-[140px] logo-img ml-8">
+            <Link to="/">
+              <img
+                src={logo}
+                alt="Logo"
+                className="w-full h-auto object-contain"
+              />
+            </Link>
           </div>
-
-          {/* NAv Menu */}
           <ul className="hidden lg:flex space-x-10 items-center">
             {NavbarData.map((link, index) => (
               <li key={index} className="relative group">
@@ -86,10 +81,8 @@ function Nav() {
                   {link.title}
                   {link.submenu && <span className="ml-1">&#9662;</span>}
                 </Link>
-
-                {/* Desktop Dropdown */}
                 {link.submenu && (
-                  <ul className="absolute top-full left-0 hidden group-hover:block hover:block bg-white shadow-lg rounded  w-60 z-50">
+                  <ul className="absolute top-full left-0 hidden group-hover:block hover:block bg-white shadow-lg rounded w-60 z-50">
                     {link.submenu.map((subLink, subIndex) => (
                       <li key={subIndex}>
                         <Link
@@ -105,8 +98,6 @@ function Nav() {
               </li>
             ))}
           </ul>
-
-          {/* Mobile Menu Button */}
           <div className="block lg:hidden z-50 relative">
             <button
               className="text-2xl text-gray-800"
@@ -119,14 +110,12 @@ function Nav() {
         </div>
       </nav>
 
-      {/* Mobile Sidebar */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 lg:hidden ${
           toggle ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex flex-col p-6 space-y-4 h-full">
-          {/* Close Button */}
           <button
             className="self-end text-3xl text-gray-700 hover:text-black"
             onClick={toggleNav}
@@ -134,8 +123,6 @@ function Nav() {
           >
             &times;
           </button>
-
-          {/* Mobile Links */}
           <ul className="space-y-2">
             {NavbarData.map((link, index) => (
               <li key={index}>
@@ -148,8 +135,6 @@ function Nav() {
                   <Link to={link.href}>{link.title}</Link>
                   {link.submenu && <span className="ml-2">&#9662;</span>}
                 </div>
-
-                {/* Mobile Dropdown */}
                 {link.submenu && openSubMenuIndex === index && (
                   <ul className="ml-4 mt-1 space-y-1 border-l border-gray-200 pl-3">
                     {link.submenu.map((subLink, subIndex) => (
@@ -168,7 +153,6 @@ function Nav() {
               </li>
             ))}
           </ul>
-
           <div className="mt-auto pt-6 border-t text-sm text-gray-500">
             © {new Date().getFullYear()} Zarq Solution
           </div>

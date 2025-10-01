@@ -3,35 +3,37 @@ import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 import "../App.css";
 import Footer from "../components/Footer/Footer";
-import { FaQrcode, FaPaintBrush } from "react-icons/fa";
-import { IoCode } from "react-icons/io5";
-import { MdDeveloperMode, MdOutlineSupportAgent } from "react-icons/md";
-import { DiGitBranch } from "react-icons/di";
+
+//icons
+import { FaToolbox } from "react-icons/fa";
+import { MdOutlineCloudSync } from "react-icons/md";
+import { MdOutlineWeb } from "react-icons/md";
+import { FaPen } from "react-icons/fa";
 
 const services = [
   {
     id: 1,
     title: "Enterprise Software Development ",
     description: "Seamless integration with third-party applications. ",
-    icon: <IoCode className="text-3xl text-[#0B80DA] " />,
+    icon: <FaToolbox className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 2,
     title: "SaaS (Software as a Service) Solutions",
     description: "Scalable, secure, and accessible ERP systems.  ",
-    icon: <FaQrcode className="text-3xl text-[#0B80DA] " />,
+    icon: <MdOutlineCloudSync className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 3,
     title: "Web Application Development ",
     description: "Tailor-made solutions designed for your business needs.  ",
-    icon: <MdDeveloperMode className="text-3xl text-[#0B80DA] " />,
+    icon: <MdOutlineWeb className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 4,
     title: "Legacy Software Modernization ",
     description: "Seamless integration with third-party applications. ",
-    icon: <FaPaintBrush className="text-3xl text-[#0B80DA] " />,
+    icon: <FaPen className="text-4xl text-[#0B80DA] " />,
   },
 ];
 
@@ -175,7 +177,10 @@ function SoftDev() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto"
+          data-aos="fade-up"
+        >
           {services.map((service) => (
             <div
               key={service.id}
@@ -237,7 +242,7 @@ function SoftDev() {
             Stages of Working With Us
           </h2>
           {/* Cards */}
-          <div className="grid md:grid-cols-3 ">
+          <div className="grid md:grid-cols-3 " data-aos="fade-up">
             {steps.map((step, index) => (
               <div
                 key={index}

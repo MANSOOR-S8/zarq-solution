@@ -5,10 +5,14 @@ import Footer from "../components/Footer/Footer";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 
-import { FaQrcode, FaPaintBrush } from "react-icons/fa";
-import { IoCode } from "react-icons/io5";
-import { MdDeveloperMode, MdOutlineSupportAgent } from "react-icons/md";
-import { DiGitBranch } from "react-icons/di";
+import { GoLightBulb } from "react-icons/go";
+import { CiCloudOn } from "react-icons/ci";
+import { MdOutlineSecurity } from "react-icons/md";
+import { MdStorage } from "react-icons/md";
+import { MdOutlineSupportAgent } from "react-icons/md";
+import { GrPowerCycle } from "react-icons/gr";
+import { MdOutlineCloudSync } from "react-icons/md";
+import { FaRegCheckCircle } from "react-icons/fa";
 
 const services = [
   {
@@ -16,56 +20,56 @@ const services = [
     title: "IT Strategy & Digital Transformation  ",
     description:
       "We develop IT roadmaps and digital transformation strategies to align technology with business goals.",
-    icon: <IoCode className="text-3xl text-[#0B80DA] " />,
+    icon: <GoLightBulb className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 2,
     title: "Cloud Consulting & Migration ",
     description:
       "Guiding businesses in adopting cloud solutions like AWS, Azure, and Google Cloud for improved scalability and performance. ",
-    icon: <FaQrcode className="text-3xl text-[#0B80DA] " />,
+    icon: <CiCloudOn className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 3,
     title: "Cybersecurity Consulting ",
     description:
       "Providing security audits, risk assessments, and compliance solutions to protect your data and IT infrastructure. ",
-    icon: <MdDeveloperMode className="text-3xl text-[#0B80DA] " />,
+    icon: <MdOutlineSecurity className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 4,
     title: "Infrastructure & Network Management",
     description:
       "Designing, optimizing, and managing IT infrastructure to ensure seamless connectivity and operational efficiency. ",
-    icon: <FaPaintBrush className="text-3xl text-[#0B80DA] " />,
+    icon: <MdStorage className="text-3xl text-[#0B80DA] " />,
   },
   {
     id: 5,
     title: "IT Helpdesk & Technical Support  ",
     description:
       "Offering 24/7 IT support, troubleshooting, and remote assistance to resolve technical issues quickly. ",
-    icon: <DiGitBranch className="text-3xl text-[#0B80DA] " />,
+    icon: <MdOutlineSupportAgent className="text-3xl text-[#0B80DA] " />,
   },
   {
     id: 6,
     title: "Software & System Integration ",
     description:
       "Ensuring smooth integration of third-party software, APIs, and legacy systems for enhanced functionality.  ",
-    icon: <MdOutlineSupportAgent className="text-3xl text-[#0B80DA] " />,
+    icon: <GrPowerCycle className="text-3xl text-[#0B80DA] " />,
   },
   {
     id: 7,
     title: "Business Continuity & Disaster Recovery  ",
     description:
       "Developing backup and disaster recovery plans to ensure data security and business continuity in case of system failures.  ",
-    icon: <DiGitBranch className="text-3xl text-[#0B80DA] " />,
+    icon: <MdOutlineCloudSync className="text-3xl text-[#0B80DA] " />,
   },
   {
     id: 8,
     title: "IT Compliance & Risk Management ",
     description:
       "Helping businesses meet industry regulations (GDPR, HIPAA, ISO) and mitigate IT-related risks.  ",
-    icon: <DiGitBranch className="text-3xl text-[#0B80DA] " />,
+    icon: <FaRegCheckCircle className="text-3xl text-[#0B80DA] " />,
   },
 ];
 
@@ -134,7 +138,7 @@ function ITSupport() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <h2 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[47px] text-center   break-words leading-tight max-w-3xl mx-auto hed-text pt-10">
               <span ref={textRef} className=" font-[900]  text-bold ">
-                IT Consultancy & Support
+                IT <span className="text-[#0B80DA]">Consultancy</span> & Support
               </span>
             </h2>
 
@@ -165,7 +169,10 @@ function ITSupport() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto"
+          data-aos="fade-up"
+        >
           {services.map((service) => (
             <div
               key={service.id}
@@ -197,7 +204,7 @@ function ITSupport() {
             Our IT Consultancy & Support Process
           </h2>
           {/* Cards */}
-          <div className="grid md:grid-cols-3 ">
+          <div className="grid md:grid-cols-3 " data-aos="fade-left">
             {steps.map((step, index) => (
               <div
                 key={index}

@@ -3,12 +3,18 @@ import { useEffect, useRef } from "react";
 import Footer from "../components/Footer/Footer";
 
 import gsap from "gsap";
+import { MdDeveloperMode } from "react-icons/md";
 import SplitText from "gsap/SplitText";
+import { TfiMobile } from "react-icons/tfi";
+import { PiDeviceMobile } from "react-icons/pi";
+import { GrPowerCycle } from "react-icons/gr";
+import { GrCart } from "react-icons/gr";
+import { IoColorPaletteSharp } from "react-icons/io5";
+import { FaRegCheckCircle } from "react-icons/fa";
+import { MdEventAvailable } from "react-icons/md";
 
-import { FaQrcode, FaPaintBrush } from "react-icons/fa";
-import { IoCode } from "react-icons/io5";
-import { MdDeveloperMode, MdOutlineSupportAgent } from "react-icons/md";
-import { DiGitBranch } from "react-icons/di";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const services = [
   {
@@ -16,56 +22,56 @@ const services = [
     title: " Custom Mobile App Development  ",
     description:
       "We create tailor-made mobile applications that align with your business needs, ensuring scalability and efficiency.  ",
-    icon: <IoCode className="text-3xl text-[#0B80DA] " />,
+    icon: <MdDeveloperMode className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 2,
     title: "iOS App Development",
     description:
       "OurDeveloping high-performance, feature-rich iOS applications using Swift and Objective-C for Apple devices.  ",
-    icon: <FaQrcode className="text-3xl text-[#0B80DA] " />,
+    icon: <TfiMobile className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 3,
     title: "Android App Development",
     description:
       "Crafting robust and secure Android apps with Kotlin and Java to ensure smooth performance on all Android devices. ",
-    icon: <MdDeveloperMode className="text-3xl text-[#0B80DA] " />,
+    icon: <PiDeviceMobile className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 4,
     title: "Cross-Platform App Development ",
     description:
       "Using frameworks like React Native and Flutter, we build apps that work seamlessly across both iOS and Android, reducing development time and costs. ",
-    icon: <FaPaintBrush className="text-3xl text-[#0B80DA] " />,
+    icon: <GrPowerCycle className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 5,
     title: "E-Commerce Mobile App Development ",
     description:
       "Developing mobile solutions for e-commerce businesses with features like secure checkout, product catalogs, and personalized recommendations.",
-    icon: <DiGitBranch className="text-3xl text-[#0B80DA] " />,
+    icon: <GrCart className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 6,
     title: "UI/UX Design for Mobile Apps ",
     description:
       "We design intuitive and visually appealing app interfaces that enhance user experience and increase engagement. ",
-    icon: <MdOutlineSupportAgent className="text-3xl text-[#0B80DA] " />,
+    icon: <IoColorPaletteSharp className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 7,
     title: "App Testing & Quality Assurance  ",
     description:
       "Thorough testing to ensure bug-free performance, smooth functionality, and optimal user experience. ",
-    icon: <DiGitBranch className="text-3xl text-[#0B80DA] " />,
+    icon: <FaRegCheckCircle className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 8,
     title: "App Maintenance & Support ",
     description:
       "Providing continuous updates, performance optimizations, and security enhancements to keep your app running smoothly. ",
-    icon: <MdOutlineSupportAgent className="text-3xl text-[#0B80DA] " />,
+    icon: <MdEventAvailable className="text-4xl text-[#0B80DA] " />,
   },
 ];
 
@@ -136,6 +142,13 @@ const steps = [
 gsap.registerPlugin(SplitText);
 
 function MobApp() {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, // animation duration (ms)
+      once: true, // animation only once
+    });
+  }, []);
+
   const textRef = useRef();
 
   useEffect(() => {
@@ -175,9 +188,9 @@ function MobApp() {
         </div>
       </section>
       {/* our service cards */}
-      <section className="bg-[#f0f4f8] py-12 px-4">
+      <section className="bg-[#f0f4f8] py-14s px-4 pb-10">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-[#0B80DA]  mb-2">
+          <h2 className="text-3xl font-bold text-[#0B80DA]  mb-2 pt-7">
             Our Mobile App Development Services
           </h2>
           <p className="text-gray-600">
@@ -186,7 +199,10 @@ function MobApp() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto"
+          data-aos="fade-up"
+        >
           {services.map((service) => (
             <div
               key={service.id}
@@ -211,7 +227,7 @@ function MobApp() {
         </div>
       </section>
       {/* technology we use */}
-      <section className="bg-[#0b80da] py-12">
+      <section className="bg-[#0b80da] py-12 " data-aos="zoom-in">
         <div className="max-w-7xl mx-auto px-4">
           {/* Title */}
           <div className="text-center mb-10">

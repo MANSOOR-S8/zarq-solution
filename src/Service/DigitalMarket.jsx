@@ -5,10 +5,12 @@ import Footer from "../components/Footer/Footer";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 
-import { FaQrcode, FaPaintBrush } from "react-icons/fa";
-import { IoCode } from "react-icons/io5";
-import { MdDeveloperMode, MdOutlineSupportAgent } from "react-icons/md";
-import { DiGitBranch } from "react-icons/di";
+import { FiSearch } from "react-icons/fi";
+import { AiOutlineDollar } from "react-icons/ai";
+import { FaUserGroup } from "react-icons/fa6";
+import { MdOutlineEmail } from "react-icons/md";
+import { IoTrendingUpOutline } from "react-icons/io5";
+import { MdAddLocationAlt } from "react-icons/md";
 
 const services = [
   {
@@ -16,42 +18,42 @@ const services = [
     title: "Search Engine Optimization (SEO)",
     description:
       "Optimize your website to rank higher on Google with keyword research, on-page SEO, technical SEO, and backlink building. ",
-    icon: <IoCode className="text-3xl text-[#0B80DA] " />,
+    icon: <FiSearch className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 2,
     title: "Pay-Per-Click (PPC) Advertising",
     description:
       "Launch targeted Google Ads and social media campaigns to drive instant, high-converting traffic to your website. ",
-    icon: <FaQrcode className="text-3xl text-[#0B80DA] " />,
+    icon: <AiOutlineDollar className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 3,
     title: "Social Media Marketing (SMM) ",
     description:
       "Build brand awareness and engagement on platforms like Facebook, Instagram, LinkedIn, and Twitter. ",
-    icon: <MdDeveloperMode className="text-3xl text-[#0B80DA] " />,
+    icon: <FaUserGroup className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 4,
     title: "Email Marketing & Automation ",
     description:
       "Reach your audience with personalized email campaigns, newsletters, and automated marketing flows. ",
-    icon: <FaPaintBrush className="text-3xl text-[#0B80DA] " />,
+    icon: <MdOutlineEmail className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 5,
     title: "Analytics & Performance Tracking  ",
     description:
       "Track campaign success, monitor website traffic, and optimize marketing efforts with real-time analytics. ",
-    icon: <DiGitBranch className="text-3xl text-[#0B80DA] " />,
+    icon: <IoTrendingUpOutline className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 6,
     title: "Local SEO & Google My Business Optimization ",
     description:
       "Optimize your business for local searches to attract nearby customers and improve Google My Business rankings.  ",
-    icon: <MdOutlineSupportAgent className="text-3xl text-[#0B80DA] " />,
+    icon: <MdAddLocationAlt className="text-4xl text-[#0B80DA] " />,
   },
 ];
 
@@ -62,10 +64,7 @@ const technologies = [
     id: 1,
     img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1694.png",
   },
-  //   {
-  //     id: 2,
-  //     img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1644.png",
-  //   },
+
   {
     id: 2,
     img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1691.png",
@@ -173,7 +172,10 @@ function DigitalMarket() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto h-auto">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto h-auto"
+          data-aos="fade-up"
+        >
           {services.map((service) => (
             <div
               key={service.id}

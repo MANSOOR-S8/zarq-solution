@@ -3,35 +3,57 @@ import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 import "../App.css";
 import Footer from "../components/Footer/Footer";
-import { FaQrcode, FaPaintBrush } from "react-icons/fa";
-import { IoCode } from "react-icons/io5";
-import { MdDeveloperMode, MdOutlineSupportAgent } from "react-icons/md";
-import { DiGitBranch } from "react-icons/di";
+
+//=====
+import { FaQrcode } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
+import { MdOutlineCloudSync } from "react-icons/md";
+import { FaPaintBrush } from "react-icons/fa";
+import { MdWebhook } from "react-icons/md";
+import { FaHeadset } from "react-icons/fa6";
 
 const services = [
   {
     id: 1,
-    title: "Enterprise Software Development ",
-    description: "Seamless integration with third-party applications. ",
-    icon: <IoCode className="text-3xl text-[#0B80DA] " />,
+    title: "Custom E-Commerce Development ",
+    description:
+      "We build tailored e-commerce platforms that align with your brand identity, ensuring a smooth and engaging shopping experience for your customers. ",
+    icon: <FaShoppingCart className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 2,
-    title: "SaaS (Software as a Service) Solutions",
-    description: "Scalable, secure, and accessible ERP systems.  ",
-    icon: <FaQrcode className="text-3xl text-[#0B80DA] " />,
+    title: "CMS Development ",
+    description:
+      "Our CMS solutions empower businesses with easy-to-use, flexible, and scalable platforms like WordPress, Shopify, and Joomla, allowing you to manage website content effortlessly without coding knowledge. ",
+    icon: <FaQrcode className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 3,
-    title: "Web Application Development ",
-    description: "Tailor-made solutions designed for your business needs.  ",
-    icon: <MdDeveloperMode className="text-3xl text-[#0B80DA] " />,
+    title: "Progressive Web Apps (PWA) ",
+    description:
+      "We develop cutting-edge Progressive Web Apps that combine the best of websites and mobile apps, offering fast loading speeds, offline functionality, and an app-like user experience without requiring installation. ",
+    icon: <MdOutlineCloudSync className="text-4xl text-[#0B80DA] " />,
   },
   {
     id: 4,
-    title: "Legacy Software Modernization ",
-    description: "Seamless integration with third-party applications. ",
-    icon: <FaPaintBrush className="text-3xl text-[#0B80DA] " />,
+    title: "Website Redesign & Optimization ",
+    description:
+      "Transform your outdated website with a modern, visually appealing design, faster load times, and an improved user experience that boosts engagement, conversions, and search engine rankings.  ",
+    icon: <FaPaintBrush className="text-4xl text-[#0B80DA] " />,
+  },
+  {
+    id: 5,
+    title: "API Development & Integration ",
+    description:
+      "Enhance your website’s functionality by integrating third-party services, payment gateways, and custom APIs, ensuring smooth data exchange and automation between different platforms.  ",
+    icon: <MdWebhook className="text-4xl text-[#0B80DA] " />,
+  },
+  {
+    id: 6,
+    title: "Website Maintenance & Support ",
+    description:
+      "We provide ongoing technical support, performance monitoring, security updates, and regular maintenance to keep your website running smoothly, securely, and efficiently. ",
+    icon: <FaHeadset className="text-4xl text-[#0B80DA] " />,
   },
 ];
 
@@ -175,7 +197,8 @@ function ECommerce() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <h2 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[47px] text-center break-words leading-tight max-w-3xl mx-auto hed-text pt-10">
               <span ref={textRef} className=" font-[900]  text-bold ">
-                Transform Your Business with Powerful E-Commerce Solutions
+                Transform Your Business with Powerful{" "}
+                <span className="text-[#0B80DA]">E-Commerce</span> Solutions
               </span>
             </h2>
 
@@ -199,7 +222,10 @@ function ECommerce() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto h-auto"
+          data-aos="fade-up"
+        >
           {services.map((service) => (
             <div
               key={service.id}
