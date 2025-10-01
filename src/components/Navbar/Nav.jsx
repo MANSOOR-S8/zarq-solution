@@ -62,16 +62,19 @@ function Nav() {
         }`}
       >
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="w-[140px] logo-img ml-8">
+          {/* Logo */}
+          <div className="flex-shrink-0">
             <Link to="/">
               <img
                 src={logo}
                 alt="Logo"
-                className="w-full h-auto object-contain"
+                className="h-12 md:h-14 w-auto object-contain"
               />
             </Link>
           </div>
-          <ul className="hidden lg:flex space-x-10 items-center">
+
+          {/* Desktop Menu */}
+          <ul className="hidden lg:flex space-x-10 flex-1 justify-center">
             {NavbarData.map((link, index) => (
               <li key={index} className="relative group">
                 <Link
@@ -87,7 +90,7 @@ function Nav() {
                       <li key={subIndex}>
                         <Link
                           to={subLink.href}
-                          className="block px-6 py-2 text-[16px] font-bold-[600] hover:bg-gray-100 text-gray-700"
+                          className="block px-6 py-2 text-[16px] font-[600] hover:bg-gray-100 text-gray-700"
                         >
                           {subLink.title}
                         </Link>
@@ -98,6 +101,8 @@ function Nav() {
               </li>
             ))}
           </ul>
+
+          {/* Mobile Menu Button */}
           <div className="block lg:hidden z-50 relative">
             <button
               className="text-2xl text-gray-800"

@@ -1,7 +1,4 @@
 import React from "react";
-import Aos from "aos";
-
-import Consultation from "../../Consultation/Consultation";
 import { Link } from "react-router-dom";
 
 function OurIntro() {
@@ -18,10 +15,10 @@ function OurIntro() {
       className="py-12 bg-cover bg-center bg-no-repeat"
       data-aos="fade-up-left"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-start justify-between gap-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-start justify-between gap-10">
         {/* 🔹 Left Content */}
         <div
-          className="flex-1 max-w-2xl bg-white/80 p-4 rounded-md lg:bg-transparent lg:pl-8"
+          className="flex-1 max-w-2xl bg-white/80 p-4 rounded-md lg:pl-8"
           data-aos="fade-right"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-[#0B80DA] mb-6">
@@ -49,12 +46,12 @@ function OurIntro() {
           </Link>
         </div>
 
-        {/* 🔹 Right Side (Image already in background, optional extra img if needed) */}
+        {/* 🔹 Right Side (Image) */}
         <div className="flex-1">
           <img
             src={sideImg[0].img}
             alt="Zarq Solution"
-            className="w-full h-auto object-cover  "
+            className="w-full h-auto object-cover"
           />
         </div>
       </div>

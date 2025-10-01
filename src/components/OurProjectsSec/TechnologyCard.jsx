@@ -101,29 +101,29 @@ const technologies = [
 
 function TechnologyCard() {
   return (
-    <section className="bg-[#0b80da] py-12">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="bg-[#0b80da] py-16">
+      <div className="container mx-auto px-4">
         {/* Title */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-12">
           <h2 className="text-[34px] font-bold text-white">
             Technologies We Use
           </h2>
-          <p className="text-gray-200 mt-2">
+          <p className="text-gray-200 mt-2 text-lg">
             Powering Your Software with the Latest Tech
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        {/* Grid same as projects */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {technologies.map((tech) => (
             <div
               key={tech.id}
-              className="bg-white rounded-md shadow hover:shadow-lg transition p-6 flex items-center justify-center"
+              className="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 flex items-center justify-center p-6"
             >
               <img
                 src={tech.img}
                 alt="Technology"
-                className="h-20 object-contain"
+                className="h-16 md:h-20 object-contain"
               />
             </div>
           ))}

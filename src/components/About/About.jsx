@@ -3,6 +3,7 @@ import Achievements from "../OurProjectsSec/Achievements";
 import Stages from "../OurProjectsSec/Stages";
 import Footer from "../Footer/Footer";
 import ChooseUs from "./ChooseUs";
+import "./About.css";
 function About() {
   const cards = [
     {
@@ -33,8 +34,8 @@ function About() {
 
   return (
     <div className="bg-[#eceff4] ">
-      <section className="">
-        <div className="bg-gradient-to-r from-blue-200 via-blue-100 to-purple-200 py-18">
+      <section className="banner-sec">
+        <div className="py-18">
           <div className="container mx-auto px-6 text-center p-20">
             {/* Heading */}
             <h1 className="text-[50px] md:text-[50px] font-bold text-gray-900">
@@ -47,33 +48,36 @@ function About() {
             </p>
           </div>
         </div>
-        <div className="container mx-auto px-6 ">
-          {/* Cards */}
-          <div className=" -mt-25 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {cards.map((card, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-lg text-left flex flex-col "
-              >
-                <hr className=" border-4 w-[60px] border-[#2c8ae9] " />
-                <h3 className="text-[22px] font-bold text-[#0B80DA]  inline-block mb-4 text-left pt-7">
-                  {card.title}
-                </h3>
-
-                {Array.isArray(card.content) ? (
-                  <ul className="list-disc pl-5 space-y-2 text-gray-700 text-left">
-                    {card.content.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-gray-700 text-[18px] ">{card.content}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
+      <div
+        className="relative z-10  container mx-auto px-6 "
+        data-aos="fade-up"
+      >
+        {/* Cards */}
+        <div className=" -mt-[100px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-lg shadow-lg text-left flex flex-col "
+            >
+              <hr className=" border-4 w-[60px] border-[#2c8ae9] " />
+              <h3 className="text-[22px] font-bold text-[#0B80DA]  inline-block mb-4 text-left pt-7">
+                {card.title}
+              </h3>
+
+              {Array.isArray(card.content) ? (
+                <ul className="list-disc pl-5 space-y-2 text-gray-700 text-left">
+                  {card.content.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-gray-700 text-[18px] ">{card.content}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
       <div>
         <ChooseUs />
       </div>

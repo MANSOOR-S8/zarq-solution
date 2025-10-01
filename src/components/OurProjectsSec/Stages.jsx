@@ -35,32 +35,36 @@ const steps = [
 
 function Stages() {
   return (
-    <section className="py-12 bg-[#eceff4] ">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="py-12 bg-[#eceff4]">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <h2 className="text-2xl md:text-3xl font-bold text-center text-[#0B80DA] mb-10">
           Stages of Working With Us
         </h2>
-        {/* Cards */}
+
+        {/*  */}
         <div
-          className="grid md:grid-cols-3 "
+          className="grid md:grid-cols-3 border border-gray-200"
           data-aos="fade-up"
           data-aos-duration="3000"
         >
           {steps.map((step, index) => (
             <div
               key={index}
-              className="bg-white border-1 border-gray-300  p-12 relative"
+              className="bg-white border border-gray-200 p-10 relative"
             >
-              <span className="text-7xl font-[800] text-gray-200 absolute top-5 left-5">
+              {/* Number background */}
+              <span className="text-7xl font-extrabold text-gray-100 absolute top-6 left-5">
                 {step.number}
               </span>
 
               {/* Content */}
-              <div className="mt-12">
-                <h3 className="text-[20px] font-bold text-[#0B80DA] mb-2">
+              <div className="mt-12 relative">
+                <h3 className="text-[20px] font-bold text-[#0B80DA] mb-3">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 text-[18px] ">{step.desc}</p>
+                <p className="text-gray-600 text-[18px] leading-relaxed">
+                  {step.desc}
+                </p>
               </div>
             </div>
           ))}
