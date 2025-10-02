@@ -27,10 +27,10 @@ const NavbarData = [
     title: "Projects",
     href: "/Projects",
   },
-  {
-    title: "Contact Us",
-    href: "/Consultation",
-  },
+  // {
+  //   title: "Contact Us",
+  //   href: "/Consultation",
+  // },
 ];
 
 export default NavbarData;

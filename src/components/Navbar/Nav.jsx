@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import NavbarData from "./NavbarData";
 import { FaBars } from "react-icons/fa";
 import logo from "../../assets/Toplogo.png";
@@ -22,14 +23,13 @@ function Nav() {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // New: track whether navbar should have background / blur
+  // track whether navbar should have background / blur
   const [scrolledPastBanner, setScrolledPastBanner] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Hide / show logic
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
         setShowNavbar(false);
       } else {
@@ -37,8 +37,7 @@ function Nav() {
       }
       setLastScrollY(currentScrollY);
 
-      // Transparent -> blur logic ye check karta hy k agar navbar ki height less then 400px tho transparent ho nahi tho blur
-      const bannerHeight = 400; // match your banner height
+      const bannerHeight = 400;
       if (currentScrollY > bannerHeight) {
         setScrolledPastBanner(true);
       } else {
@@ -61,8 +60,9 @@ function Nav() {
             : "bg-transparent"
         }`}
       >
+        {/* */}
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          {/* Logo */}
+          {/* Logo (Left) */}
           <div className="flex-shrink-0">
             <Link to="/">
               <img
@@ -73,19 +73,23 @@ function Nav() {
             </Link>
           </div>
 
-          {/* Desktop Menu */}
+          {/* Desktop Menu (Center) */}
           <ul className="hidden lg:flex space-x-10 flex-1 justify-center">
             {NavbarData.map((link, index) => (
               <li key={index} className="relative group">
-                <Link
+                <NavLink
                   to={link.href}
-                  className="text-[19px] font-[500] text-black nav-item flex items-center transition"
+                  className={({ isActive }) =>
+                    `text-[19px] font-[500] flex items-center nav-item transition ${
+                      isActive ? "text-[#0B80DA]" : "text-black"
+                    }`
+                  }
                 >
                   {link.title}
                   {link.submenu && <span className="ml-1">&#9662;</span>}
-                </Link>
+                </NavLink>
                 {link.submenu && (
-                  <ul className="absolute top-full left-0 hidden group-hover:block hover:block bg-white shadow-lg rounded w-60 z-50">
+                  <ul className="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded w-60 z-50">
                     {link.submenu.map((subLink, subIndex) => (
                       <li key={subIndex}>
                         <Link
@@ -102,6 +106,15 @@ function Nav() {
             ))}
           </ul>
 
+          {/* Contact Us  */}
+          <div className="hidden lg:flex items-center">
+            <Link to="/Service">
+              <button className="w-auto h-[45px] items-center  bg-[#0B80DA] px-6 py-3 rounded text-[#fff] text-[19px] font-[500] sm:text-base cursor-pointer hover:bg-[#73717100] hover:text-[#000] border border-[#676464] transition-all">
+                Contact Us
+              </button>
+            </Link>
+          </div>
+
           {/* Mobile Menu Button */}
           <div className="block lg:hidden z-50 relative">
             <button
@@ -115,6 +128,7 @@ function Nav() {
         </div>
       </nav>
 
+      {/* Mobile view */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 lg:hidden ${
           toggle ? "translate-x-0" : "translate-x-full"
@@ -128,6 +142,7 @@ function Nav() {
           >
             &times;
           </button>
+
           <ul className="space-y-2">
             {NavbarData.map((link, index) => (
               <li key={index}>
@@ -158,6 +173,16 @@ function Nav() {
               </li>
             ))}
           </ul>
+
+          {/* contact us  */}
+          <div className="mt-4">
+            <Link to="/Service" onClick={toggleNav}>
+              <button className="w-full bg-[#0B80DA] px-6 py-3 rounded text-[#fff] text-base cursor-pointer hover:bg-[#73717100] hover:text-[#000] border border-gray-100 transition-all">
+                Contact Us
+              </button>
+            </Link>
+          </div>
+
           <div className="mt-auto pt-6 border-t text-sm text-gray-500">
             © {new Date().getFullYear()} Zarq Solution
           </div>

@@ -37,7 +37,8 @@ const img =
   "https://zarqsolution.com/wp-content/uploads/2020/01/why-choose-us.jpg";
 
 function ChooseUs() {
-  const [activeIndex, setActiveIndex] = useState(null);
+  //
+  const [activeIndex, setActiveIndex] = useState(0); // <-- Yahan change kiya
 
   const toggleItem = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -60,7 +61,7 @@ function ChooseUs() {
           <h2 className="text-2xl md:text-3xl font-bold text-[#0B80DA] mb-3">
             Why Choose Us?
           </h2>
-          <p className="text-gray-700 mb-6 text-[16px] ">
+          <p className="text-gray-700 mb-6 text-[16px]">
             Innovative solutions, expert team, and seamless technology — Zarq
             Solution delivers excellence for your success.
           </p>
@@ -82,7 +83,7 @@ function ChooseUs() {
                   >
                     <p
                       className={`font-semibold text-[16px] md:text-[18px] ${
-                        isOpen ? "text-[#0B80DA]" : "text-black "
+                        isOpen ? "text-[#0B80DA]" : "text-black"
                       }`}
                     >
                       {item.title}
@@ -97,11 +98,14 @@ function ChooseUs() {
                     </div>
                   </div>
 
-                  {isOpen && item.content && (
-                    <p className="mt-3 text-black text-[15px]">
-                      {item.content}
-                    </p>
-                  )}
+                  {/*SMOOTH TRANSITION WALA PART */}
+                  <div
+                    className={`overflow-hidden transition delay-1000 duration-500 ease-in-out ${
+                      isOpen ? "max-h-[999px] mt-3" : "max-h-0"
+                    }`}
+                  >
+                    <p className="text-black text-[15px]">{item.content}</p>
+                  </div>
                 </div>
               );
             })}

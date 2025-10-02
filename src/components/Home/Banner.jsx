@@ -62,7 +62,7 @@ function Banner() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-12 items-center relative z-10">
           <div className="text-center justify-center pt-8">
-            <h2 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[46px] font-[900] leading-tight max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4  leading-tight max-w-3xl mx-auto">
               <span className="text-[#0B80DA]" ref={textRef}>
                 Zarq Solution:
               </span>
