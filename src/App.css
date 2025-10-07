@@ -40,7 +40,7 @@
     #5eb3cc
   ); */
 
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right top,
     #92fdfd,
     #77d5e7,
@@ -54,7 +54,21 @@
     #d0eaff,
     #7fcff7,
     #5eb3cc
+  ); */
+
+  background: linear-gradient(
+    to right top,
+    oklch(0.85 0.08 195),
+    oklch(0.92 0.04 200),
+    oklch(0.95 0.02 210),
+    oklch(0.98 0.01 220),
+    oklch(0.99 0 0),
+    oklch(0.98 0.02 30),
+    oklch(0.95 0.04 25),
+    oklch(0.9 0.06 20),
+    oklch(0.85 0.08 195) /* Back to teal (creates loop) */
   );
+
   background-size: 200% 200%;
   /* animation: gradient 15s ease infinite; */
   z-index: -2;
@@ -84,6 +98,9 @@
     background-position: 0% 50%;
   }
 }
+/* .zarq {
+  color: #00676f;
+} */
 
 /* 🔹 Particles */
 .particles {

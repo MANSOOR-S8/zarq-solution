@@ -109,7 +109,7 @@ function Nav() {
           {/* Contact Us  */}
           <div className="hidden lg:flex items-center">
             <Link to="/Service">
-              <button className="w-auto h-[45px] items-center  bg-[#0B80DA] px-6 py-3 rounded text-[#fff] text-[19px] font-[500] sm:text-base cursor-pointer hover:bg-[#73717100] hover:text-[#000] border border-[#676464] transition-all">
+              <button className=" items-center  bg-gradient-to-r from-cyan-600 to-blue-600 text-base px-6 py-3 rounded text-[#fff] hover:from-cyan-700 hover:to-blue-700 transition-all duration-300 group sm:text-base cursor-pointer hover:bg-[#00748a] hover:text-[#fff] border border-[#676464] transition-all">
                 Contact Us
               </button>
             </Link>
