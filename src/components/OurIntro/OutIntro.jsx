@@ -101,7 +101,10 @@ function OurIntro() {
 
         {/* Right Image (Single Large Image) */}
         <div className="relative w-full flex justify-center">
-          <div className="card float-1 max-w-lg w-full sm:w-4/5 md:w-full">
+          <div
+            className="card float-1 max-w-lg w-full sm:w-4/5 md:w-full"
+            data-aos="fade-left"
+          >
             <img
               src={sideImg}
               alt="Team collaboration"
