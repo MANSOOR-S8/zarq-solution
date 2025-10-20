@@ -8,6 +8,8 @@ import {
   FaHeadset,
   FaCloud,
 } from "react-icons/fa";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -15,102 +17,115 @@ const services = [
     title: "Web Development",
     description:
       "Building fast, responsive, and user-friendly websites that enhance digital presence and customer engagement.",
-    icon: <FaLaptopCode className="text-3xl text-[#0B80DA]" />,
+    icon: <FaLaptopCode className="text-4xl text-[#0B80DA]" />,
+    link: "/WebDevelopment",
   },
   {
     id: 2,
     title: "E-Commerce Solutions",
     description:
       "Building secure, high-converting e-commerce platforms with integrated payment gateways and custom features.",
-    icon: <FaShoppingCart className="text-3xl text-[#0B80DA]" />,
+    icon: <FaShoppingCart className="text-4xl text-[#0B80DA]" />,
+    link: "/ECommerce",
   },
   {
     id: 3,
     title: "Digital Marketing (SEO)",
     description:
       "Boosting online visibility with data-driven SEO strategies, content marketing, and targeted campaigns.",
-    icon: <FaChartLine className="text-3xl text-[#0B80DA]" />,
+    icon: <FaChartLine className="text-4xl text-[#0B80DA]" />,
+    link: "/DigitalMArket",
   },
   {
     id: 4,
     title: "UI/UX Design",
     description:
       "Delivering intuitive, aesthetically pleasing, and functional designs that enhance user interaction and satisfaction.",
-    icon: <FaPencilRuler className="text-3xl text-[#0B80DA]" />,
+    icon: <FaPencilRuler className="text-4xl text-[#0B80DA]" />,
+    link: "/OurUI",
   },
   {
     id: 5,
     title: "Mobile App Development",
     description:
       "Creating high-performance mobile apps with seamless user experience for both Android and iOS platforms.",
-    icon: <FaMobileAlt className="text-3xl text-[#0B80DA]" />,
+    icon: <FaMobileAlt className="text-4xl text-[#0B80DA]" />,
+    link: "/MobApp",
   },
   {
     id: 6,
     title: "Custom Software Development",
     description:
       "We craft tailored software solutions that optimize your business processes, improve efficiency, and drive innovation.",
-    icon: <FaCogs className="text-3xl text-[#0B80DA]" />,
+    icon: <FaCogs className="text-4xl text-[#0B80DA]" />,
+    link: "/SoftDev",
   },
   {
     id: 7,
     title: "IT Consultancy & Support",
     description:
       "Providing expert IT consultation and round-the-clock support to ensure smooth business operations.",
-    icon: <FaHeadset className="text-3xl text-[#0B80DA]" />,
+    icon: <FaHeadset className="text-4xl text-[#0B80DA]" />,
+    link: "/ITSupport",
   },
   {
     id: 8,
     title: "Cloud Solutions & DevOps",
     description:
       "Optimizing cloud infrastructure and implementing DevOps strategies for seamless deployment and scalability.",
-    icon: <FaCloud className="text-3xl text-[#0B80DA]" />,
+    icon: <FaCloud className="text-4xl text-[#0B80DA]" />,
+    link: "/Cloud",
   },
 ];
 
 function OurServices() {
   return (
-    <section className="bg-[#f0f4f8] py-12">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-white">
+      <div className="max-w-[1400px] mx-auto px-6">
         {/* Heading */}
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-[#0B80DA] mb-2">
-            We provide a wide range of Services
+        <div className="text-center mb-16">
+          <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl">
+            <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+              Our Services
+            </span>
           </h2>
-          <p className="text-gray-600 text-left max-w-4xl mx-auto">
-            We provide a comprehensive range of services, including web and
-            mobile development, software solutions, and IT consulting. Our
-            expert team is dedicated to delivering innovative, high-quality, and
-            customized solutions that drive business success and enhance digital
-            experiences.
+          <p className="text-gray-600 max-w-3xl mx-auto mt-3">
+            We offer innovative and tailored digital solutions to help you grow
+            your business efficiently and effectively.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
-          data-aos="fade-down"
-          data-aos-easing="linear"
-          data-aos-duration="1500"
-        >
+        {/* Services cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-16">
           {services.map((service) => (
             <div
               key={service.id}
-              className="relative bg-white rounded-lg shadow-md p-6 transition-all duration-300 transform hover:scale-[1.02] group overflow-hidden"
+              className="bg-[#f9fafb] rounded-xl p-7 hover:shadow-sm transition-all duration-300 group flex flex-col justify-between h-full"
             >
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-[#EF6025] to-[#16A87A] transition-opacity duration-300 rounded-lg z-0" />
+              {/* Top Section */}
+              <div>
+                <div className=" space-x-4 mb-4">
+                  <div className="pb-4 transition-all duration-500 ease-in-out transform group-hover:-translate-y-2 group-hover:opacity-100">
+                    {service.icon}
+                  </div>
 
-              <div className="relative z-10">
-                <div className="bg-gray-100 w-14 h-14 flex items-center justify-center rounded-full mb-4">
-                  {service.icon}
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {service.title}
+                  </h3>
                 </div>
-                <h3 className="text-lg text-[22px] font-[600] text-[#0B80DA] mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-[16px] font-[400] text-gray-600">
+                <p className="text-gray-600 leading-relaxed">
                   {service.description}
                 </p>
+              </div>
+
+              <div className="mt-6">
+                <Link
+                  to={service.link}
+                  className="inline-flex items-center text-[#0B80DA] font-medium hover:underline transition-all"
+                >
+                  Learn More
+                  <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+                </Link>
               </div>
             </div>
           ))}

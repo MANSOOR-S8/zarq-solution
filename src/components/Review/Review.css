@@ -1,0 +1,21 @@
+.custom-swiper .swiper-slide {
+  opacity: 0.5;
+  filter: blur(4px);
+  transition: all 0.4s ease-in-out;
+}
+
+.custom-swiper .swiper-slide-active {
+  opacity: 1;
+  filter: blur(0px);
+  transform: scale(1.05);
+}
+
+/* Mobile fixes */
+@media (max-width: 768px) {
+  .review-card {
+    flex: unset !important;
+    width: 100%;
+    height: auto;
+    filter: blur(0px);
+  }
+}

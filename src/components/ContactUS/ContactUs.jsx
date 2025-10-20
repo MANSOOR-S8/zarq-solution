@@ -3,6 +3,10 @@ import ReCAPTCHA from "react-google-recaptcha";
 import Notification from "./Notification";
 import emailjs from "@emailjs/browser";
 
+//icons
+import { MdEmail } from "react-icons/md";
+import { FaPhone, FaLocationDot } from "react-icons/fa6";
+
 function ContactUs() {
   const [formData, setFormData] = useState({
     name: "",
@@ -97,8 +101,10 @@ function ContactUs() {
       <div className="container mx-auto max-w-7xl p-0 m-0">
         <div className="bg-white rounded-lg shadow-md p-6 md:p-10 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="md:col-span-3">
-            <h2 className="text-3xl font-bold text-[#0b80da] mb-6 text-center">
-              Get a Free Consultation
+            <h2 className="text-balance text-3xl font-semibold text-center tracking-tight md:text-4xl">
+              <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+                Get a Free Consultation
+              </span>
             </h2>
           </div>
 
@@ -113,16 +119,7 @@ function ContactUs() {
                   rel="noopener noreferrer"
                 >
                   <div className="bg-blue-100 p-3 rounded-full hover:bg-blue-200 transition">
-                    <svg
-                      className="w-8 h-8 text-[#0b80da]"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z" />
-                      <circle cx="12" cy="9" r="2.5" />
-                    </svg>
+                    <FaLocationDot className="text-4xl text-[#0b80da]" />
                   </div>
                 </a>
               </div>
@@ -134,15 +131,7 @@ function ContactUs() {
             <div className="border border-gray-200 rounded-lg p-6 text-center bg-white">
               <div className="flex justify-center mb-2">
                 <div className="bg-blue-100 p-3 rounded-full">
-                  <svg
-                    className="w-8 h-8 text-[#0b80da]"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.2 3.59a1 1 0 01-.23 1.03L8.21 9.79a16.001 16.001 0 007 7l1.49-1.49a1 1 0 011.03-.23l3.59 1.2a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.82 21 3 14.18 3 6V5z" />
-                  </svg>
+                  <FaPhone className="text-4xl text-[#0b80da]" />
                 </div>
               </div>
               <h3 className="font-bold text-[22px] text-[#0b80da]">Call Us</h3>
@@ -158,15 +147,7 @@ function ContactUs() {
                   rel="noopener noreferrer"
                 >
                   <div className="bg-blue-100 p-3 rounded-full hover:bg-blue-200 transition">
-                    <svg
-                      className="w-8 h-8 text-[#0b80da]"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M4 4h16v16H4V4zm0 0l8 8 8-8" />
-                    </svg>
+                    <MdEmail className="text-4xl text-[#0B80DA]" />
                   </div>
                 </a>
               </div>

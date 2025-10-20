@@ -38,9 +38,11 @@ function About() {
         <div className="py-18">
           <div className="container mx-auto px-6 text-center p-20">
             {/* Heading */}
-            <h1 className="text-[50px] md:text-[50px] font-bold text-gray-900">
-              Welcome to Zarq Solution
-            </h1>
+            <h2 className="text-balance text-4xl lg:text-6xl font-semibold tracking-tight md:text-4xl">
+              <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+                Welcome to Zarq Solution
+              </span>
+            </h2>
             <p className="mt-4 text-gray-700 max-w-2xl mx-auto">
               Zarq Solution is a tech-driven software house specializing in web
               and mobile solutions, delivering innovative and high-quality

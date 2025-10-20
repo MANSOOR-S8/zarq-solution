@@ -112,21 +112,21 @@ function Footer() {
                     <FaFacebook />
                   </a>
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/zarqsolution911/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <FaInstagram />
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/company/zarq-solution/about/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <FaLinkedin />
                   </a>
                   <a
-                    href="https://youtube.com"
+                    href="https://www.youtube.com/@Zarqsolution"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -58,8 +58,10 @@ function ChooseUs() {
 
         {/* Text Section */}
         <div data-aos="fade-up">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0B80DA] mb-3">
-            Why Choose Us?
+          <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl mb-3">
+            <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+              Why Choose Us?
+            </span>
           </h2>
           <p className="text-gray-700 mb-6 text-[16px]">
             Innovative solutions, expert team, and seamless technology — Zarq

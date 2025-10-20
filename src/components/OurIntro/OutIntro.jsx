@@ -29,20 +29,18 @@ function OurIntro() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-white"
+      className="relative overflow-hidden bg-white py-20"
       aria-labelledby="who-we-are-heading"
     >
       {/* Background glow effects */}
       <div className="pointer-events-none absolute -left-20 top-10 h-56 w-56 rounded-full bg-blue-300/10 blur-3xl"></div>
       <div className="pointer-events-none absolute right-0 top-32 h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl"></div>
 
-      <div className="mx-auto grid max-w-7xl grid-cols-1 md:grid-cols-2 items-center gap-12 px-6 py-16 sm:px-8 lg:px-12 md:py-24">
+      {/* Main Container */}
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-14 px-6 sm:px-8 lg:px-12">
         {/* Left Content */}
         <div className="relative">
-          <h2
-            id="who-we-are-heading"
-            className="text-balance text-3xl font-semibold tracking-tight md:text-4xl"
-          >
+          <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl">
             <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
               Who we are
             </span>
@@ -85,30 +83,27 @@ function OurIntro() {
             </li>
           </ul>
 
-          {/* Buttons */}
+          {/* Button */}
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
-              to="/Consultation"
+              to="/About"
               className="px-6 py-3 rounded-md bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold shadow-lg hover:shadow-2xl hover:from-cyan-700 hover:to-blue-700 transition-all duration-300"
             >
-              Get Free Consultation
+              About Us
             </Link>
-            <button className="px-6 py-3 rounded-md border border-gray-800 text-gray-800 font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300">
-              Explore Capabilities
-            </button>
           </div>
         </div>
 
-        {/* Right Image (Single Large Image) */}
+        {/* Right Image */}
         <div className="relative w-full flex justify-center">
           <div
-            className="card float-1 max-w-lg w-full sm:w-4/5 md:w-full"
+            className="max-w-lg w-full sm:w-4/5 md:w-full"
             data-aos="fade-left"
           >
             <img
               src={sideImg}
               alt="Team collaboration"
-              className="h-auto w-full rounded-xl object-cover shadow-lg"
+              className="h-auto w-full rounded-xl object-cover"
             />
           </div>
         </div>

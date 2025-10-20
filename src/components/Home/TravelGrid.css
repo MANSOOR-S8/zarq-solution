@@ -1,0 +1,247 @@
+/* .parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.div1 {
+  grid-row: span 2 / span 2;
+}
+
+.div2 {
+  grid-row: span 3 / span 3;
+}
+
+.div3 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+
+.div4 {
+  grid-column-start: 2;
+  grid-row-start: 4;
+}
+
+.div5 {
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+
+.div6 {
+  grid-column-start: 2;
+  grid-row-start: 5;
+}
+
+.div7 {
+  grid-column: span 3 / span 3;
+  grid-row: span 5 / span 5;
+  grid-column-start: 3;
+  grid-row-start: 1;
+} */
+
+/* === GRID CONTAINER === */
+/* === GRID CONTAINER === */
+.parent {
+  display: grid;
+  grid-template-columns: 1.1fr 1.1fr 0.9fr 0.9fr 0.9fr;
+  grid-template-rows: repeat(5, minmax(100px, auto));
+  gap: 10px;
+  width: 110%;
+}
+
+/* === GRID POSITIONS === */
+.div1 {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+.div2 {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+}
+.div3 {
+  grid-column: 1;
+  grid-row: 3 / span 2;
+}
+.div4 {
+  grid-column: 2;
+  grid-row: 4;
+}
+.div5 {
+  grid-column: 1;
+  grid-row: 5;
+}
+.div6 {
+  grid-column: 2;
+  grid-row: 5;
+}
+.div7 {
+  grid-column: 3 / span 3;
+  grid-row: 1 / span 5;
+}
+
+/* === CARD STYLING === */
+.service-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Arrow icon perfectly inside bottom-right */
+.arrow-icon {
+  position: absolute;
+  bottom: 16px;
+  right: 18px;
+  height: 22px;
+  width: 22px;
+}
+
+/* Text Styling */
+.service-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+.service-card p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* === INTRO CARD === */
+.intro-card {
+  /* background: linear-gradient(135deg, #f8fafc 0%, #eef7ff 100%); */
+  /* border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06); */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* === Gear Animation === */
+.gear-container {
+  position: absolute;
+  bottom: -56px;
+  right: -70px;
+  opacity: 0.25;
+  pointer-events: none;
+}
+.gear {
+  font-size: 300px;
+  color: #0b80da;
+  animation: rotate 10s linear infinite;
+  transform-origin: center;
+  opacity: 0.25;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1200px) {
+  .parent {
+    grid-template-columns: 1.2fr 1.2fr 1fr;
+  }
+  .div7 {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .parent {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .div1,
+  .div2,
+  .div3,
+  .div4,
+  .div5,
+  .div6,
+  .div7 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  /* hide descriptions on mobile */
+  .service-card p {
+    display: none;
+  }
+
+  .arrow-icon {
+    bottom: 14px;
+    right: 14px;
+  }
+}
+
+/* === Gear Animation === */
+.gear-container {
+  position: absolute;
+  bottom: -56px;
+  right: -80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gear {
+  font-size: 300px;
+  color: #0b80da;
+  animation: rotate 10s linear infinite;
+  transform-origin: center;
+  opacity: 0.25; /* 👈 kam opacity */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .gear-container {
+    position: absolute;
+    bottom: -56px;
+    right: -80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .gear {
+    font-size: 200px;
+    color: #0b80da;
+    animation: rotate 10s linear infinite;
+    transform-origin: center;
+    opacity: 0.25;
+  }
+}

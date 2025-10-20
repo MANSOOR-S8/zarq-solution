@@ -10,7 +10,7 @@ const Achievements = () => {
     // Init AOS animations
     AOS.init({ duration: 1000, once: true });
 
-    // IntersectionObserver -> jab section 50% viewport me ho to counter start
+    // IntersectionObserver -> jab section 50% viewport me ho to counter start ho
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -54,12 +54,12 @@ const Achievements = () => {
     }, [target, duration, startCount]);
 
     return (
-      <span className="text-4xl md:text-5xl font-bold block">{count}+</span>
+      <span className="text-4xl md:text-5xl font-[800] block">{count}+</span>
     );
   };
 
   return (
-    <section ref={sectionRef} className="bg-[#0B80DA] text-white py-16">
+    <section className="bg-[#0b80da] text-white py-16">
       {/* Container for consistent layout */}
       <div className="container mx-auto px-6 sm:px-8">
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-12">
@@ -74,7 +74,10 @@ const Achievements = () => {
           </div>
 
           {/*  */}
-          <div className="grid grid-cols-2 gap-x-10 gap-y-10 md:grid-cols-4 mt-10 md:mt-0">
+          <div
+            ref={sectionRef}
+            className="grid grid-cols-2 gap-x-10 gap-y-10 md:grid-cols-4 mt-10 md:mt-0"
+          >
             <div className="text-center">
               <Counter target={50} duration={2000} />
               <p className="mt-2 text-sm md:text-base">Satisfied Clients</p>

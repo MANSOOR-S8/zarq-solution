@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import NavbarData from "./NavbarData";
 import { FaBars } from "react-icons/fa";
 import logo from "../../assets/Toplogo.png";
@@ -9,6 +8,9 @@ import "./nav.css";
 function Nav() {
   const [toggle, setToggle] = useState(false);
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState(null);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrolledPastBanner, setScrolledPastBanner] = useState(false);
 
   const toggleNav = () => {
     setToggle((prev) => !prev);
@@ -19,17 +21,12 @@ function Nav() {
     setOpenSubMenuIndex(openSubMenuIndex === index ? null : index);
   };
 
-  // Scroll hide / show
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  // track whether navbar should have background / blur
-  const [scrolledPastBanner, setScrolledPastBanner] = useState(false);
-
+  // Scroll behavior
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
+      // Hide nav on scroll down, show on scroll up
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
         setShowNavbar(false);
       } else {
@@ -37,12 +34,9 @@ function Nav() {
       }
       setLastScrollY(currentScrollY);
 
+      // Add blur background after scrolling past hero/banner
       const bannerHeight = 400;
-      if (currentScrollY > bannerHeight) {
-        setScrolledPastBanner(true);
-      } else {
-        setScrolledPastBanner(false);
-      }
+      setScrolledPastBanner(currentScrollY > bannerHeight);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -51,18 +45,18 @@ function Nav() {
 
   return (
     <>
+      {/* Navbar */}
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-transform duration-500 ${
-          showNavbar ? "translate-y-0" : "-translate-y-full"
+          showNavbar ? "translate-y-0 " : "-translate-y-full "
         } ${
           scrolledPastBanner
             ? "bg-white/30 backdrop-blur-md shadow-sm"
             : "bg-transparent"
         }`}
       >
-        {/* */}
-        <div className="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          {/* Logo (Left) */}
+        <div className="flex justify-between items-center max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-10 py-3">
+          {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/">
               <img
@@ -73,28 +67,34 @@ function Nav() {
             </Link>
           </div>
 
-          {/* Desktop Menu (Center) */}
+          {/* Desktop Menu */}
           <ul className="hidden lg:flex space-x-10 flex-1 justify-center">
             {NavbarData.map((link, index) => (
               <li key={index} className="relative group">
                 <NavLink
                   to={link.href}
                   className={({ isActive }) =>
-                    `text-[19px] font-[500] flex items-center nav-item transition ${
-                      isActive ? "text-[#0B80DA]" : "text-black"
+                    `text-[18px] font-[500] flex items-center nav-item transition ${
+                      scrolledPastBanner
+                        ? isActive
+                          ? "text-[#0B80DA]"
+                          : "text-gray-900"
+                        : "text-white"
                     }`
                   }
                 >
                   {link.title}
                   {link.submenu && <span className="ml-1">&#9662;</span>}
                 </NavLink>
+
+                {/* Submenu */}
                 {link.submenu && (
-                  <ul className="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded w-60 z-50">
+                  <ul className="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded w-56 z-50">
                     {link.submenu.map((subLink, subIndex) => (
                       <li key={subIndex}>
                         <Link
                           to={subLink.href}
-                          className="block px-6 py-2 text-[16px] font-[600] hover:bg-gray-100 text-gray-700"
+                          className="block px-5 py-2 text-[16px] font-[600] hover:bg-gray-100 text-gray-700"
                         >
                           {subLink.title}
                         </Link>
@@ -106,17 +106,17 @@ function Nav() {
             ))}
           </ul>
 
-          {/* Contact Us  */}
+          {/* Contact Us (Desktop) */}
           <div className="hidden lg:flex items-center">
             <Link to="/Service">
-              <button className=" items-center  bg-gradient-to-r from-cyan-600 to-blue-600 text-base px-6 py-3 rounded text-[#fff] hover:from-cyan-700 hover:to-blue-700 transition-all duration-300 group sm:text-base cursor-pointer hover:bg-[#00748a] hover:text-[#fff] border border-[#676464] transition-all">
+              <button className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-medium text-base px-6 py-3 rounded hover:from-cyan-700 hover:to-blue-700 transition-all duration-300 shadow-sm hover:shadow-md">
                 Contact Us
               </button>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="block lg:hidden z-50 relative">
+          <div className="block lg:hidden">
             <button
               className="text-2xl text-gray-800"
               onClick={toggleNav}
@@ -128,7 +128,7 @@ function Nav() {
         </div>
       </nav>
 
-      {/* Mobile view */}
+      {/* Mobile Menu */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 lg:hidden ${
           toggle ? "translate-x-0" : "translate-x-full"
@@ -155,6 +155,8 @@ function Nav() {
                   <Link to={link.href}>{link.title}</Link>
                   {link.submenu && <span className="ml-2">&#9662;</span>}
                 </div>
+
+                {/* Mobile Submenu */}
                 {link.submenu && openSubMenuIndex === index && (
                   <ul className="ml-4 mt-1 space-y-1 border-l border-gray-200 pl-3">
                     {link.submenu.map((subLink, subIndex) => (
@@ -174,10 +176,10 @@ function Nav() {
             ))}
           </ul>
 
-          {/* contact us  */}
+          {/* Contact Button (Mobile) */}
           <div className="mt-4">
             <Link to="/Service" onClick={toggleNav}>
-              <button className="w-full bg-[#0B80DA] px-6 py-3 rounded text-[#fff] text-base cursor-pointer hover:bg-[#73717100] hover:text-[#000] border border-gray-100 transition-all">
+              <button className="w-full bg-[#0B80DA] px-6 py-3 rounded text-white text-base font-medium hover:bg-[#0070b8] transition-all">
                 Contact Us
               </button>
             </Link>

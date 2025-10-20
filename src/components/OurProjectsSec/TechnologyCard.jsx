@@ -1,4 +1,5 @@
 import React from "react";
+import "./Style.css";
 
 const technologies = [
   {
@@ -100,21 +101,25 @@ const technologies = [
 ];
 
 function TechnologyCard() {
+  const firstRow = technologies.slice(0, 12);
+  const secondRow = technologies.slice(12, 24);
   return (
-    <section className="bg-[#0b80da] py-16">
-      <div className="container mx-auto px-4">
+    <section className="bg-[#fff] py-16">
+      <div className="max-w-[1400px]  mx-auto px-4">
         {/* Title */}
         <div className="text-center mb-12">
-          <h2 className="text-[34px] font-bold text-white">
-            Technologies We Use
+          <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl">
+            <span className=" bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+              Technologies We Use
+            </span>
           </h2>
-          <p className="text-gray-200 mt-2 text-lg">
+          <p className="text-[#000] mt-2 text-lg">
             Powering Your Software with the Latest Tech
           </p>
         </div>
 
         {/* Grid same as projects */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        {/* <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {technologies.map((tech) => (
             <div
               key={tech.id}
@@ -123,10 +128,39 @@ function TechnologyCard() {
               <img
                 src={tech.img}
                 alt="Technology"
-                className="h-16 md:h-20 object-contain"
+                className="h-16 md:h-20 object-contain filter grayscale hover:grayscale-0"
               />
             </div>
           ))}
+        </div> */}
+
+        <div className="techCard-container">
+          <div className=" techCard-track scroll-left">
+            {[...firstRow, ...firstRow].map((item, index) => {
+              return (
+                <img
+                  key={`row1-${item.id}-${index}`}
+                  src={item.img}
+                  alt=""
+                  className="techCard-img filter grayscale hover:grayscale-0"
+                />
+              );
+            })}
+          </div>
+        </div>
+        <div className="techCard-container">
+          <div className="techCard-track scroll-right">
+            {[...secondRow, ...secondRow].map((item, index) => {
+              return (
+                <img
+                  key={`row2-${item.id}-${index}`}
+                  src={item.img}
+                  alt=""
+                  className="techCard-img filter grayscale hover:grayscale-0"
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

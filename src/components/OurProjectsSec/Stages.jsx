@@ -36,9 +36,11 @@ const steps = [
 function Stages() {
   return (
     <section className="py-12 bg-[#eceff4]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-[#0B80DA] mb-10">
-          Stages of Working With Us
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8">
+        <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl mb-10 text-center">
+          <span className=" bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+            Stages of Working With Us
+          </span>
         </h2>
 
         {/*  */}

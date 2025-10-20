@@ -9,6 +9,9 @@ import Stages from "../OurProjectsSec/Stages";
 import TechnologyCard from "../OurProjectsSec/TechnologyCard";
 import Banner from "./Banner";
 import Slider from "./Slider";
+import Review from "../Review/Review";
+//test
+import Test from "./Test";
 
 function Home() {
   return (
@@ -18,8 +21,10 @@ function Home() {
       </div>
       <Slider />
       <OurIntro />
-      <OurServices />
+      {/* <OurServices /> */}
+      <Test />
       <OurProjects />
+      <Review />
       <Achievements />
       <Stages />
       <TechnologyCard />

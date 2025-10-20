@@ -1,69 +1,119 @@
 import { Link } from "react-router";
 import "./Style.css";
+import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+
+import TripleJFurniture from "../../assets/JFurniture.png";
+import MarsTranslation from "../../assets/MarsTranslation.webp";
+import SpyCameraCCTV from "../../assets/SpyCameraCCTV.webp";
+import TechLogistics from "../../assets/TechLogistics.png";
+import CollegeBoundMovers from "../../assets/CollegeBound.png";
+import SHIPCLLogistics from "../../assets/SHIPCLLOGISTICS.webp";
 
 function OurProjects() {
   const projectCard = [
+    // ---- Web Apps ----
     {
       id: 1,
       title: "Spy Camera CCTV",
       desc: "Ensuring security with high-quality, discreet surveillance solutions for homes and businesses. Stay protected with advanced monitoring technology.",
-      img: "https://zarqsolution.com/wp-content/uploads/2025/09/screencapture-spycameracctv-2025-03-09-11_21_19-scaled.webp",
+      img: SpyCameraCCTV,
       link: "https://www.spycameracctv.com/",
+      type: "web",
     },
     {
       id: 2,
       title: "Tech Logistics",
       desc: "Streamlining supply chains with smart, technology-driven logistics solutions for faster, more efficient, and secure deliveries.",
-      img: "https://zarqsolution.com/wp-content/uploads/2025/03/screencapture-techlogistics-2025-03-09-11_28_13.webp",
+      img: TechLogistics,
       link: "https://www.techlogistics.com/",
+      type: "web",
     },
     {
       id: 3,
       title: "College Bound Movers",
       desc: "Reliable and stress-free moving services tailored for students, families, and businesses. We make your move smooth, efficient, and hassle-free!",
-      img: "https://zarqsolution.com/wp-content/uploads/2025/03/screencapture-collegeboundmovers-2025-03-09-11_18_15.webp",
+      img: CollegeBoundMovers,
       link: "https://collegeboundmovers.com/",
+      type: "web",
     },
+
+    // ---- Mobile Apps ----
     {
       id: 4,
       title: "Triple J Furniture",
       desc: "A feature-rich eCommerce platform offering a seamless online shopping experience with intuitive UI/UX, secure payments, and advanced product browsing for premium furniture.",
-      img: "https://zarqsolution.com/wp-content/uploads/2025/09/sd-scaled.webp",
+      img: TripleJFurniture,
       link: "https://triplejfurniture.com.au/",
+      type: "mobile",
     },
     {
       id: 5,
       title: "Mars Translation",
       desc: "A professional translation platform offering fast, accurate, and industry-specific language solutions to help businesses expand globally with ease",
-      img: "https://zarqsolution.com/wp-content/uploads/2025/09/screencapture_marstranslation_2025_03_09_11_20_24_1_1-scaled.webp",
+      img: MarsTranslation,
       link: "https://www.marstranslation.com/",
+      type: "mobile",
     },
     {
       id: 6,
       title: "SHIPCL LOGISTICS",
       desc: "A logistics software for efficient carrier management, warehouse optimization, and seamless goods transportation.",
-      img: "https://zarqsolution.com/wp-content/uploads/2025/03/Group-47312.png",
+      img: SHIPCLLogistics,
       link: "https://zarqsolution.com/shipcl/",
+      type: "mobile",
     },
   ];
 
+  // === Filter State ===
+  const [filter, setFilter] = useState("all");
+
+  const filterCards =
+    filter === "all"
+      ? projectCard
+      : projectCard.filter((card) => card.type === filter);
+
   return (
     <section className="bg-gray-50 py-12">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0B80DA] mb-10">
-          Our Recent Works
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl mb-10 text-center ">
+          <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+            Our Recent Works
+          </span>
         </h2>
 
+        {/* ==== Filter Buttons ==== */}
+        <div className="flex justify-center gap-4 mb-10">
+          {["all", "web", "mobile"].map((type) => (
+            <button
+              key={type}
+              onClick={() => setFilter(type)}
+              className={`px-6 py-2 rounded-2xl text-[18px] font-semibold transition duration-300 ${
+                filter === type
+                  ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold hover:shadow-2xl hover:from-cyan-700 hover:to-blue-700 transition-all duration-300  shadow-md"
+                  : "bg-white text-gray-600 border border-gray-300 hover:bg-blue-100"
+              }`}
+            >
+              {type === "all"
+                ? "All"
+                : type === "web"
+                ? "Web Apps"
+                : "Mobile Apps"}
+            </button>
+          ))}
+        </div>
+
+        {/* ==== Project Cards ==== */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           data-aos="fade-up"
         >
-          {projectCard.map((pCard) => (
+          {filterCards.map((pCard) => (
             <div
               key={pCard.id}
               className="card bg-white rounded-[8px] shadow-md hover:shadow-xl transition duration-300 overflow-hidden"
             >
-              <Link to={pCard.link} target="_blank ">
+              <Link to={pCard.link} target="_blank">
                 <div className="img-wrapper">
                   <img
                     src={pCard.img}
@@ -71,16 +121,26 @@ function OurProjects() {
                     className="w-full h-48 object-cover img"
                   />
                 </div>
-                <div className="pl-5 mt-5 ">
-                  <h3 className="text-[22px] font-semibold text-[#0B80DA] mb-2">
-                    {pCard.title}
-                  </h3>
-                </div>
               </Link>
-              <div className="pl-5 ">
+              <div className="pl-5 mt-5 ">
+                <h3 className="text-[22px] font-semibold text-[#0B80DA] mb-2">
+                  {pCard.title}
+                </h3>
+              </div>
+              <div className="pl-5 pb-5 card-content">
                 <p className="text-[16px] font-normal text-gray-600">
                   {pCard.desc}
                 </p>
+                <div className="mt-6">
+                  <Link
+                    to={pCard.link}
+                    target="_blank"
+                    className="inline-flex items-center text-[#0B80DA] font-medium hover:underline transition-all"
+                  >
+                    Learn More
+                    <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
