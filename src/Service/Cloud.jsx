@@ -4,7 +4,7 @@ import Footer from "../components/Footer/Footer";
 
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
-
+//icons
 import { CiCloudOn } from "react-icons/ci";
 import { LuDownload } from "react-icons/lu";
 import { MdOutlineCloudSync } from "react-icons/md";
@@ -13,6 +13,13 @@ import { RiCodeView } from "react-icons/ri";
 import { TbTransformFilled } from "react-icons/tb";
 import { RiFlashlightLine } from "react-icons/ri";
 import { IoMdTrendingUp } from "react-icons/io";
+
+//images
+import slider1 from "../assets/techSlider/googlecloud.webp";
+import slider2 from "../assets/techSlider/DigitalOsean.png";
+import slider3 from "../assets/techSlider/AWS.png";
+import slider4 from "../assets/techSlider/Github.png";
+import slider5 from "../assets/techSlider/Azure.png";
 
 const services = [
   {
@@ -78,7 +85,7 @@ const services = [
 const technologies = [
   {
     id: 1,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1652.webp",
+    img: slider1,
   },
   //   {
   //     id: 2,
@@ -86,19 +93,19 @@ const technologies = [
   //   },
   {
     id: 2,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1673.png",
+    img: slider2,
   },
   {
     id: 3,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1641.png",
+    img: slider3,
   },
   {
     id: 4,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1672-1.webp",
+    img: slider4,
   },
   {
     id: 5,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1671.png",
+    img: slider5,
   },
 ];
 

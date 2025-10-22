@@ -1,8 +1,9 @@
 import "../App.css";
 import { useEffect, useRef } from "react";
 import Footer from "../components/Footer/Footer";
-
+//animation
 import gsap from "gsap";
+//icons
 import { MdDeveloperMode } from "react-icons/md";
 import SplitText from "gsap/SplitText";
 import { TfiMobile } from "react-icons/tfi";
@@ -15,6 +16,14 @@ import { MdEventAvailable } from "react-icons/md";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+//images
+import slider1 from "../assets/techSlider/flutter2.png";
+import slider2 from "../assets/techSlider/firebase.png";
+import slider3 from "../assets/techSlider/Java.png";
+import slider4 from "../assets/techSlider/swift12.webp";
+import slider5 from "../assets/techSlider/kotlin2.webp";
+import slider6 from "../assets/techSlider/restapi.webp";
 
 const services = [
   {
@@ -80,27 +89,27 @@ const services = [
 const technologies = [
   {
     id: 1,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1682.png",
+    img: slider1,
   },
   {
     id: 2,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1680.png",
+    img: slider2,
   },
   {
     id: 3,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1677.png",
+    img: slider3,
   },
   {
     id: 4,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1676-1.webp",
+    img: slider4,
   },
   {
     id: 5,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1678.webp",
+    img: slider5,
   },
   {
     id: 6,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1681.webp",
+    img: slider6,
   },
 ];
 

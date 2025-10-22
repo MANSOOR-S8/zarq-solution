@@ -3,7 +3,7 @@ import { ArrowRight, Play } from "lucide-react";
 import { Link } from "react-router-dom"; // corrected import
 import Aos from "aos";
 import "aos/dist/aos.css";
-import banner from "../../assets/bannerbg.jpeg";
+import banner from "../../assets/banner1.png";
 
 function Banner() {
   // Counter states
@@ -50,9 +50,9 @@ function Banner() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[900px] mx-auto flex flex-col  space-y-4">
+      <div className="relative z-10 max-w-[900px] mx-auto flex flex-col items-center   space-y-4">
         <h1
-          className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight"
+          className="banner-heading font-[500] sm:text-5xl  font-bold text-white "
           data-aos="fade-up"
         >
           We Build What Your Business Deserves

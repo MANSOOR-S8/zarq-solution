@@ -12,6 +12,8 @@ import tech from "../../assets/tech.jpg";
 import CollageBound from "../../assets/collage.jpg";
 import marsTranslate from "../../assets/mars.jpg";
 import spaCam from "../../assets/spy.jpg";
+//animation
+// import { ScrollEffect } from "../../hooks/ScrollEffect";
 
 const cards = [
   {
@@ -57,6 +59,9 @@ const cards = [
 ];
 
 function Review() {
+  // const sectionRef = useRef(null);
+  // ScrollEffect(sectionRef);
+
   const [active, setActive] = useState(1);
 
   return (

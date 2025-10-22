@@ -1,4 +1,14 @@
 @import "tailwindcss";
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/fonts/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Medium.woff2")
+    format("woff2");
+
+  font-display: swap;
+}
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   /* font-family: "Poppins", sans-serif; */
@@ -11,7 +21,9 @@ h4,
 h5,
 h6 {
   /* font-family: "Nunito", sans-serif; */
-  font-family: "Mona Sans", sans-serif;
+  /* font-family: "Mona Sans", sans-serif; */
+
+  font-family: "Clash Display", sans-serif;
 }
 p {
   font-family: "Inter", sans-serif;

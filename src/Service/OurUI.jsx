@@ -15,6 +15,15 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { IoColorPaletteSharp } from "react-icons/io5";
 
+//images
+
+import slider1 from "../assets/techSlider/figma2.png";
+import slider2 from "../assets/techSlider/Adobeillustrator.png";
+import slider3 from "../assets/techSlider/XD.png";
+import slider4 from "../assets/techSlider/Sketch.png";
+import slider5 from "../assets/techSlider/Photoshop.png";
+import slider6 from "../assets/techSlider/invision.png";
+
 const services = [
   {
     id: 1,
@@ -114,27 +123,27 @@ const features = [
 const technologies = [
   {
     id: 1,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1666.webp",
+    img: slider1,
   },
   {
     id: 2,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1698.webp",
+    img: slider2,
   },
   {
     id: 3,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1670.webp",
+    img: slider3,
   },
   {
     id: 4,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1667.webp",
+    img: slider4,
   },
   {
     id: 5,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1699.webp",
+    img: slider5,
   },
   {
     id: 6,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1668.webp",
+    img: slider6,
   },
 ];
 

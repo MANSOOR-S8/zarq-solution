@@ -8,6 +8,8 @@ import {
 import { MdEmail } from "react-icons/md";
 import { FaPhoneFlip } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+//image
+// import footerBG from "../../assets/footerbg2.png";
 
 function Footer() {
   const quickLinks = [
@@ -29,8 +31,16 @@ function Footer() {
   ];
 
   return (
-    <div>
-      <footer className="bg-[#0b80da] text-white py-12">
+    // old color bg-[#0b80da]  new bg-[#03223b]
+    <div
+      style={{
+        // backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.23)), url(${footerBG})`,
+        // backgroundSize: "cover",
+        // backgroundPosition: "center",
+        backgroundColor: "#03223b",
+      }}
+    >
+      <footer className=" text-white py-12 ">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pb-1">
             {/* Column 1 */}
@@ -46,13 +56,13 @@ function Footer() {
 
             {/* Column 2 - Quick Links */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">Quick Links</h3>
+              <h3 className="text-xl font-bold text-[#0b80da]">Quick Links</h3>
               <ul className="space-y-2">
                 {quickLinks.map((link, i) => (
                   <li key={i}>
                     <Link
                       to={link.path}
-                      className="hover:text-white transition-colors duration-300"
+                      className="hover:text-[#0b80da] transition-colors duration-300"
                     >
                       {link.name}
                     </Link>
@@ -63,13 +73,13 @@ function Footer() {
 
             {/* Column 3 - Services */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">Our Services</h3>
+              <h3 className="text-xl font-bold text-[#0b80da]">Our Services</h3>
               <ul className="space-y-2">
                 {services.map((service, i) => (
                   <li key={i}>
                     <Link
                       to={service.path}
-                      className="hover:text-white transition-colors duration-300"
+                      className="hover:text-[#0b80da] transition-colors duration-300"
                     >
                       {service.name}
                     </Link>
@@ -80,7 +90,7 @@ function Footer() {
 
             {/* Column 4 - Contact */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">Contact Us</h3>
+              <h3 className="text-xl font-bold text-[#0b80da]">Contact Us</h3>
               <div className="text-[15px] space-y-2">
                 <div className="flex items-start gap-2">
                   <FaLocationDot className="mt-1" />
@@ -96,7 +106,7 @@ function Footer() {
                     Email:{" "}
                     <a
                       href="mailto:info@zarqsolution.com"
-                      className="hover:text-white"
+                      className="hover:text-[#0b80da]"
                     >
                       info@zarqsolution.com
                     </a>
@@ -108,6 +118,7 @@ function Footer() {
                     href="https://facebook.com"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="hover:text-[#1d93ec] transition-colors duration-300"
                   >
                     <FaFacebook />
                   </a>
@@ -115,6 +126,7 @@ function Footer() {
                     href="https://www.instagram.com/zarqsolution911/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="hover:text-[#ba0267] transition-colors duration-300"
                   >
                     <FaInstagram />
                   </a>
@@ -122,6 +134,7 @@ function Footer() {
                     href="https://www.linkedin.com/company/zarq-solution/about/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="hover:text-[#1d93ec] transition-colors duration-300"
                   >
                     <FaLinkedin />
                   </a>
@@ -129,6 +142,7 @@ function Footer() {
                     href="https://www.youtube.com/@Zarqsolution"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="hover:text-[#df0b2f] transition-colors duration-300"
                   >
                     <FaYoutube />
                   </a>
@@ -140,7 +154,7 @@ function Footer() {
       </footer>
 
       {/* Copyright */}
-      <div className="pb-9 pt-9 text-[17px] text-white text-center bg-[#0067B8]">
+      <div className="pb-9 pt-9 text-[17px] text-white text-center bg-[#03223b]  border-t">
         <p>
           Copyright &copy; {new Date().getFullYear()} Zarq Solution | Powered by
           Zarq Solution

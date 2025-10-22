@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import sideImg from "../../assets/why-choose-us.jpg";
+
 const features = [
   {
     title: "Best Quality Designs",
@@ -33,8 +35,8 @@ const features = [
   },
 ];
 
-const img =
-  "https://zarqsolution.com/wp-content/uploads/2020/01/why-choose-us.jpg";
+// const img =
+//   "https://zarqsolution.com/wp-content/uploads/2020/01/why-choose-us.jpg";
 
 function ChooseUs() {
   //
@@ -50,7 +52,7 @@ function ChooseUs() {
         {/* Image Section */}
         <div data-aos="fade-right">
           <img
-            src={img}
+            src={sideImg}
             alt="Why Choose Us"
             className="w-full h-[700px] rounded-md shadow-md object-cover"
           />

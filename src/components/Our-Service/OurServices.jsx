@@ -10,6 +10,10 @@ import {
 } from "react-icons/fa";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+//animation
+// import React, { useRef } from "react";
+// import { ScrollEffect } from "../../hooks/ScrollEffect";
 
 const services = [
   {
@@ -79,9 +83,12 @@ const services = [
 ];
 
 function OurServices() {
+  // const sectionRef = useRef(null);
+  // ScrollEffect(sectionRef);
+
   return (
-    <section className="bg-white">
-      <div className="max-w-[1400px] mx-auto px-6">
+    <section className="bg-white" data-aos="fade-up">
+      <div className="max-w-[1400px] mx-auto ">
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl">
@@ -100,7 +107,7 @@ function OurServices() {
           {services.map((service) => (
             <div
               key={service.id}
-              className="bg-[#f9fafb] rounded-xl p-7 hover:shadow-sm transition-all duration-300 group flex flex-col justify-between h-full"
+              className=" bg-[#f9fafb] rounded-xl p-7 hover:shadow-sm transition-all duration-300 group flex flex-col justify-between h-full"
             >
               {/* Top Section */}
               <div>

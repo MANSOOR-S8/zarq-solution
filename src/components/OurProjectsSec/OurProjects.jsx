@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import "./Style.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
 import TripleJFurniture from "../../assets/JFurniture.png";
@@ -9,6 +9,7 @@ import SpyCameraCCTV from "../../assets/SpyCameraCCTV.webp";
 import TechLogistics from "../../assets/TechLogistics.png";
 import CollegeBoundMovers from "../../assets/CollegeBound.png";
 import SHIPCLLogistics from "../../assets/SHIPCLLOGISTICS.webp";
+import Aos from "aos";
 
 function OurProjects() {
   const projectCard = [
@@ -20,6 +21,7 @@ function OurProjects() {
       img: SpyCameraCCTV,
       link: "https://www.spycameracctv.com/",
       type: "web",
+      animation: "fade-left",
     },
     {
       id: 2,
@@ -28,6 +30,7 @@ function OurProjects() {
       img: TechLogistics,
       link: "https://www.techlogistics.com/",
       type: "web",
+      animation: "fade-up",
     },
     {
       id: 3,
@@ -36,6 +39,7 @@ function OurProjects() {
       img: CollegeBoundMovers,
       link: "https://collegeboundmovers.com/",
       type: "web",
+      animation: "fade-right",
     },
 
     // ---- Mobile Apps ----
@@ -46,6 +50,7 @@ function OurProjects() {
       img: TripleJFurniture,
       link: "https://triplejfurniture.com.au/",
       type: "mobile",
+      animation: "fade-right",
     },
     {
       id: 5,
@@ -54,6 +59,7 @@ function OurProjects() {
       img: MarsTranslation,
       link: "https://www.marstranslation.com/",
       type: "mobile",
+      animation: "fade-up",
     },
     {
       id: 6,
@@ -62,8 +68,14 @@ function OurProjects() {
       img: SHIPCLLogistics,
       link: "https://zarqsolution.com/shipcl/",
       type: "mobile",
+      animation: "fade-left",
     },
   ];
+
+  //for animation
+  useEffect(() => {
+    Aos.init({ duration: 1000, once: true });
+  }, []);
 
   // === Filter State ===
   const [filter, setFilter] = useState("all");
@@ -110,6 +122,7 @@ function OurProjects() {
         >
           {filterCards.map((pCard) => (
             <div
+              data-aos={pCard.animation}
               key={pCard.id}
               className="card bg-white rounded-[8px] shadow-md hover:shadow-xl transition duration-300 overflow-hidden"
             >

@@ -1,35 +1,19 @@
-import React, { useEffect, useRef } from "react";
+// import React, { useRef } from "react";
+// import { ScrollEffect } from "../../hooks/ScrollEffect";
 import { Link } from "react-router-dom";
 import { CheckCircle2, Sparkles, Rocket } from "lucide-react";
 
+//image
+import introimg from "../../assets/ourintro.png";
+
 function OurIntro() {
-  const sectionRef = useRef(null);
-
-  // Scroll-based reveal animation
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) el.classList.add("is-visible");
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  const sideImg =
-    "https://zarqsolution.com/wp-content/uploads/2025/03/Group-143725923.webp";
+  // const sectionRef = useRef(null);
+  // ScrollEffect(sectionRef);
 
   return (
     <section
-      ref={sectionRef}
-      className="relative overflow-hidden bg-white py-20"
+      // ref={sectionRef}
+      className=" relative overflow-hidden bg-white py-20"
       aria-labelledby="who-we-are-heading"
     >
       {/* Background glow effects */}
@@ -101,7 +85,7 @@ function OurIntro() {
             data-aos="fade-left"
           >
             <img
-              src={sideImg}
+              src={introimg}
               alt="Team collaboration"
               className="h-auto w-full rounded-xl object-cover"
             />

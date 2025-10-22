@@ -4,13 +4,28 @@ import Footer from "../components/Footer/Footer";
 
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
-
+//icons
 import { FiSearch } from "react-icons/fi";
 import { AiOutlineDollar } from "react-icons/ai";
 import { FaUserGroup } from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
 import { IoTrendingUpOutline } from "react-icons/io5";
 import { MdAddLocationAlt } from "react-icons/md";
+
+//images
+
+import slider1 from "../assets/techSlider/googleanalytics.png";
+import slider2 from "../assets/techSlider/googleads.png";
+import slider3 from "../assets/techSlider/googleplanner.png";
+import slider4 from "../assets/techSlider/Facebookad.png";
+import slider5 from "../assets/techSlider/ahref.png";
+import slider6 from "../assets/techSlider/semrush.png";
+import slider7 from "../assets/techSlider/Moz.png";
+import slider8 from "../assets/techSlider/linkdin.png";
+import slider9 from "../assets/techSlider/metabusinuss.png";
+import slider10 from "../assets/techSlider/screamingfrog.png";
+import slider11 from "../assets/techSlider/googleConsol.png";
+import slider12 from "../assets/techSlider/grammarly.png";
 
 const services = [
   {
@@ -62,52 +77,52 @@ const services = [
 const technologies = [
   {
     id: 1,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1694.png",
+    img: slider1,
   },
 
   {
     id: 2,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1691.png",
+    img: slider2,
   },
   {
     id: 3,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1696.png",
+    img: slider3,
   },
   {
     id: 4,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1690.webp",
+    img: slider4,
   },
   {
     id: 5,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1687.webp",
+    img: slider5,
   },
   {
     id: 6,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1688.webp",
+    img: slider6,
   },
   {
     id: 7,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1689.webp",
+    img: slider7,
   },
   {
     id: 8,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1692.webp",
+    img: slider8,
   },
   {
     id: 9,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1693.webp",
+    img: slider9,
   },
   {
     id: 10,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1697.png",
+    img: slider10,
   },
   {
     id: 11,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1686.png",
+    img: slider11,
   },
   {
     id: 12,
-    img: "https://zarqsolution.com/wp-content/uploads/2025/03/image-1695.webp",
+    img: slider12,
   },
 ];
 

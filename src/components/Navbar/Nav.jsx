@@ -78,7 +78,7 @@ function Nav() {
                       scrolledPastBanner
                         ? isActive
                           ? "text-[#0B80DA]"
-                          : "text-gray-900"
+                          : "text-black"
                         : "text-white"
                     }`
                   }
