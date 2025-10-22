@@ -50,23 +50,19 @@ function Banner() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[900px] mx-auto flex flex-col items-center   space-y-4">
+      <div className="relative z-10 max-w-[900px] mx-auto flex flex-col items-center space-y-4 px-4">
         <h1
-          className="banner-heading font-[500] sm:text-5xl  font-bold text-white "
+          className="font-bold text-3xl sm:text-5xl lg:text-7xl text-white text-center"
           data-aos="fade-up"
         >
           We Build What Your Business Deserves
-          {/* Build Amazing Digital Solutions */}
         </h1>
 
         <p
-          className="text-lg sm:text-xl text-[#fff] leading-relaxed max-w-2xl"
+          className="text-base sm:text-lg text-white leading-relaxed text-center max-w-2xl"
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          {/* We create cutting-edge mobile and web applications that drive growth
-          and innovation. From concept to launch, we bring your vision to life
-          with stunning design and powerful technology. */}
           Empowering startups and enterprises with stunning designs, smooth
           performance, and result-driven digital experiences.
         </p>
