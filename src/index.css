@@ -24,7 +24,10 @@ h6 {
   /* font-family: "Mona Sans", sans-serif; */
 
   font-family: "Clash Display", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 p {
   font-family: "Inter", sans-serif;
+  letter-spacing: 1px;
 }

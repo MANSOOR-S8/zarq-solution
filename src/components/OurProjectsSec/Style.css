@@ -14,9 +14,9 @@
   flex-grow: 1;
 }
 /* Image wrapper  */
-.img-wrapper {
+.long-img {
   position: relative;
-  height: 192px;
+  height: 270px;
   overflow: hidden;
 }
 

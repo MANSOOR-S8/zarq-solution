@@ -3,17 +3,18 @@ html {
 }
 .whatsapp-icon {
   position: fixed;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   bottom: 40px;
   right: 15px;
-  /* background-color: #25d366; */
-  color: #25d366;
+  background-color: #25d366;
+  color: #fbfbfb;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 60px; /* icon size */
-
+  font-size: 45px;
+  border-radius: 50px;
+  animation: pulse-glow 2s infinite;
   z-index: 100;
 }
 
@@ -21,7 +22,7 @@ html {
   margin: 0;
   padding: 0;
   line-height: 1;
-  animation: pulse-glow 2s infinite;
+
   cursor: pointer;
 }
 @keyframes pulse-glow {

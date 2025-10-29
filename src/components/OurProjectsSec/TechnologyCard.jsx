@@ -131,7 +131,7 @@ function TechnologyCard() {
   const secondRow = technologies.slice(12, 24);
   return (
     <section className="bg-[#fff] py-16">
-      <div className="max-w-[1400px]  mx-auto px-4">
+      <div className=" mx-auto px-4">
         {/* Title */}
         <div className="text-center mb-12">
           <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl">

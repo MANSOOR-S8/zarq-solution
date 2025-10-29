@@ -66,7 +66,7 @@ function Review() {
 
   return (
     <section className="bg-white py-10 pb-24">
-      <div className="max-w-[1400px] mx-auto px-4 transition-all">
+      <div className="max-w-[1400px] mx-auto px-6 transition-all">
         {/* responsive layout for cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row gap-4 lg:h-[400px]">
           {cards.map((card) => (

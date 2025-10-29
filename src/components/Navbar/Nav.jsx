@@ -107,11 +107,12 @@ function Nav() {
           </ul>
 
           {/* Contact Us (Desktop) */}
-          <div className="hidden lg:flex items-center">
-            <Link to="/Service">
-              <button className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-medium text-base px-6 py-3 rounded hover:from-cyan-700 hover:to-blue-700 transition-all duration-300 shadow-sm hover:shadow-md">
-                Contact Us
-              </button>
+          <div className=" flex flex-wrap items-center gap-3">
+            <Link
+              to="/Consultation"
+              className="px-6 py-3 rounded-md bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold shadow-lg hover:shadow-2xl hover:from-cyan-700 hover:to-blue-700 transition-all duration-300"
+            >
+              Contact US
             </Link>
           </div>
 

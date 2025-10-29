@@ -1,5 +1,7 @@
 // import React, { useRef } from "react";
 // import { ScrollEffect } from "../../hooks/ScrollEffect";
+
+import "../../App.css";
 import { Link } from "react-router-dom";
 import { CheckCircle2, Sparkles, Rocket } from "lucide-react";
 
@@ -24,14 +26,14 @@ function OurIntro() {
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-14 px-6 sm:px-8 lg:px-12">
         {/* Left Content */}
         <div className="relative">
-          <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl">
+          <h2 className="our-intro text-balance text-3xl font-semibold tracking-tight md:text-4xl">
             <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
               Who we are
             </span>
             <span className="text-gray-700"> — building what’s next</span>
           </h2>
 
-          <p className="mt-5 text-gray-700 md:text-lg leading-relaxed">
+          <p className=" mt-5 text-gray-700 md:text-lg leading-relaxed">
             At Zarq Solution, we are a team of passionate and innovative
             technology experts committed to transforming ideas into powerful and
             scalable digital solutions. We specialize in designing and

@@ -154,7 +154,7 @@ function Footer() {
       </footer>
 
       {/* Copyright */}
-      <div className="pb-9 pt-9 text-[17px] text-white text-center bg-[#03223b]  border-t">
+      <div className="pb-3 pt-3 text-[12px] text-white text-center bg-[#03223b]  border-t">
         <p>
           Copyright &copy; {new Date().getFullYear()} Zarq Solution | Powered by
           Zarq Solution

@@ -53,7 +53,7 @@ function Slider() {
   const images = [...sliderImg, ...sliderImg];
 
   return (
-    <div className="max-w-[1400px] mx-auto ">
+    <div className=" mx-auto ">
       <div className="slider-container">
         <div className="slider-track">
           {images.map((item, index) => (

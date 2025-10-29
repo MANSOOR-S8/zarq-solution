@@ -95,24 +95,30 @@ function OurProjects() {
         </h2>
 
         {/* ==== Filter Buttons ==== */}
-        <div className="flex justify-center gap-4 mb-10">
-          {["all", "web", "mobile"].map((type) => (
-            <button
-              key={type}
-              onClick={() => setFilter(type)}
-              className={`px-6 py-2 rounded-2xl text-[18px] font-semibold transition duration-300 ${
-                filter === type
-                  ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold hover:shadow-2xl hover:from-cyan-700 hover:to-blue-700 transition-all duration-300  shadow-md"
-                  : "bg-white text-gray-600 border border-gray-300 hover:bg-blue-100"
-              }`}
-            >
-              {type === "all"
-                ? "All"
-                : type === "web"
-                ? "Web Apps"
-                : "Mobile Apps"}
-            </button>
-          ))}
+        <div className="flex justify-center mb-10">
+          <div className="inline-flex rounded-md  overflow-hidden" role="group">
+            {["all", "web", "mobile"].map((type, index) => (
+              <button
+                key={type}
+                onClick={() => setFilter(type)}
+                className={`px-6 py-2 text-[18px] font-semibold transition duration-300 
+          ${
+            filter === type
+              ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold hover:from-cyan-700 hover:to-blue-700"
+              : "bg-white text-gray-600 border border-gray-300 hover:bg-blue-100"
+          }
+          ${index === 0 ? "rounded-l-md" : ""}
+          ${index === 2 ? "rounded-r-md" : ""}
+        `}
+              >
+                {type === "all"
+                  ? "All"
+                  : type === "web"
+                  ? "Web Apps"
+                  : "Mobile Apps"}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* ==== Project Cards ==== */}
@@ -127,7 +133,7 @@ function OurProjects() {
               className="card bg-white rounded-[8px] shadow-md hover:shadow-xl transition duration-300 overflow-hidden"
             >
               <Link to={pCard.link} target="_blank">
-                <div className="img-wrapper">
+                <div className="long-img">
                   <img
                     src={pCard.img}
                     alt={pCard.title}

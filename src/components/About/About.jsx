@@ -4,6 +4,8 @@ import Stages from "../OurProjectsSec/Stages";
 import Footer from "../Footer/Footer";
 import ChooseUs from "./ChooseUs";
 import "./About.css";
+//images
+import aboutBanner from "../../assets/Aboutpic.webp";
 function About() {
   const cards = [
     {
@@ -33,17 +35,23 @@ function About() {
   ];
 
   return (
-    <div className="bg-[#eceff4] ">
-      <section className="banner-sec">
+    <div className="">
+      <section
+        className=""
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 50, 0.6), rgba(0, 0, 15, 0.6)), url(${aboutBanner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div className="py-18">
           <div className="container mx-auto px-6 text-center p-20">
             {/* Heading */}
-            <h2 className="text-balance text-4xl lg:text-6xl font-semibold tracking-tight md:text-4xl">
-              <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                Welcome to Zarq Solution
-              </span>
+            <h2 className="text-balance text-4xl lg:text-7xl font-bold tracking-tight md:text-4xl">
+              <span className="text-white">Welcome to Zarq Solution</span>
             </h2>
-            <p className="mt-4 text-gray-700 max-w-2xl mx-auto">
+            <p className="mt-4 text-[#f1f1f1] max-w-2xl mx-auto">
               Zarq Solution is a tech-driven software house specializing in web
               and mobile solutions, delivering innovative and high-quality
               digital experiences.

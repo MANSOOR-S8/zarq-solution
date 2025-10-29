@@ -3,7 +3,8 @@ import { ArrowRight, Play } from "lucide-react";
 import { Link } from "react-router-dom"; // corrected import
 import Aos from "aos";
 import "aos/dist/aos.css";
-import banner from "../../assets/banner1.png";
+import banner from "../../assets/herobanner.webp";
+import "../../App.css";
 
 function Banner() {
   // Counter states
@@ -33,13 +34,15 @@ function Banner() {
   // }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden px-6">
+    <section className="relative min-h-96 flex flex-col justify-center items-center  px-6">
       {/* Background Gradient */}
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: `url(${banner})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 50, 0.6), rgba(0, 0, 50, 0.6)), url(${banner})`,
           backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       ></div>
 
@@ -50,9 +53,9 @@ function Banner() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[900px] mx-auto flex flex-col items-center space-y-4 px-4">
+      <div className="relative pt-24 pb-17 z-10 max-w-[900px] mx-auto flex flex-col items-center space-y-4 px-4">
         <h1
-          className="font-bold text-3xl sm:text-5xl lg:text-7xl text-white text-center"
+          className="banner-heading font-bold text-3xl sm:text-5xl lg:text-7xl text-white text-center"
           data-aos="fade-up"
         >
           We Build What Your Business Deserves
@@ -74,7 +77,7 @@ function Banner() {
           data-aos-delay="200"
         >
           <Link to="/About">
-            <button className="flex items-center gap-2 px-8 py-3 rounded-2xl bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold shadow-xl hover:shadow-2xl hover:from-cyan-700 hover:to-blue-700 transition-all duration-300 group">
+            <button className="flex items-center gap-2 px-8 py-3 rounded-md bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold shadow-xl hover:shadow-2xl hover:from-cyan-700 hover:to-blue-700 transition-all duration-300 group">
               To Get Free Consultant
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>

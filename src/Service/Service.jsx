@@ -13,6 +13,9 @@ import {
   FaCloud,
 } from "react-icons/fa";
 
+//images
+import serviceImg from "../assets/servicesimg.webp";
+
 const services = [
   {
     id: 1,
@@ -83,14 +86,22 @@ const services = [
 function Service() {
   return (
     <section>
-      <div className="banner-sec overflow-x-hidden bg-white">
+      <div
+        className=" overflow-x-hidden bg-white"
+        style={{
+          backgroundImage: `linear-gradient(rgba(1, 1, 40, 0.87), rgba(0, 0, 0, 0.6)), url(${serviceImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h1 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[50px] text-center pt-24  font-bold break-words leading-tight max-w-3xl mx-auto hed-text">
-            <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="text-white">
               We provide a wide range of Services
             </span>
           </h1>
-          <p className="text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-center pt-4 sm:pt-6 break-words leading-relaxed max-w-2xl mx-auto ">
+          <p className="text-white text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-center pt-4 sm:pt-6 break-words leading-relaxed max-w-2xl mx-auto ">
             We provide a comprehensive range of services, including web and
             mobile development, software solutions, and IT consulting. Our
             expert team is dedicated to delivering innovative, high-quality, and
