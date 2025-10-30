@@ -13,6 +13,8 @@ import { MdOutlineSupportAgent } from "react-icons/md";
 import { GrPowerCycle } from "react-icons/gr";
 import { MdOutlineCloudSync } from "react-icons/md";
 import { FaRegCheckCircle } from "react-icons/fa";
+//banner image
+import ITBanner from "../assets/ITSol.webp";
 
 const services = [
   {
@@ -133,34 +135,30 @@ function ITSupport() {
 
   return (
     <div>
-      <section>
-        <div className="banner-sec overflow-x-hidden bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <h2 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[47px] text-center   break-words leading-tight max-w-3xl mx-auto hed-text pt-10">
-              <span ref={textRef} className=" font-[900]  text-bold ">
-                IT <span className="text-[#0B80DA]">Consultancy</span> & Support
-              </span>
-            </h2>
-
-            {/* <h1 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[50px] text-center  font-bold break-words leading-tight max-w-3xl mx-auto hed-text"></h1> */}
-            <p className="text-[15px] sm:text-[14px] md:text-[16px] lg:text-[18px] text-center pt-4 sm:pt-6 break-words leading-relaxed max-w-2xl mx-auto ">
-              We provide strategic{" "}
-              <span className="font-bold text-black"> IT consultancy</span> and
-              dependable{" "}
-              <span className="font-bold text-black"> support services </span>{" "}
-              designed to help businesses improve operational efficiency,
-              strengthen security, and achieve scalable growth. Our experts work
-              closely with your team to align technology with business goals,
-              ensure infrastructure reliability, and deliver proactive support
-              that minimizes downtime and maximizes performance.
-            </p>
-          </div>
+      <section
+        className="min-h-[80vh] flex items-center justify-center bg-cover bg-center bg-no-repeat relative py-20"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,40,0.96), rgba(0,0,13,0.7)), url(${ITBanner})`,
+        }}
+      >
+        <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 text-center py-10">
+          <h2
+            ref={textRef}
+            className="text-white text-3xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-7xl font-bold leading-tight break-words"
+          >
+            IT Consultancy & Support
+          </h2>
+          <p className="text-white text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px] mt-5 max-w-2xl mx-auto leading-relaxed">
+            We provide strategic IT consultancy and dependable support services
+            designed to help businesses improve operational efficiency,
+            strengthen security, and achieve scalable growth.
+          </p>
         </div>
       </section>
       {/* our service cards */}
-      <section className="bg-[#f0f4f8] py-12 px-4">
+      <section className="bg-[#f0f4f8] py-12 px-4 max-w-[1400px] mx-auto">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-[#0B80DA]  mb-2">
+          <h2 className="text-3xl lg:text-[48px] md:text-5xl font-bold text-[#0B80DA]  mb-2">
             Our IT Consultancy & Support Services
           </h2>
           <p className="text-gray-600">
@@ -170,7 +168,7 @@ function ITSupport() {
         </div>
 
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1400px] mx-auto h-auto"
           data-aos="fade-up"
         >
           {services.map((service) => (
@@ -199,8 +197,8 @@ function ITSupport() {
 
       {/* stages section */}
       <section className="py-12 bg-[#eceff4] ">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl text-[#0B80DA] font-bold text-center mb-10">
+        <div className="max-w-[1400px] mx-auto px-4">
+          <h2 className="text-3xl md:text-3xl lg:text-[48px] text-[#0B80DA] font-bold text-center mb-10">
             Our IT Consultancy & Support Process
           </h2>
           {/* Cards */}
@@ -223,7 +221,7 @@ function ITSupport() {
                 </span>
 
                 {/* Content */}
-                <div className="mt-12">
+                <div className="mt-16">
                   <h3 className="text-[20px] font-bold text-[#0B80DA] mb-2">
                     {step.title}
                   </h3>

@@ -26,31 +26,31 @@ function OurIntro() {
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-14 px-6 sm:px-8 lg:px-12">
         {/* Left Content */}
         <div className="relative">
-          <h2 className="our-intro text-balance text-3xl font-semibold tracking-tight md:text-4xl">
+          <h2 className="our-intro text-balance  font-[500] text-3xl sm:text-3xl tracking-tight md:text-4xl lg:text-[48px]">
             <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
               Who we are
             </span>
-            <span className="text-gray-700"> — building what’s next</span>
+            <span className="text-gray-700"> building what’s next</span>
           </h2>
 
           <p className=" mt-5 text-gray-700 md:text-lg leading-relaxed">
             At Zarq Solution, we are a team of passionate and innovative
             technology experts committed to transforming ideas into powerful and
             scalable digital solutions. We specialize in designing and
-            developing customized software, dynamic websites, and feature-rich
+            developing customized software, dynamic websites, and feature rich
             mobile applications that drive growth and success.
           </p>
 
           <p className="mt-4 text-gray-700 md:text-lg leading-relaxed">
             Our mission is to empower businesses with cutting-edge technology,
             ensuring each client’s unique vision is brought to life through
-            tailored, high-impact solutions.
+            tailored, high impact solutions.
           </p>
 
           {/* Highlights */}
           <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
             <li className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 size-5 text-cyan-600" />
+              <CheckCircle2 className="mt-0.5 size-5  text-blue-500" />
               <span className="text-sm text-gray-800">
                 Tailored solutions for web, mobile, and cloud
               </span>
@@ -62,7 +62,7 @@ function OurIntro() {
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <Rocket className="mt-0.5 size-5 text-cyan-600" />
+              <Rocket className="mt-0.5 size-5 text-blue-500" />
               <span className="text-sm text-gray-800">
                 Lean delivery, rapid iterations, and quality
               </span>

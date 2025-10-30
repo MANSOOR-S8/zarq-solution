@@ -20,7 +20,7 @@ const services = [
     id: 1,
     title: "Web Development",
     description:
-      "Building fast, responsive, and user-friendly websites that enhance digital presence and customer engagement.",
+      "Building fast, responsive, and user friendly websites that enhance digital presence and customer engagement.",
     icon: <FaLaptopCode className="text-4xl text-[#0B80DA]" />,
     link: "/WebDevelopment",
   },
@@ -28,7 +28,7 @@ const services = [
     id: 2,
     title: "E-Commerce Solutions",
     description:
-      "Building secure, high-converting e-commerce platforms with integrated payment gateways and custom features.",
+      "Building secure, high converting e-commerce platforms with integrated payment gateways and custom features.",
     icon: <FaShoppingCart className="text-4xl text-[#0B80DA]" />,
     link: "/ECommerce",
   },
@@ -36,7 +36,7 @@ const services = [
     id: 3,
     title: "Digital Marketing (SEO)",
     description:
-      "Boosting online visibility with data-driven SEO strategies, content marketing, and targeted campaigns.",
+      "Boosting online visibility with data driven SEO strategies, content marketing, and targeted campaigns.",
     icon: <FaChartLine className="text-4xl text-[#0B80DA]" />,
     link: "/DigitalMArket",
   },
@@ -52,7 +52,7 @@ const services = [
     id: 5,
     title: "Mobile App Development",
     description:
-      "Creating high-performance mobile apps with seamless user experience for both Android and iOS platforms.",
+      "Creating high performance mobile apps with seamless user experience for both Android and iOS platforms.",
     icon: <FaMobileAlt className="text-4xl text-[#0B80DA]" />,
     link: "/MobApp",
   },
@@ -68,7 +68,7 @@ const services = [
     id: 7,
     title: "IT Consultancy & Support",
     description:
-      "Providing expert IT consultation and round-the-clock support to ensure smooth business operations.",
+      "Providing expert IT consultation and round the clock support to ensure smooth business operations.",
     icon: <FaHeadset className="text-4xl text-[#0B80DA]" />,
     link: "/ITSupport",
   },
@@ -91,7 +91,7 @@ function OurServices() {
       <div className="max-w-[1400px] mx-auto px-6 ">
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl">
+          <h2 className="text-balance text-3xl sm:text-3xl lg:text-[48px] font-[500] tracking-tight  md:text-4xl">
             <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
               Our Services
             </span>
@@ -107,7 +107,7 @@ function OurServices() {
           {services.map((service) => (
             <div
               key={service.id}
-              className=" bg-[#f9fafb] rounded-xl p-7 hover:shadow-sm transition-all duration-300 group flex flex-col justify-between h-full"
+              className=" bg-[#f9fafb] rounded-[5px] p-7 hover:shadow-sm transition-all duration-300 group flex flex-col justify-between h-full"
             >
               {/* Top Section */}
               <div>

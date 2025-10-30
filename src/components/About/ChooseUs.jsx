@@ -48,7 +48,7 @@ function ChooseUs() {
 
   return (
     <section className="bg-[#eceff4] py-12 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Image Section */}
         <div data-aos="fade-right">
           <img
@@ -60,7 +60,7 @@ function ChooseUs() {
 
         {/* Text Section */}
         <div data-aos="fade-up">
-          <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl mb-3">
+          <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl lg:text-[48px] mb-3">
             <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
               Why Choose Us?
             </span>

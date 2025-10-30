@@ -31,6 +31,9 @@ import slider15 from "../assets/techSlider/MySQL.png";
 import slider16 from "../assets/techSlider/AWS.png";
 import slider17 from "../assets/techSlider/symfony.webp";
 import slider18 from "../assets/techSlider/tailwind-css-1.svg";
+//banner image
+
+import ecommerece from "../assets/ecommerece.webp";
 
 const services = [
   {
@@ -212,18 +215,25 @@ function ECommerce() {
 
   return (
     <div>
+      {/* ===== Hero Section ===== */}
       <section>
-        <div className="banner-sec overflow-x-hidden bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <h2 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[47px] text-center break-words leading-tight max-w-3xl mx-auto hed-text pt-10">
-              <span ref={textRef} className=" font-[900]  text-bold ">
-                Transform Your Business with Powerful{" "}
-                <span className="text-[#0B80DA]">E-Commerce</span> Solutions
-              </span>
+        <div
+          className="overflow-x-hidden bg-white py-20"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,40,0.96), rgba(0,0,13,0.7)), url(${ecommerece})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10 mt-14">
+            <h2
+              ref={textRef}
+              className="text-white text-4xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-7xl font-[800] text-center  leading-tight max-w-3xl mx-auto"
+            >
+              Next Level E-Commerce Solutions
             </h2>
-
-            {/* <h1 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[50px] text-center  font-bold break-words leading-tight max-w-3xl mx-auto hed-text"></h1> */}
-            <p className="text-[15px] sm:text-[14px] md:text-[16px] lg:text-[18px] text-center pt-4 sm:pt-6 break-words leading-relaxed max-w-2xl mx-auto ">
+            <p className="text-white text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] text-center pt-4 sm:pt-6 max-w-2xl mx-auto leading-relaxed">
               We design and develop high-performance, responsive, and secure
               websites tailored to your business needs, ensuring seamless user
               experience and scalability.
@@ -231,19 +241,20 @@ function ECommerce() {
           </div>
         </div>
       </section>
-      {/* our service cards */}
+
+      {/* ===== Services Section ===== */}
       <section className="bg-[#f0f4f8] py-12 px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-[#0B80DA]  mb-2">
+          <h2 className="text-3xl sm:text-3xl lg:text-[48px] font-bold text-[#0B80DA] mb-2">
             Our Custom Software Services
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-sm sm:text-base">
             Our Expertise in Custom Software Development
           </p>
         </div>
 
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto h-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1400px] mx-auto"
           data-aos="fade-up"
         >
           {services.map((service) => (
@@ -251,17 +262,15 @@ function ECommerce() {
               key={service.id}
               className="relative bg-white rounded-lg shadow-md p-6 transition-all duration-300 transform hover:scale-[1.02] group overflow-hidden"
             >
-              {/* Gradient overlay */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-[#EF6025] to-[#16A87A] transition-opacity duration-300 rounded-lg z-0" />
-
               <div className="relative z-10">
-                <div className="bg-gray-100 w-14 h-14 flex items-center justify-center rounded-full mb-4 transition-all duration-300 ">
+                <div className="bg-gray-100 w-14 h-14 flex items-center justify-center rounded-full mb-4">
                   {service.icon}
                 </div>
-                <h3 className="text-lg text-[22px] font-[600] text-[#0B80DA]  mb-2 ">
+                <h3 className="text-lg sm:text-xl font-semibold text-[#0B80DA] mb-2">
                   {service.title}
                 </h3>
-                <p className="text-[16px] font-[400] text-gray-600  ">
+                <p className="text-[15px] sm:text-[16px] text-gray-600">
                   {service.description}
                 </p>
               </div>
@@ -269,21 +278,20 @@ function ECommerce() {
           ))}
         </div>
       </section>
-      {/* technology we use */}
+
+      {/* ===== Technologies Section ===== */}
       <section className="bg-[#0b80da] py-12">
-        <div className="max-w-7xl mx-auto px-4">
-          {/* Title */}
+        <div className="max-w-[1400px] mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-[34px] font-bold text-white">
+            <h2 className="text-3xl sm:text-3xl lg:text-[48px] font-bold text-white">
               Technologies We Use
             </h2>
-            <p className="text-gray-200 mt-2">
+            <p className="text-gray-200 mt-2 text-sm sm:text-base">
               Powering Your Software with the Latest Tech
             </p>
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-6">
             {technologies.map((tech) => (
               <div
                 key={tech.id}
@@ -292,7 +300,7 @@ function ECommerce() {
                 <img
                   src={tech.img}
                   alt="Technology"
-                  className="h-20 object-contain"
+                  className="h-14 sm:h-16 md:h-20 object-contain"
                 />
               </div>
             ))}
@@ -300,46 +308,46 @@ function ECommerce() {
         </div>
       </section>
 
-      {/* stages section */}
-      <section className="py-12 bg-[#eceff4] ">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl text-[#0B80DA] font-bold text-center mb-10">
+      {/* ===== Stages Section ===== */}
+      <section className="py-12 bg-[#eceff4]">
+        <div className="max-w-[1400px] mx-auto px-4">
+          <h2 className="text-3xl sm:text-3xl lg:text-[48px] text-[#0B80DA] font-bold text-center mb-10">
             Stages of Working With Us
           </h2>
-          {/* Cards */}
-          <div className="grid md:grid-cols-3 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="bg-white border-1 border-gray-300  p-12 relative"
+                className="bg-white border border-gray-200 p-8 sm:p-10 relative rounded-lg shadow-sm"
               >
                 <span
-                  className=" absolute top-0 left-2"
+                  className="absolute top-0 left-4 sm:text-2xl"
                   style={{
-                    fontSize: "90px",
+                    fontSize: "80px",
                     fontWeight: 800,
                     color: "#f2f4f8",
-                    fontFamily: "Poppins, sans-serif",
+                    fontFamily: "inter, sans-serif",
                   }}
                 >
                   {step.number}
                 </span>
 
-                {/* Content */}
                 <div className="mt-12">
-                  <h3 className="text-[20px] font-bold text-[#0B80DA] mb-2">
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0B80DA] mb-2 pt-4">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 text-[18px] ">{step.desc}</p>
+                  <p className="text-gray-600 text-[15px] sm:text-[16px]">
+                    {step.desc}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-      <div>
-        <Footer />
-      </div>
+
+      {/* ===== Footer ===== */}
+      <Footer />
     </div>
   );
 }

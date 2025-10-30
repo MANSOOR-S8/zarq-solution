@@ -89,31 +89,29 @@ function Service() {
       <div
         className=" overflow-x-hidden bg-white"
         style={{
-          backgroundImage: `linear-gradient(rgba(1, 1, 40, 0.87), rgba(0, 0, 0, 0.6)), url(${serviceImg})`,
+          backgroundImage: `linear-gradient(rgba(1, 1, 40, 0.96), rgba(0, 0, 0, 0.6)), url(${serviceImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h1 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[50px] text-center pt-24  font-bold break-words leading-tight max-w-3xl mx-auto hed-text">
             <span className="text-white">
               We provide a wide range of Services
             </span>
           </h1>
           <p className="text-white text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-center pt-4 sm:pt-6 break-words leading-relaxed max-w-2xl mx-auto ">
-            We provide a comprehensive range of services, including web and
-            mobile development, software solutions, and IT consulting. Our
-            expert team is dedicated to delivering innovative, high-quality, and
-            customized solutions that drive business success and enhance digital
-            experiences.
+            We build innovative web, mobile, and software solutions that fuel
+            business growth tailored for performance, quality, and lasting
+            impact.
           </p>
         </div>
       </div>
       <div className="our-projects">
         <section className="bg-[#f0f4f8] py-12 px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0B80DA]  mb-2">
+            <h2 className="text-3xl md:text-4xl lg:text-[48px] font-bold text-[#0B80DA]  mb-2">
               <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
                 Our Services
               </span>

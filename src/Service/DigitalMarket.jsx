@@ -27,6 +27,9 @@ import slider10 from "../assets/techSlider/screamingfrog.png";
 import slider11 from "../assets/techSlider/googleConsol.png";
 import slider12 from "../assets/techSlider/grammarly.png";
 
+//images
+import digitalMarkeeting from "../assets/digitalMarkeeting.webp";
+
 const services = [
   {
     id: 1,
@@ -150,36 +153,29 @@ function DigitalMarket() {
 
   return (
     <div>
-      <section>
-        <div className="banner-sec overflow-x-hidden bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <h2 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[47px] text-center   break-words leading-tight max-w-3xl mx-auto hed-text pt-10">
-              <span ref={textRef} className=" font-[900]  text-bold ">
-                Boost Your Online Presence & Drive More Traffic
-              </span>
-            </h2>
-
-            {/* <h1 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[50px] text-center  font-bold break-words leading-tight max-w-3xl mx-auto hed-text"></h1> */}
-            <p className="text-[15px] sm:text-[14px] md:text-[16px] lg:text-[18px] text-center pt-4 sm:pt-6 break-words leading-relaxed max-w-2xl mx-auto ">
-              We help businesses grow by crafting{" "}
-              <span className=" font-bold">
-                {" "}
-                result-driven SEO, PPC, and digital marketing strategies
-              </span>{" "}
-              tailored to their goals. From boosting search engine visibility
-              and generating qualified traffic to increasing customer engagement
-              and driving higher conversions — our full-funnel approach ensures
-              measurable growth and long-term success. Whether you’re launching
-              a brand or scaling your reach, we deliver impactful digital
-              solutions that make every click count.
-            </p>
-          </div>
+      <section
+        className="min-h-[80vh] py-20 flex items-center justify-center bg-cover bg-center bg-no-repeat relative"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,40,0.96), rgba(0,0,13,0.7)), url(${digitalMarkeeting})`,
+        }}
+      >
+        <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 text-center mt-12 p-12">
+          <h2
+            ref={textRef}
+            className="text-white text-[26px] sm:text-[32px] md:text-5xl lg:text-6xl font-bold leading-tight break-words"
+          >
+            Boost Your Online Presence & Drive More Traffic
+          </h2>
+          <p className="text-white text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px] mt-5 max-w-2xl mx-auto leading-relaxed">
+            Boost visibility, drive traffic, and convert clicks into growth with
+            our result driven digital marketing
+          </p>
         </div>
       </section>
       {/* our service cards */}
       <section className="bg-[#f0f4f8] py-12 px-4">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-[#0B80DA]  mb-2">
+        <div className="text-center mb-10 max-w-[1400px] mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-[48px] font-bold text-[#0B80DA]  mb-2">
             Our Digital Marketing Services
           </h2>
           <p className="text-black">
@@ -188,7 +184,7 @@ function DigitalMarket() {
         </div>
 
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto h-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1400px] mx-auto h-auto"
           data-aos="fade-up"
         >
           {services.map((service) => (
@@ -216,10 +212,10 @@ function DigitalMarket() {
       </section>
       {/* technology we use */}
       <section className="bg-[#0b80da] py-12 border border-b-1 border-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-[1400px] mx-auto px-4">
           {/* Title */}
           <div className="text-center mb-10">
-            <h2 className="text-[34px] font-bold text-white">
+            <h2 className="text-3xl sm:text-3xl lg:text-[48px] font-bold text-white">
               Technologies We Use
             </h2>
             <p className="text-gray-200 mt-2">
@@ -228,7 +224,7 @@ function DigitalMarket() {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 ">
             {technologies.map((tech) => (
               <div
                 key={tech.id}

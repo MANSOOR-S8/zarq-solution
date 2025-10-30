@@ -134,7 +134,7 @@ function TechnologyCard() {
       <div className=" mx-auto px-4">
         {/* Title */}
         <div className="text-center mb-12">
-          <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl">
+          <h2 className="text-balance lg:text-[48px] font-[500] tracking-tight md:text-4xl">
             <span className=" bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
               Technologies We Use
             </span>
@@ -174,7 +174,7 @@ function TechnologyCard() {
             })}
           </div>
         </div>
-        <div className="techCard-container">
+        <div className="techCard-container-two">
           <div className="techCard-track scroll-right">
             {[...secondRow, ...secondRow].map((item, index) => {
               return (

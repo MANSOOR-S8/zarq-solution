@@ -40,6 +40,13 @@
   overflow: hidden;
   background-color: #ffffff;
 }
+.techCard-container-two {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  background-color: #ffffff;
+  padding-top: 20px;
+}
 
 .techCard-track {
   display: flex;

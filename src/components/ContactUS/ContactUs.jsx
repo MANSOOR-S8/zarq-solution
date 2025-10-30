@@ -101,7 +101,7 @@ function ContactUs() {
       <div className="container mx-auto max-w-7xl p-0 m-0">
         <div className="bg-white rounded-lg shadow-md p-6 md:p-10 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="md:col-span-3">
-            <h2 className="text-balance text-3xl font-semibold text-center tracking-tight md:text-4xl">
+            <h2 className="text-balance text-3xl lg:text-[48px] font-semibold text-center tracking-tight md:text-4xl">
               <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
                 Get a Free Consultation
               </span>

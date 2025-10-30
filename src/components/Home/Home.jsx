@@ -49,7 +49,7 @@ function Home() {
       <OurProjects />
       <Review />
       <Achievements />
-      {/* <Stages /> */}
+      <Stages />
       <TechnologyCard />
       <ContactUS />
       <Footer />

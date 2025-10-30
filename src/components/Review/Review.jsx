@@ -20,7 +20,7 @@ const cards = [
     id: 1,
     img: techlogestic,
     quote:
-      "At Tech Logistics, we believe efficiency drives success — delivering smarter, faster, and more reliable supply chain solutions every day.",
+      "At Tech Logistics, we believe efficiency drives success delivering smarter, faster, and more reliable supply chain solutions every day.",
     name: "Samantha William",
     role: "Regional Manager at Philips",
     companyLogo: tech,
@@ -30,17 +30,17 @@ const cards = [
     id: 2,
     img: translations, //marsTranslate,
     quote:
-      "Breaking language barriers through technology — empowering global communication with accuracy and speed.",
+      "Breaking language barriers through technology empowering global communication with accuracy and speed.",
     name: "Jessica Brown",
     role: "Product Designer at Huawei",
     companyLogo: marsTranslate,
-    disc: "Translate your documents and digital content hassle-free.",
+    disc: "Translate your documents and digital content hassle free.",
   },
   {
     id: 3,
     img: collageBound,
     quote:
-      "Every move tells a story — we make yours smooth, safe, and stress-free with expert care and reliability.",
+      "Every move tells a story  we make yours smooth, safe, and stress free with expert care and reliability.",
     name: "Robert James",
     role: "Software Engineer at Hershey",
     companyLogo: CollageBound,
@@ -50,11 +50,11 @@ const cards = [
     id: 4,
     img: CCTV,
     quote:
-      "Your safety is our mission — delivering cutting-edge CCTV solutions for smarter and more secure spaces.",
+      "Your safety is our mission delivering cutting-edge CCTV solutions for smarter and more secure spaces.",
     name: "Emily Clark",
     role: "Marketing Lead at Lactalis",
     companyLogo: spaCam,
-    disc: "Browse our range of world-class CCTV equipment.",
+    disc: "Browse our range of world class CCTV equipment.",
   },
 ];
 

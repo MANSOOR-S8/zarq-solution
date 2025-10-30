@@ -1,5 +1,5 @@
 import "../App.css";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import Footer from "../components/Footer/Footer";
 //animation
 import gsap from "gsap";
@@ -24,6 +24,8 @@ import slider3 from "../assets/techSlider/Java.png";
 import slider4 from "../assets/techSlider/swift12.webp";
 import slider5 from "../assets/techSlider/kotlin2.webp";
 import slider6 from "../assets/techSlider/restapi.webp";
+//banner image
+import mobApp from "../assets/mobApp.webp";
 
 const services = [
   {
@@ -158,37 +160,25 @@ function MobApp() {
     });
   }, []);
 
-  const textRef = useRef();
-
-  useEffect(() => {
-    // ye text ko split karta hy (alg) karta hy
-    const split = new SplitText(textRef.current, { type: "chars" });
-    gsap.from(split.chars, {
-      duration: 0.6,
-      opacity: 0,
-      y: 20,
-      stagger: 0.05,
-      ease: "power2.out",
-    });
-
-    return () => {
-      split.revert();
-    };
-  }, []);
-
   return (
     <div>
       <section>
-        <div className="banner-sec overflow-x-hidden bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <h2 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[47px] text-center   break-words leading-tight max-w-3xl mx-auto hed-text pt-10">
-              <span ref={textRef} className=" font-[900]  text-bold ">
-                Build High-Performance User-Friendly Mobile Apps
-              </span>
+        <div
+          className=" overflow-x-hidden bg-white justify-center min-h-[80vh] w-full  py-10"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,40,0.96), rgba(0,0,50,0.7)), url(${mobApp})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 pt-24">
+            <h2 className=" text-balance text-4xl lg:text-7xl text-center font-bold tracking-wide md:text-4xl text-white">
+              Build Fast, Seamless Mobile Apps
             </h2>
 
             {/* <h1 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[50px] text-center  font-bold break-words leading-tight max-w-3xl mx-auto hed-text"></h1> */}
-            <p className="text-[15px] sm:text-[14px] md:text-[16px] lg:text-[18px] text-center pt-4 sm:pt-6 break-words leading-relaxed max-w-2xl mx-auto ">
+            <p className="text-white text-[15px] sm:text-[14px] md:text-[16px] lg:text-[18px] text-center pt-4 sm:pt-6 break-words leading-relaxed max-w-2xl mx-auto ">
               We specialize in designing and developing custom mobile
               applications that offer seamless user experiences, high
               performance, and robust functionality.
@@ -199,7 +189,7 @@ function MobApp() {
       {/* our service cards */}
       <section className="bg-[#f0f4f8] py-14s px-4 pb-10">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-[#0B80DA]  mb-2 pt-7">
+          <h2 className="lg:text-[48px] sm:text-3xl font-[500] text-[#0B80DA]  mb-2 pt-7">
             Our Mobile App Development Services
           </h2>
           <p className="text-gray-600">
@@ -236,11 +226,11 @@ function MobApp() {
         </div>
       </section>
       {/* technology we use */}
-      <section className="bg-[#0b80da] py-12 " data-aos="zoom-in">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="bg-[#0b80da] py-12 ">
+        <div className="max-w-7xl mx-auto px-4" data-aos="zoom-in">
           {/* Title */}
           <div className="text-center mb-10">
-            <h2 className="text-[34px] font-bold text-white">
+            <h2 className="lg:text-[48px] sm:text-3xl md:text-5xl font-bold text-white">
               Technologies We Use
             </h2>
             <p className="text-gray-200 mt-2">
@@ -269,7 +259,7 @@ function MobApp() {
       {/* stages section */}
       <section className="py-12 bg-[#eceff4] ">
         <div className="max-w-6xl mx-auto px-4" data-aos="fade-up">
-          <h2 className="text-2xl md:text-3xl text-[#0B80DA] font-bold text-center mb-10">
+          <h2 className="lg:text-[48px] sm:text-3xl md:text-5xl text-[#0B80DA] font-bold text-center mb-10">
             Our UI/UX Design Process
           </h2>
           {/* Cards */}

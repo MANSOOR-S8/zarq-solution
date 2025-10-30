@@ -17,7 +17,7 @@ function OurProjects() {
     {
       id: 1,
       title: "Spy Camera CCTV",
-      desc: "Ensuring security with high-quality, discreet surveillance solutions for homes and businesses. Stay protected with advanced monitoring technology.",
+      desc: "Ensuring security with high quality, discreet surveillance solutions for homes and businesses. Stay protected with advanced monitoring technology.",
       img: SpyCameraCCTV,
       link: "https://www.spycameracctv.com/",
       type: "web",
@@ -26,7 +26,7 @@ function OurProjects() {
     {
       id: 2,
       title: "Tech Logistics",
-      desc: "Streamlining supply chains with smart, technology-driven logistics solutions for faster, more efficient, and secure deliveries.",
+      desc: "Streamlining supply chains with smart, technology driven logistics solutions for faster, more efficient, and secure deliveries.",
       img: TechLogistics,
       link: "https://www.techlogistics.com/",
       type: "web",
@@ -35,7 +35,7 @@ function OurProjects() {
     {
       id: 3,
       title: "College Bound Movers",
-      desc: "Reliable and stress-free moving services tailored for students, families, and businesses. We make your move smooth, efficient, and hassle-free!",
+      desc: "Reliable and stress free moving services tailored for students, families, and businesses. We make your move smooth, efficient, and hassle free!",
       img: CollegeBoundMovers,
       link: "https://collegeboundmovers.com/",
       type: "web",
@@ -46,7 +46,7 @@ function OurProjects() {
     {
       id: 4,
       title: "Triple J Furniture",
-      desc: "A feature-rich eCommerce platform offering a seamless online shopping experience with intuitive UI/UX, secure payments, and advanced product browsing for premium furniture.",
+      desc: "A feature rich eCommerce platform offering a seamless online shopping experience with intuitive UI/UX, secure payments, and advanced product browsing for premium furniture.",
       img: TripleJFurniture,
       link: "https://triplejfurniture.com.au/",
       type: "mobile",
@@ -55,7 +55,7 @@ function OurProjects() {
     {
       id: 5,
       title: "Mars Translation",
-      desc: "A professional translation platform offering fast, accurate, and industry-specific language solutions to help businesses expand globally with ease",
+      desc: "A professional translation platform offering fast, accurate, and industry specific language solutions to help businesses expand globally with ease",
       img: MarsTranslation,
       link: "https://www.marstranslation.com/",
       type: "mobile",
@@ -88,7 +88,7 @@ function OurProjects() {
   return (
     <section className="bg-gray-50 py-12">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-4xl mb-10 text-center ">
+        <h2 className="text-balance text-3xl font-[500] tracking-tight md:text-4xl lg:text-[48px] mb-10 text-center ">
           <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
             Our Recent Works
           </span>
@@ -130,7 +130,7 @@ function OurProjects() {
             <div
               data-aos={pCard.animation}
               key={pCard.id}
-              className="card bg-white rounded-[8px] shadow-md hover:shadow-xl transition duration-300 overflow-hidden"
+              className="card bg-white rounded-[4px] shadow-sm hover:shadow-xl transition duration-300 overflow-hidden"
             >
               <Link to={pCard.link} target="_blank">
                 <div className="long-img">

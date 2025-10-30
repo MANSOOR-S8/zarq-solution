@@ -23,6 +23,8 @@ import slider3 from "../assets/techSlider/XD.png";
 import slider4 from "../assets/techSlider/Sketch.png";
 import slider5 from "../assets/techSlider/Photoshop.png";
 import slider6 from "../assets/techSlider/invision.png";
+//banner
+import UIUX from "../assets/uiux.webp";
 
 const services = [
   {
@@ -212,27 +214,29 @@ function OurUI() {
 
   return (
     <div>
-      <section>
-        <div className="banner-sec overflow-x-hidden bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <h2 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[47px] text-center   break-words leading-tight max-w-3xl mx-auto hed-text pt-10">
-              Create Stunning, User-Centric Digital Experiences.
-            </h2>
-
-            {/* <h1 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[50px] text-center  font-bold break-words leading-tight max-w-3xl mx-auto hed-text"></h1> */}
-            <p className="text-[15px] sm:text-[14px] md:text-[16px] lg:text-[18px] text-center pt-4 sm:pt-6 break-words leading-relaxed max-w-2xl mx-auto ">
-              We craft intuitive, visually compelling, and high-performance
-              UI/UX solutions that not only elevate user engagement but also
-              strategically drive conversions, helping your business grow
-              through seamless digital experiences.
-            </p>
-          </div>
+      <section
+        className="min-h-[80vh] py-20 flex items-center justify-center bg-cover bg-center bg-no-repeat relative"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,40,0.96), rgba(0,0,13,0.7)), url(${UIUX})`,
+        }}
+      >
+        <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 text-center py-10">
+          <h2
+            ref={textRef}
+            className="text-white text-3xl sm:text-3xl md:text-5xl lg:text-7xl font-bold leading-tight break-words"
+          >
+            Building Powerful User Experiences
+          </h2>
+          <p className="text-white text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px] mt-5 max-w-2xl mx-auto leading-relaxed">
+            Crafting intuitive, stunning UI/UX experiences that captivate users
+            and drive results.
+          </p>
         </div>
       </section>
       {/* our service cards */}
       <section className="bg-[#f0f4f8] py-12 px-4">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-[#0B80DA]  mb-2">
+        <div className="text-center mb-10 max-w-[1400px] mx-auto">
+          <h2 className="text-3xl sm:text-3xl lg:text-[48px] font-bold text-[#0B80DA]  mb-2">
             Our UI/UX Services
           </h2>
           <p className="text-gray-600">
@@ -241,7 +245,7 @@ function OurUI() {
         </div>
 
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto h-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6  max-w-[1400px] mx-auto h-auto"
           data-aos="fade-up"
         >
           {services.map((service) => (
@@ -270,8 +274,8 @@ function OurUI() {
       {/* why choose us */}
       <section>
         <div className="bg-[#f0f4f8]">
-          <div className="text-center pt-7 bg-[#f0f4f8] ">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0B80DA] mb-3">
+          <div className="text-center pt-7 bg-[#f0f4f8] max-w-[1400px] mx-auto ">
+            <h2 className="text-3xl sm:text-3xl md:text-3xl lg:text-[48px] font-bold text-[#0B80DA] mb-3">
               Why Choose Us?
             </h2>
             <p className="text-gray-700 mb-6 text-[16px] ">
@@ -281,7 +285,7 @@ function OurUI() {
           </div>
 
           <div
-            className="bg-white rounded-lg shadow-md p-5 space-y-4"
+            className="bg-white rounded-lg shadow-md p-5 space-y-4 max-w-[1400px] mx-auto"
             data-aos="fade-down"
           >
             {features.map((item, index) => {
@@ -328,10 +332,10 @@ function OurUI() {
       </section>
       {/* technology we use */}
       <section className="bg-[#0b80da] py-12">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-[1400px] mx-auto px-4">
           {/* Title */}
           <div className="text-center mb-10">
-            <h2 className="text-[34px] font-bold text-white">
+            <h2 className="text-3xl sm:text-3xl lg:text-[48px]  font-bold text-white">
               Technologies We Use
             </h2>
             <p className="text-gray-200 mt-2">
@@ -359,8 +363,8 @@ function OurUI() {
 
       {/* stages section */}
       <section className="py-12 bg-[#eceff4] ">
-        <div className="max-w-6xl mx-auto px-4" data-aos="fade-up">
-          <h2 className="text-2xl md:text-3xl text-[#0B80DA] font-bold text-center mb-10">
+        <div className="max-w-[1400px] mx-auto px-4" data-aos="fade-up">
+          <h2 className="sm:text-3xl md:text-4xl lg:text-[48px] text-[#0B80DA] font-bold text-center mb-10">
             Our UI/UX Design Process
           </h2>
           {/* Cards */}
@@ -383,7 +387,7 @@ function OurUI() {
                 </span>
 
                 {/* Content */}
-                <div className="mt-12">
+                <div className="mt-16">
                   <h3 className="text-[20px] font-bold text-[#0B80DA] mb-2">
                     {step.title}
                   </h3>
