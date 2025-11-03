@@ -25,10 +25,10 @@ function Banner() {
       ></div>
 
       {/* Floating Decorative Circles */}
-      <div className="absolute inset-0 ">
+      {/* <div className="absolute inset-0 ">
         <div className="absolute top-10 left-5 sm:top-16 sm:left-16 md:top-24 md:left-24 w-36 h-36 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-cyan-300/20 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-10 right-5 sm:bottom-16 sm:right-16 md:bottom-24 md:right-24 w-44 h-44 sm:w-72 sm:h-72 md:w-[500px] md:h-[500px] bg-blue-300/20 rounded-full blur-3xl animate-float-delayed"></div>
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="relative z-10 text-center flex flex-col items-center justify-center space-y-6 max-w-3xl w-full pt-12">

@@ -35,36 +35,47 @@ function About() {
   ];
 
   return (
-    <div className="">
-      <section
-        className=""
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 50, 0.80), rgba(0, 0, 15, 0.6)), url(${aboutBanner})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="py-18">
-          <div className="max-w-[1400px] mx-auto px-6 text-center p-20">
-            {/* Heading */}
-            <h2 className="text-balance text-white text-4xl lg:text-7xl font-bold tracking-tight md:text-4xl">
-              Welcome to Zarq Solution
-            </h2>
-            <p className="mt-4 text-[#f1f1f1] max-w-2xl mx-auto">
-              Zarq Solution is a tech driven software house specializing in web
-              and mobile solutions, delivering innovative and high quality
-              digital experiences.
-            </p>
-          </div>
+    <div className="bg-[#eceff4]">
+      <section className="relative flex items-center justify-center min-h-[90vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
+        {/* Background Gradient with Image */}
+        <div
+          className="absolute inset-0 py-20"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,40,0.7), rgba(0,0,50,0.7)), url(${aboutBanner})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center flex flex-col items-center justify-center space-y-6 max-w-3xl w-full pt-12">
+          <h1
+            className="font-extrabold text-white leading-tight text-4xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-7xl px-2"
+            data-aos="fade-up"
+          >
+            Welcome to Zarq Solution
+          </h1>
+
+          <p
+            className="text-white max-w-2xl text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed px-4 pb-8"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Zarq Solution is a tech driven software house specializing in web
+            and mobile solutions, delivering innovative and high quality digital
+            experiences.
+          </p>
+
+          {/* Button */}
         </div>
       </section>
       <div
-        className="relative z-10  container mx-auto px-6 "
+        className="relative z-10  max-w-[1400px] mx-auto px-6 "
         data-aos="fade-up"
       >
         {/* Cards */}
-        <div className=" -mt-[100px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className=" -mt-[100px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           {cards.map((card, index) => (
             <div
               key={index}

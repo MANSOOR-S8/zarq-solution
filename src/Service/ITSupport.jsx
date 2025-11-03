@@ -132,20 +132,32 @@ function ITSupport() {
 
   return (
     <div>
-      <section
-        className="min-h-[80vh] flex items-center justify-center bg-cover bg-center bg-no-repeat relative py-20"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,40,0.96), rgba(0,0,13,0.7)), url(${ITBanner})`,
-        }}
-      >
-        <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 text-center py-10">
-          <h2
-            ref={textRef}
-            className="text-white text-3xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-7xl font-bold leading-tight break-words"
+      <section className="relative flex items-center justify-center min-h-[90vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
+        {/* Background Gradient with Image */}
+        <div
+          className="absolute inset-0 py-20"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,40,0.7), rgba(0,0,50,0.7)), url(${ITBanner})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center flex flex-col items-center justify-center space-y-6 max-w-3xl w-full pt-12">
+          <h1
+            className="font-extrabold text-white leading-tight text-4xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-7xl px-2"
+            data-aos="fade-up"
           >
             IT Consultancy & Support
-          </h2>
-          <p className="text-white text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px] mt-5 max-w-2xl mx-auto leading-relaxed">
+          </h1>
+
+          <p
+            className="text-white max-w-2xl text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed px-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             We provide strategic IT consultancy and dependable support services
             designed to help businesses improve operational efficiency,
             strengthen security, and achieve scalable growth.
@@ -153,45 +165,56 @@ function ITSupport() {
         </div>
       </section>
       {/* our service cards */}
-      <section className="bg-[#f0f4f8] py-12 px-4 ">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl lg:text-[48px] md:text-5xl font-bold text-[#0B80DA] mb-2 max-w-[1400px] mx-auto">
-            Our IT Consultancy & Support Services
-          </h2>
-          <p className="text-gray-600">
-            Expert IT Solutions to Enhance Security, Efficiency, and Business
-            Growth.
-          </p>
-        </div>
+      <div className="our-projects">
+        <section className="bg-[#f0f4f8] py-12 px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl lg:text-[48px] font-bold text-[#0B80DA]  mb-2">
+              <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+                Our IT Consultancy & Support Services
+              </span>
+            </h2>
+            <p className="text-gray-600">
+              Expert IT Solutions to Enhance Security, Efficiency, and Business
+              Growth.
+            </p>
+          </div>
 
-        <div
-          className="px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1400px] mx-auto h-auto"
-          data-aos="fade-up"
-        >
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="relative bg-white rounded-lg shadow-md p-6 transition-all duration-300 transform hover:scale-[1.02] group overflow-hidden"
-            >
-              {/* Gradient overlay */}
-              <div className="absolute inset-0  duration-300 rounded-lg z-0" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-16">
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className="bg-[#f9fafb] rounded-xl p-7 hover:shadow-sm transition-all duration-300 group flex flex-col justify-between h-full"
+              >
+                {/* Top Section */}
+                <div>
+                  <div className=" space-x-4 mb-4">
+                    <div className="pb-4 transition-all duration-500 ease-in-out transform group-hover:-translate-y-2 group-hover:opacity-100">
+                      {service.icon}
+                    </div>
 
-              <div className="relative z-10">
-                <div className="bg-gray-100 w-14 h-14 flex items-center justify-center rounded-full mb-4 transition-all duration-300 ">
-                  {service.icon}
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-lg text-[22px] font-[600] text-[#0B80DA]  mb-2 ">
-                  {service.title}
-                </h3>
-                <p className="text-[16px] font-[400] text-gray-600  ">
-                  {service.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
+                {/* <div className="mt-6">
+                  <Link
+                    to={service.link}
+                    className="inline-flex items-center text-[#0B80DA] font-medium hover:underline transition-all"
+                  >
+                    Learn More
+                    <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+                  </Link>
+                </div> */}
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>{" "}
       {/* stages section */}
       <section className="bg-white py-16 mt-12 ">
         <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden lg:px-12">
@@ -246,7 +269,6 @@ function ITSupport() {
           ))}
         </div>
       </section>
-
       <div>
         <Footer />
       </div>

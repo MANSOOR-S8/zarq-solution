@@ -102,14 +102,14 @@ function OurProjects() {
                 key={type}
                 onClick={() => setFilter(type)}
                 className={`px-6 py-2 text-[18px] font-semibold transition duration-300 
-          ${
-            filter === type
-              ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold hover:from-cyan-700 hover:to-blue-700"
-              : "bg-white text-gray-600 border border-gray-300 hover:bg-blue-100"
-          }
-          ${index === 0 ? "rounded-l-md" : ""}
-          ${index === 2 ? "rounded-r-md" : ""}
-        `}
+             ${
+               filter === type
+                 ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold hover:from-cyan-700 hover:to-blue-700"
+                 : "bg-white text-gray-600 border border-gray-300 hover:bg-blue-100"
+             }
+             ${index === 0 ? "rounded-l-md" : ""}
+             ${index === 2 ? "rounded-r-md" : ""}
+           `}
               >
                 {type === "all"
                   ? "All"
@@ -130,18 +130,14 @@ function OurProjects() {
             <div
               data-aos={pCard.animation}
               key={pCard.id}
-              className={
-                styles[
-                  "card bg-white rounded-[4px] shadow-sm hover:shadow-xl transition duration-300 overflow-hidden"
-                ]
-              }
+              className={`${styles.card} bg-white rounded-[4px] shadow-sm hover:shadow-xl transition duration-300 overflow-hidden`}
             >
               <Link to={pCard.link} target="_blank">
                 <div className={styles["long-img"]}>
                   <img
                     src={pCard.img}
                     alt={pCard.title}
-                    className="w-full h-48 object-cover img"
+                    className={`${styles.img} w-full h-48 object-cover`}
                   />
                 </div>
               </Link>
@@ -150,19 +146,21 @@ function OurProjects() {
                   {pCard.title}
                 </h3>
               </div>
-              <div className={styles["pl-5 pb-5 card-content"]}>
-                <p className="text-[16px] font-normal text-gray-600">
-                  {pCard.desc}
-                </p>
-                <div className="mt-6">
-                  <Link
-                    to={pCard.link}
-                    target="_blank"
-                    className="inline-flex items-center text-[#0B80DA] font-medium hover:underline transition-all"
-                  >
-                    Learn More
-                    <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
-                  </Link>
+              <div className={`${styles["card-content"]} pl-5 pb-5`}>
+                <div>
+                  <p className="text-[16px] font-normal text-gray-600">
+                    {pCard.desc}
+                  </p>
+                  <div className="mt-6">
+                    <Link
+                      to={pCard.link}
+                      target="_blank"
+                      className="inline-flex items-center text-[#0B80DA] font-medium hover:underline transition-all"
+                    >
+                      Learn More
+                      <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
