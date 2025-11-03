@@ -87,7 +87,7 @@ function Service() {
   return (
     <section>
       <div
-        className=" overflow-x-hidden bg-white"
+        className=" overflow-x-hidden bg-white py-20"
         style={{
           backgroundImage: `linear-gradient(rgba(1, 1, 40, 0.96), rgba(0, 0, 0, 0.6)), url(${serviceImg})`,
           backgroundSize: "cover",
@@ -95,8 +95,8 @@ function Service() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h1 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[50px] text-center pt-24  font-bold break-words leading-tight max-w-3xl mx-auto hed-text">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+          <h1 className="text-balance text-white text-4xl lg:text-7xl font-bold tracking-tight md:text-4xl max-w-3xl mx-auto ">
             <span className="text-white">
               We provide a wide range of Services
             </span>

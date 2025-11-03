@@ -1,6 +1,6 @@
 import Aos from "aos";
-import "./style.css";
-import { Link } from "react-router";
+import styles from "./projects.module.css";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -147,14 +147,14 @@ function SuccessfulProjects() {
             <div
               data-aos={pCard.animation}
               key={pCard.id}
-              className="card bg-white rounded-[4px] shadow-sm hover:shadow-xl transition duration-300 overflow-hidden"
+              className={`${styles.card} bg-white rounded-[4px] shadow-sm hover:shadow-xl transition duration-300 overflow-hidden`}
             >
               <Link to={pCard.link} target="_blank">
-                <div className="long-img">
+                <div className={styles["long-img"]}>
                   <img
                     src={pCard.img}
                     alt={pCard.title}
-                    className="w-full h-48 object-cover img"
+                    className={`${styles.img} w-full h-48 object-cover`}
                   />
                 </div>
               </Link>
@@ -163,19 +163,21 @@ function SuccessfulProjects() {
                   {pCard.title}
                 </h3>
               </div>
-              <div className="pl-5 pb-5 card-content">
-                <p className="text-[16px] font-normal text-gray-600">
-                  {pCard.desc}
-                </p>
-                <div className="mt-6">
-                  <Link
-                    to={pCard.link}
-                    target="_blank"
-                    className="inline-flex items-center text-[#0B80DA] font-medium hover:underline transition-all"
-                  >
-                    Learn More
-                    <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
-                  </Link>
+              <div className={`${styles["card-content"]} pl-5 pb-5`}>
+                <div>
+                  <p className="text-[16px] font-normal text-gray-600">
+                    {pCard.desc}
+                  </p>
+                  <div className="mt-6">
+                    <Link
+                      to={pCard.link}
+                      target="_blank"
+                      className="inline-flex items-center text-[#0B80DA] font-medium hover:underline transition-all"
+                    >
+                      Learn More
+                      <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

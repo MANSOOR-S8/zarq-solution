@@ -1,5 +1,5 @@
 import "../App.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer/Footer";
 
 import gsap from "gsap";
@@ -80,34 +80,29 @@ const services = [
 //stages cards
 const steps = [
   {
-    number: "01.",
+    id: 1,
     title: "Our IT Consultancy & Support Process",
     desc: "We evaluate your current IT infrastructure, pinpoint challenges, and uncover opportunities for digital transformation.",
   },
   {
-    number: "02.",
+    id: 2,
     title: "Developing a Roadmap for IT Enhancement",
     desc: "Our experts create a customized IT strategy aligned with your business goals, ensuring long-term efficiency and scalability.",
   },
   {
-    number: "03.",
+    id: 3,
     title: "Deploying Tailored IT Solutions",
     desc: "We seamlessly integrate new technologies, software, and systems while minimizing operational disruptions.",
   },
   {
-    number: "04.",
+    id: 4,
     title: "Ensuring Data Protection & Regulatory Compliance",
     desc: "We conduct security audits, implement risk mitigation strategies, and ensure compliance with industry standards like GDPR, HIPAA, and ISO.",
   },
   {
-    number: "05.",
+    id: 5,
     title: "Maintaining System Performance & Reliability",
     desc: " Providing 24/7 IT support, proactive maintenance, and real-time monitoring to prevent issues before they impact business operations.",
-  },
-  {
-    number: "06.",
-    title: "Enhancing IT Efficiency & Preparing for Growth",
-    desc: "We continuously refine your IT infrastructure to improve performance, reduce costs, and ensure your technology adapts to future business needs.",
   },
 ];
 
@@ -115,6 +110,8 @@ const steps = [
 gsap.registerPlugin(SplitText);
 
 function ITSupport() {
+  //stages
+  const [active, setActive] = useState(1);
   const textRef = useRef();
 
   useEffect(() => {
@@ -156,9 +153,9 @@ function ITSupport() {
         </div>
       </section>
       {/* our service cards */}
-      <section className="bg-[#f0f4f8] py-12 px-4 max-w-[1400px] mx-auto">
+      <section className="bg-[#f0f4f8] py-12 px-4 ">
         <div className="text-center mb-10">
-          <h2 className="text-3xl lg:text-[48px] md:text-5xl font-bold text-[#0B80DA]  mb-2">
+          <h2 className="text-3xl lg:text-[48px] md:text-5xl font-bold text-[#0B80DA] mb-2 max-w-[1400px] mx-auto">
             Our IT Consultancy & Support Services
           </h2>
           <p className="text-gray-600">
@@ -168,7 +165,7 @@ function ITSupport() {
         </div>
 
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1400px] mx-auto h-auto"
+          className="px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1400px] mx-auto h-auto"
           data-aos="fade-up"
         >
           {services.map((service) => (
@@ -177,7 +174,7 @@ function ITSupport() {
               className="relative bg-white rounded-lg shadow-md p-6 transition-all duration-300 transform hover:scale-[1.02] group overflow-hidden"
             >
               {/* Gradient overlay */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-[#EF6025] to-[#16A87A] transition-opacity duration-300 rounded-lg z-0" />
+              <div className="absolute inset-0  duration-300 rounded-lg z-0" />
 
               <div className="relative z-10">
                 <div className="bg-gray-100 w-14 h-14 flex items-center justify-center rounded-full mb-4 transition-all duration-300 ">
@@ -196,42 +193,60 @@ function ITSupport() {
       </section>
 
       {/* stages section */}
-      <section className="py-12 bg-[#eceff4] ">
-        <div className="max-w-[1400px] mx-auto px-4">
-          <h2 className="text-3xl md:text-3xl lg:text-[48px] text-[#0B80DA] font-bold text-center mb-10">
-            Our IT Consultancy & Support Process
-          </h2>
-          {/* Cards */}
-          <div className="grid md:grid-cols-3 " data-aos="fade-left">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className="bg-white border-1 border-gray-300  p-12 relative"
+      <section className="bg-white py-16 mt-12 ">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden lg:px-12">
+          {steps.map((step) => (
+            <div
+              key={step.id}
+              onMouseEnter={() => setActive(step.id)}
+              onMouseLeave={() => setActive(1)}
+              className={`group relative cursor-pointer flex flex-col justify-between items-start p-8 border-r overflow-hidden border-gray-200 
+              transition-all duration-500 ease-in-out min-h-[220px]
+              ${
+                active === step.id
+                  ? "lg:flex-[2.5] bg-gray-50"
+                  : "lg:flex-[1] bg-white"
+              }
+            `}
+              // style={{ transitionProperty: "flex-grow, background-color, color" }}
+            >
+              {/* Step number */}
+              <h1
+                className={`block text-4xl md:text-5xl font-extrabold  transition-all duration-500 ease-in-out ${
+                  active === step.id ? "text-blue-500" : "text-gray-400"
+                }`}
               >
-                <span
-                  className=" absolute top-0 left-2"
-                  style={{
-                    fontSize: "90px",
-                    fontWeight: 800,
-                    color: "#f2f4f8",
-                    fontFamily: "Poppins, sans-serif",
-                  }}
-                >
-                  {step.number}
-                </span>
+                0{step.id}
+              </h1>
 
-                {/* Content */}
-                <div className="mt-16">
-                  <h3 className="text-[20px] font-bold text-[#0B80DA] mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 text-[18px] ">{step.desc}</p>
-                </div>
+              {/* Text */}
+              <div
+                className={`absolute -bottom-1 left-6 right-6  text-black transition-all duration-500 
+                  ${active === step.id ? "lg:opacity-100" : "opacity-0"} 
+                  opacity-100`}
+              >
+                <h2
+                  className={`text-lg sm:text-xl font-semibold  ${
+                    active === step.id ? "text-gray-900" : "text-gray-700"
+                  }`}
+                >
+                  {step.title}
+                </h2>
+                <p
+                  className={`text-sm sm:text-base mt-2 overflow-y-hidden text-gray-600 leading-snug transition-all duration-500 ${
+                    active === step.id
+                      ? "opacity-100 max-h-40"
+                      : "opacity-0 max-h-0"
+                  } overflow-hidden`}
+                >
+                  {step.desc}
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
+
       <div>
         <Footer />
       </div>

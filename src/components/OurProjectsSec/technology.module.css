@@ -1,0 +1,99 @@
+/* for projects  card container */
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+}
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+/* Image wrapper  */
+.long-img {
+  position: relative;
+  height: 270px;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  transform: translateY(0);
+  transition: transform 7s ease-in-out;
+}
+
+.img:hover {
+  transform: translateY(-90%);
+  cursor: pointer;
+}
+
+/*======= technology cards css =============*/
+
+.techCard-container {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+.techCard-container-two {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  background-color: #ffffff;
+  padding-top: 20px;
+}
+
+.techCard-track {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+/* Image styles */
+.techCard-img {
+  cursor: pointer;
+  padding-top: 12px;
+  width: 160px;
+  max-height: 90px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  padding-bottom: 12px;
+}
+
+/* Smooth continuous scroll - LEFT to RIGHT */
+.scroll-left {
+  animation: scroll-left 60s linear infinite;
+}
+
+/* Smooth continuous scroll - RIGHT to LEFT */
+.scroll-right {
+  animation: scroll-right 60s linear infinite;
+}
+
+/* Keyframes: left → right */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Keyframes: right → left */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

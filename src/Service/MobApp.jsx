@@ -1,5 +1,6 @@
-import "../App.css";
-import { useEffect } from "react";
+import styles from "./css/services.module.css";
+import { useEffect, useState } from "react";
+
 import Footer from "../components/Footer/Footer";
 //animation
 import gsap from "gsap";
@@ -118,34 +119,29 @@ const technologies = [
 //ui ux cards
 const steps = [
   {
-    number: "01.",
+    id: 1,
     title: "Discovery & Planning",
     desc: "We analyze business goals, user needs, and market trends to define a solid app strategy.",
   },
   {
-    number: "02.",
+    id: 2,
     title: "UI/UX Design",
-    desc: "Creating user-friendly designs with wireframes, prototypes, and intuitive interfaces for a seamless experience.",
+    desc: "Creating user-friendly and visually appealing interfaces for seamless interactions.",
   },
   {
-    number: "03.",
+    id: 3,
     title: "App Development",
     desc: "Coding the app using the latest technologies, ensuring high performance and scalability.",
   },
   {
-    number: "04.",
+    id: 4,
     title: "Testing & Quality Assurance",
-    desc: "Performing rigorous testing for functionality, security, and usability to deliver a bug-free app.",
+    desc: "Performing rigorous testing for functionality, security, and usability to deliver a bug free app.",
   },
   {
-    number: "05.",
+    id: 5,
     title: "Deployment & Launch",
-    desc: " Publishing the app on App Store & Google Play, ensuring compliance and a smooth release.",
-  },
-  {
-    number: "06.",
-    title: "Post-Launch Support & Maintenance",
-    desc: "Providing regular updates, bug fixes, and performance enhancements to keep the app running smoothly.",
+    desc: "Publishing the app on App Store & Google Play, ensuring compliance and a smooth release.",
   },
 ];
 
@@ -160,11 +156,17 @@ function MobApp() {
     });
   }, []);
 
+  //tech cards
+  const firstRow = technologies.slice(0, 12);
+
+  // stages
+  const [active, setActive] = useState(1);
+
   return (
     <div>
       <section>
         <div
-          className=" overflow-x-hidden bg-white justify-center min-h-[80vh] w-full  py-10"
+          className=" overflow-x-hidden bg-white justify-center min-h-[80vh] w-full  py-0"
           style={{
             backgroundImage: `linear-gradient(rgba(0,0,40,0.96), rgba(0,0,50,0.7)), url(${mobApp})`,
             backgroundSize: "cover",
@@ -172,17 +174,17 @@ function MobApp() {
             backgroundRepeat: "no-repeat",
           }}
         >
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 pt-24">
-            <h2 className=" text-balance text-4xl lg:text-7xl text-center font-bold tracking-wide md:text-4xl text-white">
-              Build Fast, Seamless Mobile Apps
-            </h2>
-
-            {/* <h1 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[50px] text-center  font-bold break-words leading-tight max-w-3xl mx-auto hed-text"></h1> */}
-            <p className="text-white text-[15px] sm:text-[14px] md:text-[16px] lg:text-[18px] text-center pt-4 sm:pt-6 break-words leading-relaxed max-w-2xl mx-auto ">
-              We specialize in designing and developing custom mobile
-              applications that offer seamless user experiences, high
-              performance, and robust functionality.
-            </p>
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10 text-center">
+            <div className=" pt-20">
+              <h2 className="text-4xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-7xl font-[800] text-white leading-tight max-w-5xl mx-auto">
+                Build Fast, Seamless Mobile Apps
+              </h2>
+              <p className="text-[15px] sm:text-[16px] md:text-[18px] text-gray-200 mt-6 max-w-2xl mx-auto leading-relaxed">
+                We specialize in designing and developing custom mobile
+                applications that offer seamless user experiences, high
+                performance, and robust functionality.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -208,7 +210,7 @@ function MobApp() {
               className="relative bg-white rounded-lg shadow-md p-6 transition-all duration-300 transform hover:scale-[1.02] group overflow-hidden"
             >
               {/* Gradient overlay */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-[#EF6025] to-[#16A87A] transition-opacity duration-300 rounded-lg z-0" />
+              <div className="absolute inset-0  transition-opacity duration-300 rounded-lg z-0" />
 
               <div className="relative z-10">
                 <div className="bg-gray-100 w-14 h-14 flex items-center justify-center rounded-full mb-4 transition-all duration-300 ">
@@ -226,73 +228,94 @@ function MobApp() {
         </div>
       </section>
       {/* technology we use */}
-      <section className="bg-[#0b80da] py-12 ">
-        <div className="max-w-7xl mx-auto px-4" data-aos="zoom-in">
+      <section className="bg-[#fff] py-6 ">
+        <div className=" mx-auto px-4">
           {/* Title */}
-          <div className="text-center mb-10">
-            <h2 className="lg:text-[48px] sm:text-3xl md:text-5xl font-bold text-white">
-              Technologies We Use
+          <div className="text-center mb-12">
+            <h2 className="text-balance lg:text-[48px] font-[500] tracking-tight md:text-4xl">
+              <span className=" bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+                Technologies We Use
+              </span>
             </h2>
-            <p className="text-gray-200 mt-2">
+            <p className="text-[#000] mt-2 text-lg">
               Powering Your Software with the Latest Tech
             </p>
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            {technologies.map((tech) => (
-              <div
-                key={tech.id}
-                className="bg-white rounded-md shadow hover:shadow-lg transition p-6 flex items-center justify-center"
-              >
-                <img
-                  src={tech.img}
-                  alt="Technology"
-                  className="h-20 object-contain"
-                />
-              </div>
-            ))}
+          <div className={styles["techCard-container"]}>
+            <div
+              className={`${styles["techCard-track"]} ${styles["scroll-left"]}`}
+            >
+              {[...firstRow, ...firstRow].map((item, index) => {
+                return (
+                  <img
+                    key={`row1-${item.id}-${index}`}
+                    src={item.img}
+                    alt=""
+                    className={`${styles["techCard-img"]} filter grayscale hover:grayscale-0`}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
       {/* stages section */}
-      <section className="py-12 bg-[#eceff4] ">
-        <div className="max-w-6xl mx-auto px-4" data-aos="fade-up">
-          <h2 className="lg:text-[48px] sm:text-3xl md:text-5xl text-[#0B80DA] font-bold text-center mb-10">
-            Our UI/UX Design Process
-          </h2>
-          {/* Cards */}
-          <div className="grid md:grid-cols-3 ">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className="bg-white border-1 border-gray-300  p-12 relative"
+      <section className="bg-white py-16 mt-12 ">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden lg:px-12">
+          {steps.map((step) => (
+            <div
+              key={step.id}
+              onMouseEnter={() => setActive(step.id)}
+              onMouseLeave={() => setActive(1)}
+              className={`group relative cursor-pointer flex flex-col justify-between items-start p-8 border-r overflow-hidden border-gray-200 
+              transition-all duration-500 ease-in-out min-h-[220px]
+              ${
+                active === step.id
+                  ? "lg:flex-[2.5] bg-gray-50"
+                  : "lg:flex-[1] bg-white"
+              }
+            `}
+              // style={{ transitionProperty: "flex-grow, background-color, color" }}
+            >
+              {/* Step number */}
+              <h1
+                className={`block text-4xl md:text-5xl font-extrabold  transition-all duration-500 ease-in-out ${
+                  active === step.id ? "text-blue-500" : "text-gray-400"
+                }`}
               >
-                <span
-                  className=" absolute top-0 left-2"
-                  style={{
-                    fontSize: "90px",
-                    fontWeight: 800,
-                    color: "#f2f4f8",
-                    fontFamily: "Poppins, sans-serif",
-                  }}
-                >
-                  {step.number}
-                </span>
+                0{step.id}
+              </h1>
 
-                {/* Content */}
-                <div className="mt-12">
-                  <h3 className="text-[20px] font-bold text-[#0B80DA] mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 text-[18px] ">{step.desc}</p>
-                </div>
+              {/* Text */}
+              <div
+                className={`absolute bottom-6 left-6 right-6 text-black transition-all duration-500 
+                  ${active === step.id ? "lg:opacity-100" : "opacity-0"} 
+                  opacity-100`}
+              >
+                <h2
+                  className={`text-lg sm:text-xl font-semibold  ${
+                    active === step.id ? "text-gray-900" : "text-gray-700"
+                  }`}
+                >
+                  {step.title}
+                </h2>
+                <p
+                  className={`text-sm sm:text-base mt-2 overflow-y-hidden text-gray-600 leading-snug transition-all duration-500 ${
+                    active === step.id
+                      ? "opacity-100 max-h-40"
+                      : "opacity-0 max-h-0"
+                  } overflow-hidden`}
+                >
+                  {step.desc}
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
+
       <div>
         <Footer />
       </div>

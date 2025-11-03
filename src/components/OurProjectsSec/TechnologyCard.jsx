@@ -1,5 +1,5 @@
 import React from "react";
-import "./Style.css";
+import styles from "./technology.module.css";
 
 //images
 import slider1 from "../../assets/techSlider/React2.png";
@@ -160,29 +160,33 @@ function TechnologyCard() {
           ))}
         </div> */}
 
-        <div className="techCard-container">
-          <div className=" techCard-track scroll-left">
+        <div className={styles["techCard-container"]}>
+          <div
+            className={`${styles["techCard-track"]} ${styles["scroll-left"]}`}
+          >
             {[...firstRow, ...firstRow].map((item, index) => {
               return (
                 <img
                   key={`row1-${item.id}-${index}`}
                   src={item.img}
                   alt=""
-                  className="techCard-img filter grayscale hover:grayscale-0"
+                  className={`${styles["techCard-img"]} filter grayscale hover:grayscale-0`}
                 />
               );
             })}
           </div>
         </div>
-        <div className="techCard-container-two">
-          <div className="techCard-track scroll-right">
+        <div className={styles["techCard-container-two"]}>
+          <div
+            className={`${styles["techCard-track"]} ${styles["scroll-right"]}`}
+          >
             {[...secondRow, ...secondRow].map((item, index) => {
               return (
                 <img
                   key={`row2-${item.id}-${index}`}
                   src={item.img}
                   alt=""
-                  className="techCard-img filter grayscale hover:grayscale-0"
+                  className={`${styles["techCard-img"]} filter grayscale hover:grayscale-0`}
                 />
               );
             })}

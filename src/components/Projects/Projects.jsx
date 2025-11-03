@@ -15,11 +15,11 @@ function Projects() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="container text-center mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h1 className="text-white text-[26px] sm:text-[32px] md:text-[40px] lg:text-[50px] text-center pt-24  font-bold break-words leading-tight max-w-3xl mx-auto hed-text">
+        <div className="container text-center mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <h1 className="text-white text-[26px] sm:text-[32px] md:text-[40px] lg:text-[50px] text-center pt-24  font-bold break-words leading-tight max-w-3xl mx-auto ">
             Our Work & Success
           </h1>
-          <p className="text-left text-white text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px]  pt-4 sm:pt-6 break-words leading-relaxed max-w-2xl mx-auto ">
+          <p className="text-center text-white text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px]  pt-4 sm:pt-6 break-words leading-relaxed max-w-2xl mx-auto ">
             Zarq Solution transforms visionary ideas into powerful digital
             realities. From web and mobile apps to enterprise software, we craft
             solutions that inspire innovation, drive growth, and deliver

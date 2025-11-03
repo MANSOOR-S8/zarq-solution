@@ -88,7 +88,7 @@ function OurServices() {
 
   return (
     <section className="bg-white" data-aos="fade-up">
-      <div className="max-w-[1400px] mx-auto px-6 ">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-balance text-3xl sm:text-3xl lg:text-[48px] font-[500] tracking-tight  md:text-4xl">

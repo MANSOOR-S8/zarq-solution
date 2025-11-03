@@ -12,7 +12,7 @@ function Banner() {
   }, []);
 
   return (
-    <section className="relative flex items-center justify-center min-h-[100vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
+    <section className="relative flex items-center justify-center min-h-[90vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
       {/* Background Gradient with Image */}
       <div
         className="absolute inset-0 py-20"
@@ -31,9 +31,9 @@ function Banner() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center flex flex-col items-center justify-center space-y-6 max-w-3xl w-full pt-14">
+      <div className="relative z-10 text-center flex flex-col items-center justify-center space-y-6 max-w-3xl w-full pt-12">
         <h1
-          className="font-extrabold text-white leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-7xl px-2"
+          className="font-extrabold text-white leading-tight text-4xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-7xl px-2"
           data-aos="fade-up"
         >
           We Build What Your Business Deserves

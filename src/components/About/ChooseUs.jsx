@@ -40,7 +40,7 @@ const features = [
 
 function ChooseUs() {
   //
-  const [activeIndex, setActiveIndex] = useState(0); // <-- Yahan change kiya
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleItem = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -49,7 +49,7 @@ function ChooseUs() {
   return (
     <section className="bg-[#eceff4] py-12 px-6">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        {/* Image Section */}
+        {/* right side image Section */}
         <div data-aos="fade-right">
           <img
             src={sideImg}
@@ -66,7 +66,7 @@ function ChooseUs() {
             </span>
           </h2>
           <p className="text-gray-700 mb-6 text-[16px]">
-            Innovative solutions, expert team, and seamless technology — Zarq
+            Innovative solutions, expert team, and seamless technology Zarq
             Solution delivers excellence for your success.
           </p>
 
@@ -102,7 +102,7 @@ function ChooseUs() {
                     </div>
                   </div>
 
-                  {/*SMOOTH TRANSITION WALA PART */}
+                  {/*SMOOTH TRANSITION PART */}
                   <div
                     className={`overflow-hidden transition delay-1000 duration-500 ease-in-out ${
                       isOpen ? "max-h-[999px] mt-3" : "max-h-0"

@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import "./Style.css";
+import styles from "./technology.module.css";
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
@@ -130,10 +130,14 @@ function OurProjects() {
             <div
               data-aos={pCard.animation}
               key={pCard.id}
-              className="card bg-white rounded-[4px] shadow-sm hover:shadow-xl transition duration-300 overflow-hidden"
+              className={
+                styles[
+                  "card bg-white rounded-[4px] shadow-sm hover:shadow-xl transition duration-300 overflow-hidden"
+                ]
+              }
             >
               <Link to={pCard.link} target="_blank">
-                <div className="long-img">
+                <div className={styles["long-img"]}>
                   <img
                     src={pCard.img}
                     alt={pCard.title}
@@ -146,7 +150,7 @@ function OurProjects() {
                   {pCard.title}
                 </h3>
               </div>
-              <div className="pl-5 pb-5 card-content">
+              <div className={styles["pl-5 pb-5 card-content"]}>
                 <p className="text-[16px] font-normal text-gray-600">
                   {pCard.desc}
                 </p>

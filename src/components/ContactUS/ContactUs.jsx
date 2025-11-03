@@ -114,7 +114,7 @@ function ContactUs() {
             <div className="border border-gray-200 rounded-lg p-6 text-center bg-white">
               <div className="flex justify-center mb-2">
                 <a
-                  href="https://www.google.com/maps/place/Zarq+Solution/"
+                  href="https://www.google.com/maps/place/Zarq+Solution/@34.0101342,71.7842008,17z/data=!4m14!1m7!3m6!1s0x38d92fded2314691:0xfb10cfd2a2ed7f61!2sZarq+Solution!8m2!3d34.0101298!4d71.7867757!16s%2Fg%2F11wc2w2h3x!3m5!1s0x38d92fded2314691:0xfb10cfd2a2ed7f61!8m2!3d34.0101298!4d71.7867757!16s%2Fg%2F11wc2w2h3x?entry=ttu&g_ep=EgoyMDI1MTAyOS4yIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

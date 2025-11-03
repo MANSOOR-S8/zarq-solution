@@ -1,4 +1,4 @@
-import "../App.css";
+import styles from "./css/services.module.css";
 import { useEffect, useRef } from "react";
 import Footer from "../components/Footer/Footer";
 
@@ -133,6 +133,8 @@ const technologies = [
 gsap.registerPlugin(SplitText);
 
 function DigitalMarket() {
+  const firstRow = technologies.slice(0, 6);
+  const secondRow = technologies.slice(6, 12);
   const textRef = useRef();
 
   useEffect(() => {
@@ -162,7 +164,7 @@ function DigitalMarket() {
         <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 text-center mt-12 p-12">
           <h2
             ref={textRef}
-            className="text-white text-[26px] sm:text-[32px] md:text-5xl lg:text-6xl font-bold leading-tight break-words"
+            className="text-4xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-7xl font-[800] text-white leading-tight max-w-1xl mx-auto"
           >
             Boost Your Online Presence & Drive More Traffic
           </h2>
@@ -193,7 +195,7 @@ function DigitalMarket() {
               className="relative bg-white rounded-lg shadow-md p-6 transition-all duration-300 transform hover:scale-[1.02] group overflow-hidden"
             >
               {/* Gradient overlay */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-[#EF6025] to-[#16A87A] transition-opacity duration-300 rounded-lg z-0" />
+              <div className="absolute inset-0  duration-300 rounded-lg z-0" />
 
               <div className="relative z-10">
                 <div className="bg-gray-100 w-14 h-14 flex items-center justify-center rounded-full mb-4 transition-all duration-300 ">
@@ -211,37 +213,54 @@ function DigitalMarket() {
         </div>
       </section>
       {/* technology we use */}
-      <section className="bg-[#0b80da] py-12 border border-b-1 border-white">
-        <div className="max-w-[1400px] mx-auto px-4">
+      <section className="bg-[#fff] py-16">
+        <div className=" mx-auto px-4">
           {/* Title */}
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-3xl lg:text-[48px] font-bold text-white">
-              Technologies We Use
+          <div className="text-center mb-12">
+            <h2 className="text-balance lg:text-[48px] font-[500] tracking-tight md:text-4xl">
+              <span className=" bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+                Technologies We Use
+              </span>
             </h2>
-            <p className="text-gray-200 mt-2">
+            <p className="text-[#000] mt-2 text-lg">
               Powering Your Software with the Latest Tech
             </p>
           </div>
 
-          {/* Grid */}
-          <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 ">
-            {technologies.map((tech) => (
-              <div
-                key={tech.id}
-                className="bg-white rounded-md shadow hover:shadow-lg transition p-6 flex items-center justify-center"
-              >
-                <img
-                  src={tech.img}
-                  alt="Technology"
-                  className="h-20 object-contain"
-                />
-              </div>
-            ))}
+          <div className={styles["techCard-container"]}>
+            <div
+              className={`${styles["techCard-track"]} ${styles["scroll-left"]}`}
+            >
+              {[...firstRow, ...firstRow].map((item, index) => {
+                return (
+                  <img
+                    key={`row1-${item.id}-${index}`}
+                    src={item.img}
+                    alt=""
+                    className={`${styles["techCard-img"]} filter grayscale hover:grayscale-0`}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <div className={styles["techCard-container-two"]}>
+            <div
+              className={`${styles["techCard-track"]} ${styles["scroll-right"]} `}
+            >
+              {[...secondRow, ...secondRow].map((item, index) => {
+                return (
+                  <img
+                    key={`row2-${item.id}-${index}`}
+                    src={item.img}
+                    alt=""
+                    className={` ${styles["techCard-img"]}  filter grayscale hover:grayscale-0`}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
-
-      {/* stages section */}
 
       <div>
         <Footer />

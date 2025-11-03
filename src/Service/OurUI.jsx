@@ -1,6 +1,6 @@
-import "../App.css";
-import { useEffect, useRef } from "react";
-import { useState } from "react";
+import styles from "./css/services.module.css";
+import { useEffect, useRef, useState } from "react";
+
 import Footer from "../components/Footer/Footer";
 
 import gsap from "gsap";
@@ -152,34 +152,29 @@ const technologies = [
 //ui ux cards
 const steps = [
   {
-    number: "01.",
+    id: 1,
     title: "Discovery & Research",
     desc: "We begin by conducting thorough research to understand your target audience, industry trends, and business objectives. This helps us create a design strategy that aligns with your brand and user expectations.",
   },
   {
-    number: "02.",
+    id: 2,
     title: "Wireframing & Prototyping",
     desc: "Before diving into design, we create wireframes and interactive prototypes to map out user flows, ensuring a seamless and engaging navigation experience.",
   },
   {
-    number: "03.",
+    id: 3,
     title: "Visual Design & Branding",
     desc: "We craft visually appealing designs that enhance brand identity, using the right color schemes, typography, and interactive elements to create a compelling user interface.",
   },
   {
-    number: "04.",
+    id: 4,
     title: "User Testing & Refinement",
     desc: "Through usability testing and real user feedback, we identify pain points, refine the design, and optimize interactions to enhance overall user experience.",
   },
   {
-    number: "05.",
+    id: 5,
     title: "Development Handoff",
     desc: "Once the design is finalized, we provide developers with pixel-perfect UI assets, design specifications, and style guides to ensure a smooth development process.",
-  },
-  {
-    number: "06.",
-    title: "Support & Optimization",
-    desc: "Providing regular updates, improvements, and reliable technical support.",
   },
 ];
 
@@ -205,6 +200,11 @@ function OurUI() {
     };
   }, []);
 
+  //tech cards
+  const firstRow = technologies.slice(0, 12);
+  //stages
+  const [active, setActive] = useState(1);
+
   // why choose us
   const [activeIndex, setActiveIndex] = useState(null); // null means none is open
 
@@ -220,10 +220,10 @@ function OurUI() {
           backgroundImage: `linear-gradient(rgba(0,0,40,0.96), rgba(0,0,13,0.7)), url(${UIUX})`,
         }}
       >
-        <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 text-center py-10">
+        <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 text-center py-14">
           <h2
             ref={textRef}
-            className="text-white text-3xl sm:text-3xl md:text-5xl lg:text-7xl font-bold leading-tight break-words"
+            className="max-w-2xl mx-auto font-extrabold text-white leading-tight text-4xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-7xl px-2"
           >
             Building Powerful User Experiences
           </h2>
@@ -234,7 +234,7 @@ function OurUI() {
         </div>
       </section>
       {/* our service cards */}
-      <section className="bg-[#f0f4f8] py-12 px-4">
+      <section className="bg-[#f0f4f8] py-12 px-4 max-w-[1400px] w-full mx-auto">
         <div className="text-center mb-10 max-w-[1400px] mx-auto">
           <h2 className="text-3xl sm:text-3xl lg:text-[48px] font-bold text-[#0B80DA]  mb-2">
             Our UI/UX Services
@@ -254,7 +254,7 @@ function OurUI() {
               className="relative bg-white rounded-lg shadow-md p-6 transition-all duration-300 transform hover:scale-[1.02] group overflow-hidden"
             >
               {/* Gradient overlay */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-[#EF6025] to-[#16A87A] transition-opacity duration-300 rounded-lg z-0" />
+              <div className="absolute inset-0  duration-300 rounded-lg z-0" />
 
               <div className="relative z-10">
                 <div className="bg-gray-100 w-14 h-14 flex items-center justify-center rounded-full mb-4 transition-all duration-300 ">
@@ -279,7 +279,7 @@ function OurUI() {
               Why Choose Us?
             </h2>
             <p className="text-gray-700 mb-6 text-[16px] ">
-              Innovative solutions, expert team, and seamless technology — Zarq
+              Innovative solutions, expert team, and seamless technology Zarq
               Solution delivers excellence for your success.
             </p>
           </div>
@@ -331,73 +331,94 @@ function OurUI() {
         </div>
       </section>
       {/* technology we use */}
-      <section className="bg-[#0b80da] py-12">
-        <div className="max-w-[1400px] mx-auto px-4">
+      <section className="bg-[#fff] py-6 ">
+        <div className=" mx-auto px-4">
           {/* Title */}
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-3xl lg:text-[48px]  font-bold text-white">
-              Technologies We Use
+          <div className="text-center mb-12">
+            <h2 className="text-balance lg:text-[48px] font-[500] tracking-tight md:text-4xl">
+              <span className=" bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+                Technologies We Use
+              </span>
             </h2>
-            <p className="text-gray-200 mt-2">
+            <p className="text-[#000] mt-2 text-lg">
               Powering Your Software with the Latest Tech
             </p>
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            {technologies.map((tech) => (
-              <div
-                key={tech.id}
-                className="bg-white rounded-md shadow hover:shadow-lg transition p-6 flex items-center justify-center"
-              >
-                <img
-                  src={tech.img}
-                  alt="Technology"
-                  className="h-20 object-contain"
-                />
-              </div>
-            ))}
+          <div className={styles["techCard-container"]}>
+            <div
+              className={`${styles["techCard-track"]} ${styles["scroll-left"]}`}
+            >
+              {[...firstRow, ...firstRow].map((item, index) => {
+                return (
+                  <img
+                    key={`row1-${item.id}-${index}`}
+                    src={item.img}
+                    alt=""
+                    className={`${styles["techCard-img"]} filter grayscale hover:grayscale-0`}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
       {/* stages section */}
-      <section className="py-12 bg-[#eceff4] ">
-        <div className="max-w-[1400px] mx-auto px-4" data-aos="fade-up">
-          <h2 className="sm:text-3xl md:text-4xl lg:text-[48px] text-[#0B80DA] font-bold text-center mb-10">
-            Our UI/UX Design Process
-          </h2>
-          {/* Cards */}
-          <div className="grid md:grid-cols-3 ">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className="bg-white border-1 border-gray-300  p-12 relative"
+      <section className="bg-white py-16 mt-12 ">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden lg:px-12">
+          {steps.map((step) => (
+            <div
+              key={step.id}
+              onMouseEnter={() => setActive(step.id)}
+              onMouseLeave={() => setActive(1)}
+              className={`group relative cursor-pointer flex flex-col justify-between items-start p-8 border-r overflow-hidden border-gray-200 
+              transition-all duration-500 ease-in-out min-h-[220px]
+              ${
+                active === step.id
+                  ? "lg:flex-[2.5] bg-gray-50"
+                  : "lg:flex-[1] bg-white"
+              }
+            `}
+              // style={{ transitionProperty: "flex-grow, background-color, color" }}
+            >
+              {/* Step number */}
+              <h1
+                className={`block text-4xl md:text-5xl font-extrabold  transition-all duration-500 ease-in-out ${
+                  active === step.id ? "text-blue-500" : "text-gray-400"
+                }`}
               >
-                <span
-                  className=" absolute top-0 left-2"
-                  style={{
-                    fontSize: "90px",
-                    fontWeight: 800,
-                    color: "#f2f4f8",
-                    fontFamily: "Poppins, sans-serif",
-                  }}
-                >
-                  {step.number}
-                </span>
+                0{step.id}
+              </h1>
 
-                {/* Content */}
-                <div className="mt-16">
-                  <h3 className="text-[20px] font-bold text-[#0B80DA] mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 text-[16px] ">{step.desc}</p>
-                </div>
+              {/* Text */}
+              <div
+                className={`absolute bottom-6 left-6 right-6 text-black transition-all duration-500 
+                  ${active === step.id ? "lg:opacity-100" : "opacity-0"} 
+                  opacity-100`}
+              >
+                <h2
+                  className={`text-lg sm:text-xl font-semibold  ${
+                    active === step.id ? "text-gray-900" : "text-gray-700"
+                  }`}
+                >
+                  {step.title}
+                </h2>
+                <p
+                  className={`text-sm sm:text-base mt-2 overflow-y-hidden text-gray-600 leading-snug transition-all duration-500 ${
+                    active === step.id
+                      ? "opacity-100 max-h-40"
+                      : "opacity-0 max-h-0"
+                  } overflow-hidden`}
+                >
+                  {step.desc}
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
+
       <div>
         <Footer />
       </div>

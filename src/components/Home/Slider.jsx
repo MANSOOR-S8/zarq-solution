@@ -1,4 +1,4 @@
-import "./slider.css";
+import styles from "./slider.module.css";
 import slider1 from "../../assets/slider/slider1.png";
 import slider2 from "../../assets/slider/slider2.jpg";
 import slider3 from "../../assets/slider/slider3.jpg";
@@ -54,14 +54,14 @@ function Slider() {
 
   return (
     <div className=" mx-auto ">
-      <div className="slider-container">
-        <div className="slider-track">
+      <div className={styles["slider-container"]}>
+        <div className={styles["slider-track"]}>
           {images.map((item, index) => (
             <img
               key={`${item.id}-${index}`}
               src={item.img}
               alt={`slide-${item.id}`}
-              className="slider-img"
+              className={styles["slider-img"]}
             />
           ))}
         </div>

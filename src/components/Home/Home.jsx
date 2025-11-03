@@ -14,7 +14,7 @@ import Review from "../Review/Review";
 //icon
 import { IoLogoWhatsapp } from "react-icons/io";
 //test
-import Test from "./Test";
+// import Test from "./Test";
 
 function Home() {
   // const service = "Web Development";

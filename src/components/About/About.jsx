@@ -12,13 +12,13 @@ function About() {
       id: 1,
       title: "Who Are We",
       content:
-        "At Zarq Solution, our mission is to innovate and deliver top-tier software solutions that empower businesses with cutting-edge technology and seamless user experiences.",
+        "At Zarq Solution, our mission is to innovate and deliver top tier software solutions that empower businesses with cutting edge technology and seamless user experiences.",
     },
     {
       id: 2,
       title: "Our Mission",
       content:
-        "We are a team of passionate developers, designers, and tech experts dedicated to building smart, scalable, and high-performance digital solutions for businesses worldwide.",
+        "We are a team of passionate developers, designers, and tech experts dedicated to building smart, scalable, and high performance digital solutions for businesses worldwide.",
     },
     {
       id: 3,
@@ -39,21 +39,21 @@ function About() {
       <section
         className=""
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 50, 0.6), rgba(0, 0, 15, 0.6)), url(${aboutBanner})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 50, 0.80), rgba(0, 0, 15, 0.6)), url(${aboutBanner})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
         <div className="py-18">
-          <div className="container mx-auto px-6 text-center p-20">
+          <div className="max-w-[1400px] mx-auto px-6 text-center p-20">
             {/* Heading */}
-            <h2 className="text-balance text-4xl lg:text-7xl font-bold tracking-tight md:text-4xl">
-              <span className="text-white">Welcome to Zarq Solution</span>
+            <h2 className="text-balance text-white text-4xl lg:text-7xl font-bold tracking-tight md:text-4xl">
+              Welcome to Zarq Solution
             </h2>
             <p className="mt-4 text-[#f1f1f1] max-w-2xl mx-auto">
-              Zarq Solution is a tech-driven software house specializing in web
-              and mobile solutions, delivering innovative and high-quality
+              Zarq Solution is a tech driven software house specializing in web
+              and mobile solutions, delivering innovative and high quality
               digital experiences.
             </p>
           </div>

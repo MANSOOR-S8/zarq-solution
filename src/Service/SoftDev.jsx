@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
-import "../App.css";
+import styles from "./css/softdev.module.css";
 import Footer from "../components/Footer/Footer";
 
 //icons
@@ -72,40 +73,37 @@ const technologies = [
 // stages
 const steps = [
   {
-    number: "01.",
+    id: 1,
     title: "Requirement Analysis",
     desc: "Identifying business needs, goals, and challenges to build the right solution.",
   },
   {
-    number: "02.",
+    id: 2,
     title: "UI/UX Design",
     desc: "Creating user-friendly and visually appealing interfaces for seamless interactions.",
   },
   {
-    number: "03.",
+    id: 3,
     title: "Development & Coding",
     desc: "Building scalable, high-performance software using modern technologies.",
   },
   {
-    number: "04.",
+    id: 4,
     title: "Testing & Quality Assurance",
     desc: "Ensuring reliability, security, and bug-free performance with thorough testing.",
   },
   {
-    number: "05.",
+    id: 5,
     title: "Deployment & Integration",
     desc: "Launching and integrating software smoothly with minimal business disruption.",
-  },
-  {
-    number: "06.",
-    title: "Ongoing Support & Maintenance",
-    desc: "Providing regular updates, improvements, and reliable technical support.",
   },
 ];
 
 gsap.registerPlugin(SplitText);
 
 function SoftDev() {
+  // stages
+  const [active, setActive] = useState(1);
   const textRef = useRef();
 
   useEffect(() => {
@@ -122,6 +120,9 @@ function SoftDev() {
       split.revert();
     };
   }, []);
+  //slider
+  const firstRow = technologies.slice(0, 6);
+  const secondRow = technologies.slice(6, 12);
 
   return (
     <div className="overflow-x-hidden">
@@ -135,7 +136,7 @@ function SoftDev() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
           <h2
             ref={textRef}
-            className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-[800] leading-tight max-w-4xl mx-auto"
+            className="text-4xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-7xl font-[800] text-white leading-tight max-w-3xl mx-auto"
           >
             Custom Software for Business Growth
           </h2>
@@ -164,7 +165,7 @@ function SoftDev() {
               key={service.id}
               className="relative bg-white rounded-lg shadow-md p-6 transition-all duration-300 transform hover:scale-[1.03] group"
             >
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-[#EF6025] to-[#16A87A] transition-opacity duration-300 rounded-lg"></div>
+              <div className="absolute inset-0  transition-opacity duration-300 rounded-lg"></div>
               <div className="relative z-10 text-left">
                 <div className="bg-gray-100 w-14 h-14 flex items-center justify-center rounded-full mb-4">
                   {service.icon}
@@ -182,61 +183,107 @@ function SoftDev() {
       </section>
 
       {/* Technologies Section */}
-      <section className="bg-[#0b80da] py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1400px] mx-auto text-center mb-10">
-          <h2 className="text-3xl md:text-4xl lg:text-[48px] font-bold text-white mb-3">
-            Technologies We Use
-          </h2>
-          <p className="text-gray-200 text-[16px] md:text-[18px]">
-            Powering Your Software with the Latest Tech
-          </p>
-        </div>
+      <section className="bg-[#fff] py-16">
+        <div className=" mx-auto px-4">
+          {/* Title */}
+          <div className="text-center mb-12">
+            <h2 className="text-balance lg:text-[48px] font-[500] tracking-tight md:text-4xl">
+              <span className=" bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+                Technologies We Use
+              </span>
+            </h2>
+            <p className="text-[#000] mt-2 text-lg">
+              Powering Your Software with the Latest Tech
+            </p>
+          </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-[1400px] mx-auto">
-          {technologies.map((tech) => (
+          <div className={styles["techCard-container"]}>
             <div
-              key={tech.id}
-              className="bg-white rounded-md shadow hover:shadow-lg transition p-6 flex items-center justify-center"
+              className={`${styles["techCard-track"]} ${styles["scroll-left"]}`}
             >
-              <img
-                src={tech.img}
-                alt="Technology"
-                className="h-16 sm:h-20 object-contain"
-              />
+              {[...firstRow, ...firstRow].map((item, index) => {
+                return (
+                  <img
+                    key={`row1-${item.id}-${index}`}
+                    src={item.img}
+                    alt=""
+                    className={`${styles["techCard-img"]} filter grayscale hover:grayscale-0`}
+                  />
+                );
+              })}
             </div>
-          ))}
+          </div>
+          <div className={styles["techCard-container-two"]}>
+            <div
+              className={`${styles["techCard-track"]} ${styles["scroll-right"]}`}
+            >
+              {[...secondRow, ...secondRow].map((item, index) => {
+                return (
+                  <img
+                    key={`row2-${item.id}-${index}`}
+                    src={item.img}
+                    alt=""
+                    className={`${styles["techCard-img"]} filter grayscale hover:grayscale-0`}
+                  />
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Stages Section */}
-      <section className="py-16 bg-[#eceff4] px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1400px] mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-[48px] text-[#0B80DA] font-bold text-center mb-12">
-            Stages of Working With Us
-          </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-300 p-10 relative rounded-md shadow-sm"
+      <section className="bg-white py-16 mt-12 ">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden lg:px-12">
+          {steps.map((step) => (
+            <div
+              key={step.id}
+              onMouseEnter={() => setActive(step.id)}
+              onMouseLeave={() => setActive(1)}
+              className={`group relative cursor-pointer flex flex-col justify-between items-start p-8 border-r overflow-hidden border-gray-200 
+              transition-all duration-500 ease-in-out min-h-[220px]
+              ${
+                active === step.id
+                  ? "lg:flex-[2.5] bg-gray-50"
+                  : "lg:flex-[1] bg-white"
+              }
+            `}
+              // style={{ transitionProperty: "flex-grow, background-color, color" }}
+            >
+              {/* Step number */}
+              <h1
+                className={`block text-4xl md:text-5xl font-extrabold  transition-all duration-500 ease-in-out ${
+                  active === step.id ? "text-blue-500" : "text-gray-400"
+                }`}
               >
-                <span
-                  className="absolute top-3 left-4 text-gray-100 font-extrabold"
-                  style={{ fontSize: "80px" }}
+                0{step.id}
+              </h1>
+
+              {/* Text */}
+              <div
+                className={`absolute bottom-6 left-6 right-6 text-black transition-all duration-500 
+                  ${active === step.id ? "lg:opacity-100" : "opacity-0"} 
+                  opacity-100`}
+              >
+                <h2
+                  className={`text-lg sm:text-xl font-semibold  ${
+                    active === step.id ? "text-gray-900" : "text-gray-700"
+                  }`}
                 >
-                  {step.number}
-                </span>
-                <div className="mt-12 relative">
-                  <h3 className="text-[20px] font-bold text-[#0B80DA] mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 text-[16px] leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
+                  {step.title}
+                </h2>
+                <p
+                  className={`text-sm sm:text-base mt-2 overflow-y-hidden text-gray-600 leading-snug transition-all duration-500 ${
+                    active === step.id
+                      ? "opacity-100 max-h-40"
+                      : "opacity-0 max-h-0"
+                  } overflow-hidden`}
+                >
+                  {step.desc}
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 

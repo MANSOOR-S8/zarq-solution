@@ -109,17 +109,17 @@ function Stages() {
     },
   ];
 
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState(1);
 
   return (
     <section className="bg-white py-16 mt-12 pb-19">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden lg:px-12">
         {steps.map((step) => (
           <div
             key={step.id}
             onMouseEnter={() => setActive(step.id)}
-            onMouseLeave={() => setActive(null)}
-            className={`group cursor-pointer flex flex-col justify-between items-start p-8 border-r border-gray-200 
+            onMouseLeave={() => setActive(1)}
+            className={`group cursor-pointer flex flex-col justify-between items-start p-8 border-r overflow-hidden border-gray-200 
               transition-all duration-500 ease-in-out min-h-[220px]
               ${
                 active === step.id
@@ -127,11 +127,11 @@ function Stages() {
                   : "lg:flex-[1] bg-white"
               }
             `}
-            style={{ transitionProperty: "flex-grow, background-color, color" }}
+            // style={{ transitionProperty: "flex-grow, background-color, color" }}
           >
             {/* Step number */}
             <h1
-              className={`block text-4xl md:text-5xl font-extrabold mb-4 transition-all duration-500 ${
+              className={`block text-4xl md:text-5xl font-extrabold  transition-all duration-500 ease-in-out ${
                 active === step.id ? "text-blue-500" : "text-gray-400"
               }`}
             >
@@ -139,7 +139,7 @@ function Stages() {
             </h1>
 
             {/* Text */}
-            <div className="transition-all duration-500">
+            <div className="transition-all duration-500 ease-in-out">
               <h2
                 className={`text-lg sm:text-xl font-semibold mb-2 ${
                   active === step.id ? "text-gray-900" : "text-gray-700"

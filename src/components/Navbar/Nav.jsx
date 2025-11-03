@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import NavbarData from "./NavbarData";
 import { FaBars } from "react-icons/fa";
 import logo from "../../assets/Toplogo.png";
+import logo2 from "../../assets/footerLogo.svg";
 import "./nav.css";
 
 function Nav() {
@@ -34,7 +35,7 @@ function Nav() {
       }
       setLastScrollY(currentScrollY);
 
-      // Add blur background after scrolling past hero/banner
+      // 👇 Change logo & background after 400px scroll
       const bannerHeight = 400;
       setScrolledPastBanner(currentScrollY > bannerHeight);
     };
@@ -55,14 +56,14 @@ function Nav() {
             : "bg-transparent"
         }`}
       >
-        <div className="flex justify-between items-center max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-10 py-3">
-          {/* Logo */}
+        <div className="flex justify-between items-center max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-10 py-3 transition-all duration-500">
+          {/* 👇 Logo changes after 400px scroll */}
           <div className="flex-shrink-0">
             <Link to="/">
               <img
-                src={logo}
+                src={scrolledPastBanner ? logo : logo2}
                 alt="Logo"
-                className="h-12 md:h-14 w-auto object-contain"
+                className="h-12 md:h-14 w-auto object-contain transition-all duration-500 ease-in-out"
               />
             </Link>
           </div>
@@ -116,10 +117,12 @@ function Nav() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* 👇 Mobile Menu Button (color changes with scroll) */}
           <div className="block lg:hidden">
             <button
-              className="text-2xl text-black"
+              className={`text-2xl transition-all duration-300 ${
+                scrolledPastBanner ? "text-black" : "text-white"
+              }`}
               onClick={toggleNav}
               aria-label="Toggle Menu"
             >
