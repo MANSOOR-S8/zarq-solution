@@ -31,7 +31,7 @@ const services = [
     description:
       "Building secure, high-converting e-commerce platforms with integrated payment gateways and custom features.",
     icon: <FaShoppingCart className="text-4xl text-[#0B80DA]" />,
-    link: "/ECommerce",
+    link: "/ECommerceSolution",
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const services = [
     description:
       "Boosting online visibility with data-driven SEO strategies, content marketing, and targeted campaigns.",
     icon: <FaChartLine className="text-4xl text-[#0B80DA]" />,
-    link: "/DigitalMArket",
+    link: "/DigitalMarketing",
   },
   {
     id: 4,
@@ -47,7 +47,7 @@ const services = [
     description:
       "Delivering intuitive, aesthetically pleasing, and functional designs that enhance user interaction and satisfaction.",
     icon: <FaPencilRuler className="text-4xl text-[#0B80DA]" />,
-    link: "/OurUI",
+    link: "/UIUXDesign",
   },
   {
     id: 5,
@@ -55,7 +55,7 @@ const services = [
     description:
       "Creating high-performance mobile apps with seamless user experience for both Android and iOS platforms.",
     icon: <FaMobileAlt className="text-4xl text-[#0B80DA]" />,
-    link: "/MobApp",
+    link: "/MobileAppDevelopment",
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ const services = [
     description:
       "We craft tailored software solutions that optimize your business processes, improve efficiency, and drive innovation.",
     icon: <FaCogs className="text-4xl text-[#0B80DA]" />,
-    link: "/SoftDev",
+    link: "/CustomSoftwareDevelopment",
   },
   {
     id: 7,
@@ -71,7 +71,7 @@ const services = [
     description:
       "Providing expert IT consultation and round-the-clock support to ensure smooth business operations.",
     icon: <FaHeadset className="text-4xl text-[#0B80DA]" />,
-    link: "/ITSupport",
+    link: "/ITConsultancySupport",
   },
   {
     id: 8,
@@ -79,14 +79,14 @@ const services = [
     description:
       "Optimizing cloud infrastructure and implementing DevOps strategies for seamless deployment and scalability.",
     icon: <FaCloud className="text-4xl text-[#0B80DA]" />,
-    link: "/Cloud",
+    link: "/CloudSolutionDevOps",
   },
 ];
 
-function Service() {
+function Services() {
   return (
     <div className="parent">
-      <section className="relative flex items-center justify-center min-h-[90vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
+      <section className="relative flex items-center justify-center min-h-[80vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
         {/* Background Gradient with Image */}
         <div
           className="absolute inset-0 py-20"
@@ -128,7 +128,7 @@ function Service() {
       </section>
       <section>
         <div className="our-projects">
-          <section className="bg-[#f0f4f8] py-12 px-4">
+          <section className="bg-[#fff] py-12 px-4">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl lg:text-[48px] font-bold text-[#0B80DA]  mb-2">
                 <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
@@ -140,7 +140,7 @@ function Service() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-16">
+            <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-16 px-4 lg:px-5">
               {services.map((service) => (
                 <div
                   key={service.id}
@@ -184,4 +184,4 @@ function Service() {
   );
 }
 
-export default Service;
+export default Services;

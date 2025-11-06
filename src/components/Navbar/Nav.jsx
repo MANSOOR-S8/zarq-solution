@@ -90,12 +90,12 @@ function Nav() {
 
                 {/* Submenu */}
                 {link.submenu && (
-                  <ul className="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg rounded w-56 z-50">
+                  <ul className="absolute top-full left-0 hidden group-hover:block bg-white shadow-lg  rounded w-56 z-50">
                     {link.submenu.map((subLink, subIndex) => (
                       <li key={subIndex}>
                         <Link
                           to={subLink.href}
-                          className="block px-5 py-2 text-[16px] font-[600] hover:bg-gray-100 text-gray-700"
+                          className="block px-5 py-2 text-[16px]  font-[600] hover:bg-gray-100 text-gray-700"
                         >
                           {subLink.title}
                         </Link>
@@ -110,7 +110,7 @@ function Nav() {
           {/* Contact Us (Desktop) */}
           <div className="hidden lg:flex flex-wrap items-center gap-3">
             <Link
-              to="/Consultation"
+              to="/ContactUS"
               className="px-6 py-3 rounded-md bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold shadow-lg hover:shadow-2xl hover:from-cyan-700 hover:to-blue-700 transition-all duration-300"
             >
               Contact US
@@ -182,7 +182,7 @@ function Nav() {
 
           {/* Contact Button (Mobile) */}
           <div className="mt-4">
-            <Link to="/Service" onClick={toggleNav}>
+            <Link to="/ContactUS" onClick={toggleNav}>
               <button className="w-full bg-[#0B80DA] px-6 py-3 rounded text-white text-base font-medium hover:bg-[#0070b8] transition-all">
                 Contact Us
               </button>

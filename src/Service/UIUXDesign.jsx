@@ -181,7 +181,7 @@ const steps = [
 // Register the plugin
 gsap.registerPlugin(SplitText);
 
-function OurUI() {
+function UIUXDesign() {
   const textRef = useRef();
 
   useEffect(() => {
@@ -214,7 +214,7 @@ function OurUI() {
 
   return (
     <div>
-      <section className="relative flex items-center justify-center min-h-[90vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
+      <section className="relative flex items-center justify-center min-h-[80vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
         {/* Background Gradient with Image */}
         <div
           className="absolute inset-0 py-20"
@@ -247,7 +247,7 @@ function OurUI() {
       </section>
       {/* our service cards */}
       <div className="our-projects">
-        <section className="bg-[#f0f4f8] py-12 px-4">
+        <section className="bg-[#fff] py-12 px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl lg:text-[48px] font-bold text-[#0B80DA]  mb-2">
               <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
@@ -259,7 +259,7 @@ function OurUI() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-16">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-16">
             {services.map((service) => (
               <div
                 key={service.id}
@@ -298,7 +298,7 @@ function OurUI() {
       {/* why choose us */}
       <section>
         <div className="bg-[#f0f4f8]">
-          <div className="text-center pt-7 bg-[#f0f4f8] max-w-[1400px] mx-auto ">
+          <div className="text-center pt-7 bg-[#f0f4f8] max-w-[1400px] mx-auto  ">
             <h2 className="text-3xl sm:text-3xl md:text-3xl lg:text-[48px] font-bold text-[#0B80DA] mb-3">
               Why Choose Us?
             </h2>
@@ -309,7 +309,7 @@ function OurUI() {
           </div>
 
           <div
-            className="bg-white rounded-lg shadow-md p-5 space-y-4 max-w-[1400px] mx-auto"
+            className="bg-white rounded-lg shadow-md p-5 space-y-4 max-w-[1400px] mx-auto px-4 lg:px-5"
             data-aos="fade-down"
           >
             {features.map((item, index) => {
@@ -390,7 +390,7 @@ function OurUI() {
 
       {/* stages section */}
       <section className="bg-white py-16 mt-12 ">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden lg:px-12">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden lg:px-5">
           {steps.map((step) => (
             <div
               key={step.id}
@@ -450,4 +450,4 @@ function OurUI() {
   );
 }
 
-export default OurUI;
+export default UIUXDesign;

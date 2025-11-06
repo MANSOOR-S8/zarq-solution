@@ -1,95 +1,76 @@
-import styles from "./css/services.module.css";
 import { useEffect, useRef, useState } from "react";
-import Footer from "../components/Footer/Footer";
+
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
+import styles from "./css/softdev.module.css";
+import Footer from "../components/Footer/Footer";
 
 //icons
-import { CiCloudOn } from "react-icons/ci";
-import { LuDownload } from "react-icons/lu";
-import { MdOutlineCloudSync } from "react-icons/md";
-import { FaCube } from "react-icons/fa6";
-import { RiCodeView } from "react-icons/ri";
-import { TbTransformFilled } from "react-icons/tb";
-import { RiFlashlightLine } from "react-icons/ri";
-import { IoMdTrendingUp } from "react-icons/io";
+import { FaToolbox } from "react-icons/fa";
+import { MdOutlineCloudSync, MdOutlineWeb } from "react-icons/md";
+import { FaPen } from "react-icons/fa";
 
 //images
-import slider1 from "../assets/techSlider/googlecloud.webp";
-import slider2 from "../assets/techSlider/DigitalOsean.png";
-import slider3 from "../assets/techSlider/AWS.png";
-import slider4 from "../assets/techSlider/Github.png";
-import slider5 from "../assets/techSlider/Azure.png";
+import slider1 from "../assets/techSlider/React2.png";
+import slider2 from "../assets/techSlider/Laravel.webp";
+import slider3 from "../assets/techSlider/Codigniter.png";
+import slider4 from "../assets/techSlider/Node.png";
+import slider5 from "../assets/techSlider/VueJs.png";
+import slider6 from "../assets/techSlider/Php.png";
+import slider7 from "../assets/techSlider/Docker.png";
+import slider8 from "../assets/techSlider/wordpress-original.png";
+import slider9 from "../assets/techSlider/shopify.webp";
+import slider10 from "../assets/techSlider/wix.webp";
+import slider11 from "../assets/techSlider/Bootstrap.png";
+import slider12 from "../assets/techSlider/Angular.png";
 //banner
-import cloudBanner from "../assets/cloudbanner.webp";
+import softwareDev from "../assets/softDev.webp";
 
+//services
 const services = [
   {
     id: 1,
-    title: "Cloud Consulting & Strategy",
-    description:
-      "Guiding businesses in cloud adoption, architecture design, and migration strategies for optimal performance.",
-    icon: <CiCloudOn className="text-4xl text-[#0B80DA]" />,
+    title: "Enterprise Software Development",
+    description: "Seamless integration with third-party applications.",
+    icon: <FaToolbox className="text-4xl text-[#0B80DA]" />,
   },
   {
     id: 2,
-    title: "Cloud Migration & Deployment",
-    description:
-      "Seamlessly migrating applications, data, and infrastructure to AWS, Azure, or Google Cloud.",
-    icon: <LuDownload className="text-4xl text-[#0B80DA]" />,
-  },
-  {
-    id: 3,
-    title: "Multi-Cloud & Hybrid Cloud Solutions",
-    description:
-      "Implementing flexible cloud strategies that combine on-premises, private, and public cloud environments.",
+    title: "SaaS (Software as a Service) Solutions",
+    description: "Scalable, secure, and accessible ERP systems.",
     icon: <MdOutlineCloudSync className="text-4xl text-[#0B80DA]" />,
   },
   {
+    id: 3,
+    title: "Web Application Development",
+    description: "Tailor-made solutions designed for your business needs.",
+    icon: <MdOutlineWeb className="text-4xl text-[#0B80DA]" />,
+  },
+  {
     id: 4,
-    title: "Containerization & Kubernetes",
-    description:
-      "Using Docker and Kubernetes to enable containerized applications for faster deployment and scalability.",
-    icon: <FaCube className="text-4xl text-[#0B80DA]" />,
-  },
-  {
-    id: 5,
-    title: "Infrastructure as Code (IaC)",
-    description:
-      "Automating infrastructure provisioning using Terraform, Ansible, and CloudFormation.",
-    icon: <RiCodeView className="text-4xl text-[#0B80DA]" />,
-  },
-  {
-    id: 6,
-    title: "CI/CD Pipeline Implementation",
-    description:
-      "Developing continuous integration and delivery pipelines to streamline software deployment.",
-    icon: <TbTransformFilled className="text-4xl text-[#0B80DA]" />,
-  },
-  {
-    id: 7,
-    title: "Serverless Computing & Microservices",
-    description:
-      "Building serverless applications and microservices architectures for cost efficiency and scalability.",
-    icon: <RiFlashlightLine className="text-4xl text-[#0B80DA]" />,
-  },
-  {
-    id: 8,
-    title: "DevOps Automation & Monitoring",
-    description:
-      "Implementing real-time monitoring, logging, and automated workflows for high availability.",
-    icon: <IoMdTrendingUp className="text-4xl text-[#0B80DA]" />,
+    title: "Legacy Software Modernization",
+    description: "Seamless integration with third-party applications.",
+    icon: <FaPen className="text-4xl text-[#0B80DA]" />,
   },
 ];
 
+// technologies
 const technologies = [
   { id: 1, img: slider1 },
   { id: 2, img: slider2 },
   { id: 3, img: slider3 },
   { id: 4, img: slider4 },
   { id: 5, img: slider5 },
+  { id: 6, img: slider6 },
+  { id: 7, img: slider7 },
+  { id: 8, img: slider8 },
+  { id: 9, img: slider9 },
+  { id: 10, img: slider10 },
+  { id: 11, img: slider11 },
+  { id: 12, img: slider12 },
 ];
 
+// stages
 const steps = [
   {
     id: 1,
@@ -114,13 +95,15 @@ const steps = [
   {
     id: 5,
     title: "Deployment & Integration",
-    desc: " Launching and integrating software smoothly with minimal business disruption.",
+    desc: "Launching and integrating software smoothly with minimal business disruption.",
   },
 ];
 
 gsap.registerPlugin(SplitText);
 
-function Cloud() {
+function CustomSoftwareDevelopment() {
+  // stages
+  const [active, setActive] = useState(1);
   const textRef = useRef();
 
   useEffect(() => {
@@ -132,24 +115,24 @@ function Cloud() {
       stagger: 0.05,
       ease: "power2.out",
     });
-    return () => split.revert();
+
+    return () => {
+      split.revert();
+    };
   }, []);
-
-  //tech cards
-  const firstRow = technologies.slice(0, 12);
-
-  //stages
-  const [active, setActive] = useState(1);
+  //slider
+  const firstRow = technologies.slice(0, 6);
+  const secondRow = technologies.slice(6, 12);
 
   return (
-    <div className="w-full">
-      {/* ======= Banner Section ======= */}
-      <section className="relative flex items-center justify-center min-h-[90vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
+    <div className="overflow-x-hidden">
+      {/* Banner Section */}
+      <section className="relative flex items-center justify-center min-h-[80vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
         {/* Background Gradient with Image */}
         <div
           className="absolute inset-0 py-20"
           style={{
-            backgroundImage: `linear-gradient(rgba(0,0,40,0.7), rgba(0,0,50,0.7)), url(${cloudBanner})`,
+            backgroundImage: `linear-gradient(rgba(0,0,40,0.7), rgba(0,0,50,0.7)), url(${softwareDev})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -162,7 +145,7 @@ function Cloud() {
             className="font-extrabold text-white leading-tight text-4xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-7xl px-2"
             data-aos="fade-up"
           >
-            Cloud Solutions & DevOps
+            Custom Software for Business Growth
           </h1>
 
           <p
@@ -170,29 +153,28 @@ function Cloud() {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            We help businesses leverage cloud computing and modern DevOps to
-            boost agility, streamline workflows, and deliver software faster and
-            more reliably empowering teams to innovate without limits.
+            We develop scalable, secure, and high performance custom software
+            solutions tailored to your business needs, ensuring seamless
+            integration, enhanced efficiency, and long-term growth.
           </p>
         </div>
       </section>
 
-      {/* ======= Services Section ======= */}
+      {/* Services Section */}
       <div className="our-projects">
-        <section className="bg-[#f0f4f8] py-12 px-4">
+        <section className="bg-[#fff] py-12 px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl lg:text-[48px] font-bold text-[#0B80DA]  mb-2">
               <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                Our Cloud Solutions & DevOps Services
+                Our Custom Software Services
               </span>
             </h2>
             <p className="text-gray-600">
-              Scalable, Secure, and Automated Cloud & DevOps Solutions for
-              Business Growth
+              Our Expertise in Custom Software Development
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-16">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-16">
             {services.map((service) => (
               <div
                 key={service.id}
@@ -229,9 +211,8 @@ function Cloud() {
         </section>
       </div>
 
-      {/* ======= Technologies Section ======= */}
-
-      <section className="bg-[#fff] py-6 ">
+      {/* Technologies Section */}
+      <section className="bg-[#fff] py-16">
         <div className=" mx-auto px-4">
           {/* Title */}
           <div className="text-center mb-12">
@@ -261,13 +242,28 @@ function Cloud() {
               })}
             </div>
           </div>
+          <div className={styles["techCard-container-two"]}>
+            <div
+              className={`${styles["techCard-track"]} ${styles["scroll-right"]}`}
+            >
+              {[...secondRow, ...secondRow].map((item, index) => {
+                return (
+                  <img
+                    key={`row2-${item.id}-${index}`}
+                    src={item.img}
+                    alt=""
+                    className={`${styles["techCard-img"]} filter grayscale hover:grayscale-0`}
+                  />
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ======= Process Section ======= */}
-      {/* stages section */}
+      {/* Stages Section */}
       <section className="bg-white py-16 mt-12 ">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden lg:px-12">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden lg:px-4">
           {steps.map((step) => (
             <div
               key={step.id}
@@ -325,4 +321,4 @@ function Cloud() {
   );
 }
 
-export default Cloud;
+export default CustomSoftwareDevelopment;

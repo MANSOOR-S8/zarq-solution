@@ -30,7 +30,7 @@ const services = [
     description:
       "Building secure, high converting e-commerce platforms with integrated payment gateways and custom features.",
     icon: <FaShoppingCart className="text-4xl text-[#0B80DA]" />,
-    link: "/ECommerce",
+    link: "/ECommerceSolution",
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const services = [
     description:
       "Boosting online visibility with data driven SEO strategies, content marketing, and targeted campaigns.",
     icon: <FaChartLine className="text-4xl text-[#0B80DA]" />,
-    link: "/DigitalMArket",
+    link: "/DigitalMarketing",
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const services = [
     description:
       "Delivering intuitive, aesthetically pleasing, and functional designs that enhance user interaction and satisfaction.",
     icon: <FaPencilRuler className="text-4xl text-[#0B80DA]" />,
-    link: "/OurUI",
+    link: "/UIUXDesign",
   },
   {
     id: 5,
@@ -54,7 +54,7 @@ const services = [
     description:
       "Creating high performance mobile apps with seamless user experience for both Android and iOS platforms.",
     icon: <FaMobileAlt className="text-4xl text-[#0B80DA]" />,
-    link: "/MobApp",
+    link: "/MobileAppDevelopment",
   },
   {
     id: 6,
@@ -62,7 +62,7 @@ const services = [
     description:
       "We craft tailored software solutions that optimize your business processes, improve efficiency, and drive innovation.",
     icon: <FaCogs className="text-4xl text-[#0B80DA]" />,
-    link: "/SoftDev",
+    link: "/CustomSoftwareDevelopment",
   },
   {
     id: 7,
@@ -70,7 +70,7 @@ const services = [
     description:
       "Providing expert IT consultation and round the clock support to ensure smooth business operations.",
     icon: <FaHeadset className="text-4xl text-[#0B80DA]" />,
-    link: "/ITSupport",
+    link: "/ITConsultancySupport",
   },
   {
     id: 8,
@@ -78,7 +78,7 @@ const services = [
     description:
       "Optimizing cloud infrastructure and implementing DevOps strategies for seamless deployment and scalability.",
     icon: <FaCloud className="text-4xl text-[#0B80DA]" />,
-    link: "/Cloud",
+    link: "/CloudSolutionDevOps",
   },
 ];
 

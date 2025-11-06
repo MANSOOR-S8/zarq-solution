@@ -61,11 +61,11 @@ const Achievements = () => {
   return (
     <section className="bg-[#0b80da] text-white py-16">
       {/* Container for consistent layout */}
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-8">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-12">
           {/*  */}
           <div className="md:w-1/3 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-xl md:text-4xl font-bold mb-4">
               Our Achievements
             </h2>
             <p className="text-base md:text-lg leading-relaxed">

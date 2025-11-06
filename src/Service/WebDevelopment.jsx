@@ -159,7 +159,7 @@ function WebDevelopment() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative flex items-center justify-center min-h-[90vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
+      <section className="relative flex items-center justify-center min-h-[80vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
         {/* Background Gradient with Image */}
         <div
           className="absolute inset-0 py-20"
@@ -194,7 +194,7 @@ function WebDevelopment() {
 
       {/* Services Section */}
       <div className="our-projects">
-        <section className="bg-[#f0f4f8] py-12 px-4">
+        <section className="bg-[#fff] py-12 px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl lg:text-[48px] font-bold text-[#0B80DA]  mb-2">
               <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
@@ -208,7 +208,7 @@ function WebDevelopment() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
             {services.map((service) => (
               <div
                 key={service.id}
@@ -296,8 +296,8 @@ function WebDevelopment() {
       </section>
 
       {/* Stages Section */}
-      <section className="bg-white py-16 mt-12 ">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden lg:px-12">
+      <section className="bg-white py-12 ">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden lg:px-5">
           {steps.map((step) => (
             <div
               key={step.id}

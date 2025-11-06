@@ -1,127 +1,100 @@
 import styles from "./css/services.module.css";
-import { useEffect, useState } from "react";
-
+import { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer/Footer";
-//animation
 import gsap from "gsap";
-//icons
-import { MdDeveloperMode } from "react-icons/md";
 import SplitText from "gsap/SplitText";
-import { TfiMobile } from "react-icons/tfi";
-import { PiDeviceMobile } from "react-icons/pi";
-import { GrPowerCycle } from "react-icons/gr";
-import { GrCart } from "react-icons/gr";
-import { IoColorPaletteSharp } from "react-icons/io5";
-import { FaRegCheckCircle } from "react-icons/fa";
-import { MdEventAvailable } from "react-icons/md";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
+//icons
+import { CiCloudOn } from "react-icons/ci";
+import { LuDownload } from "react-icons/lu";
+import { MdOutlineCloudSync } from "react-icons/md";
+import { FaCube } from "react-icons/fa6";
+import { RiCodeView } from "react-icons/ri";
+import { TbTransformFilled } from "react-icons/tb";
+import { RiFlashlightLine } from "react-icons/ri";
+import { IoMdTrendingUp } from "react-icons/io";
 
 //images
-import slider1 from "../assets/techSlider/flutter2.png";
-import slider2 from "../assets/techSlider/firebase.png";
-import slider3 from "../assets/techSlider/Java.png";
-import slider4 from "../assets/techSlider/swift12.webp";
-import slider5 from "../assets/techSlider/kotlin2.webp";
-import slider6 from "../assets/techSlider/restapi.webp";
-//banner image
-import mobApp from "../assets/mobApp.webp";
+import slider1 from "../assets/techSlider/googlecloud.webp";
+import slider2 from "../assets/techSlider/DigitalOsean.png";
+import slider3 from "../assets/techSlider/AWS.png";
+import slider4 from "../assets/techSlider/Github.png";
+import slider5 from "../assets/techSlider/Azure.png";
+//banner
+import cloudBanner from "../assets/cloudbanner.webp";
 
 const services = [
   {
     id: 1,
-    title: " Custom Mobile App Development  ",
+    title: "Cloud Consulting & Strategy",
     description:
-      "We create tailor-made mobile applications that align with your business needs, ensuring scalability and efficiency.  ",
-    icon: <MdDeveloperMode className="text-4xl text-[#0B80DA] " />,
+      "Guiding businesses in cloud adoption, architecture design, and migration strategies for optimal performance.",
+    icon: <CiCloudOn className="text-4xl text-[#0B80DA]" />,
   },
   {
     id: 2,
-    title: "iOS App Development",
+    title: "Cloud Migration & Deployment",
     description:
-      "OurDeveloping high-performance, feature-rich iOS applications using Swift and Objective-C for Apple devices.  ",
-    icon: <TfiMobile className="text-4xl text-[#0B80DA] " />,
+      "Seamlessly migrating applications, data, and infrastructure to AWS, Azure, or Google Cloud.",
+    icon: <LuDownload className="text-4xl text-[#0B80DA]" />,
   },
   {
     id: 3,
-    title: "Android App Development",
+    title: "Multi-Cloud & Hybrid Cloud Solutions",
     description:
-      "Crafting robust and secure Android apps with Kotlin and Java to ensure smooth performance on all Android devices. ",
-    icon: <PiDeviceMobile className="text-4xl text-[#0B80DA] " />,
+      "Implementing flexible cloud strategies that combine on-premises, private, and public cloud environments.",
+    icon: <MdOutlineCloudSync className="text-4xl text-[#0B80DA]" />,
   },
   {
     id: 4,
-    title: "Cross-Platform App Development ",
+    title: "Containerization & Kubernetes",
     description:
-      "Using frameworks like React Native and Flutter, we build apps that work seamlessly across both iOS and Android, reducing development time and costs. ",
-    icon: <GrPowerCycle className="text-4xl text-[#0B80DA] " />,
+      "Using Docker and Kubernetes to enable containerized applications for faster deployment and scalability.",
+    icon: <FaCube className="text-4xl text-[#0B80DA]" />,
   },
   {
     id: 5,
-    title: "E-Commerce Mobile App Development ",
+    title: "Infrastructure as Code (IaC)",
     description:
-      "Developing mobile solutions for e-commerce businesses with features like secure checkout, product catalogs, and personalized recommendations.",
-    icon: <GrCart className="text-4xl text-[#0B80DA] " />,
+      "Automating infrastructure provisioning using Terraform, Ansible, and CloudFormation.",
+    icon: <RiCodeView className="text-4xl text-[#0B80DA]" />,
   },
   {
     id: 6,
-    title: "UI/UX Design for Mobile Apps ",
+    title: "CI/CD Pipeline Implementation",
     description:
-      "We design intuitive and visually appealing app interfaces that enhance user experience and increase engagement. ",
-    icon: <IoColorPaletteSharp className="text-4xl text-[#0B80DA] " />,
+      "Developing continuous integration and delivery pipelines to streamline software deployment.",
+    icon: <TbTransformFilled className="text-4xl text-[#0B80DA]" />,
   },
   {
     id: 7,
-    title: "App Testing & Quality Assurance  ",
+    title: "Serverless Computing & Microservices",
     description:
-      "Thorough testing to ensure bug-free performance, smooth functionality, and optimal user experience. ",
-    icon: <FaRegCheckCircle className="text-4xl text-[#0B80DA] " />,
+      "Building serverless applications and microservices architectures for cost efficiency and scalability.",
+    icon: <RiFlashlightLine className="text-4xl text-[#0B80DA]" />,
   },
   {
     id: 8,
-    title: "App Maintenance & Support ",
+    title: "DevOps Automation & Monitoring",
     description:
-      "Providing continuous updates, performance optimizations, and security enhancements to keep your app running smoothly. ",
-    icon: <MdEventAvailable className="text-4xl text-[#0B80DA] " />,
+      "Implementing real-time monitoring, logging, and automated workflows for high availability.",
+    icon: <IoMdTrendingUp className="text-4xl text-[#0B80DA]" />,
   },
 ];
-
-// technology cards
 
 const technologies = [
-  {
-    id: 1,
-    img: slider1,
-  },
-  {
-    id: 2,
-    img: slider2,
-  },
-  {
-    id: 3,
-    img: slider3,
-  },
-  {
-    id: 4,
-    img: slider4,
-  },
-  {
-    id: 5,
-    img: slider5,
-  },
-  {
-    id: 6,
-    img: slider6,
-  },
+  { id: 1, img: slider1 },
+  { id: 2, img: slider2 },
+  { id: 3, img: slider3 },
+  { id: 4, img: slider4 },
+  { id: 5, img: slider5 },
 ];
 
-//ui ux cards
 const steps = [
   {
     id: 1,
-    title: "Discovery & Planning",
-    desc: "We analyze business goals, user needs, and market trends to define a solid app strategy.",
+    title: "Requirement Analysis",
+    desc: "Identifying business needs, goals, and challenges to build the right solution.",
   },
   {
     id: 2,
@@ -130,46 +103,53 @@ const steps = [
   },
   {
     id: 3,
-    title: "App Development",
-    desc: "Coding the app using the latest technologies, ensuring high performance and scalability.",
+    title: "Development & Coding",
+    desc: "Building scalable, high-performance software using modern technologies.",
   },
   {
     id: 4,
     title: "Testing & Quality Assurance",
-    desc: "Performing rigorous testing for functionality, security, and usability to deliver a bug free app.",
+    desc: "Ensuring reliability, security, and bug-free performance with thorough testing.",
   },
   {
     id: 5,
-    title: "Deployment & Launch",
-    desc: "Publishing the app on App Store & Google Play, ensuring compliance and a smooth release.",
+    title: "Deployment & Integration",
+    desc: " Launching and integrating software smoothly with minimal business disruption.",
   },
 ];
 
-// Register the plugin
 gsap.registerPlugin(SplitText);
 
-function MobApp() {
+function CloudSolutionDevOps() {
+  const textRef = useRef();
+
   useEffect(() => {
-    AOS.init({
-      duration: 2000, // animation duration (ms)
-      once: true, // animation only once
+    const split = new SplitText(textRef.current, { type: "chars" });
+    gsap.from(split.chars, {
+      duration: 0.6,
+      opacity: 0,
+      y: 20,
+      stagger: 0.05,
+      ease: "power2.out",
     });
+    return () => split.revert();
   }, []);
 
   //tech cards
   const firstRow = technologies.slice(0, 12);
 
-  // stages
+  //stages
   const [active, setActive] = useState(1);
 
   return (
-    <div>
-      <section className="relative flex items-center justify-center min-h-[90vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
+    <div className="w-full">
+      {/* ======= Banner Section ======= */}
+      <section className="relative flex items-center justify-center min-h-[80vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
         {/* Background Gradient with Image */}
         <div
           className="absolute inset-0 py-20"
           style={{
-            backgroundImage: `linear-gradient(rgba(0,0,40,0.7), rgba(0,0,50,0.7)), url(${mobApp})`,
+            backgroundImage: `linear-gradient(rgba(0,0,40,0.7), rgba(0,0,50,0.7)), url(${cloudBanner})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -182,7 +162,7 @@ function MobApp() {
             className="font-extrabold text-white leading-tight text-4xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-7xl px-2"
             data-aos="fade-up"
           >
-            Build Fast, Seamless Mobile Apps
+            Cloud Solutions & DevOps
           </h1>
 
           <p
@@ -190,28 +170,29 @@ function MobApp() {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            We specialize in designing and developing custom mobile applications
-            that offer seamless user experiences, high performance, and robust
-            functionality.
+            We help businesses leverage cloud computing and modern DevOps to
+            boost agility, streamline workflows, and deliver software faster and
+            more reliably empowering teams to innovate without limits.
           </p>
         </div>
       </section>
-      {/* our service cards */}
+
+      {/* ======= Services Section ======= */}
       <div className="our-projects">
-        <section className="bg-[#f0f4f8] py-12 px-4">
+        <section className="bg-[#fff] py-12 px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl lg:text-[48px] font-bold text-[#0B80DA]  mb-2">
               <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                Our Mobile App Development Services
+                Our Cloud Solutions & DevOps Services
               </span>
             </h2>
             <p className="text-gray-600">
-              Innovative, Scalable & High-Performance Mobile App Solutions
-              Tailored for Your Business.
+              Scalable, Secure, and Automated Cloud & DevOps Solutions for
+              Business Growth
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-16">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-16">
             {services.map((service) => (
               <div
                 key={service.id}
@@ -233,21 +214,23 @@ function MobApp() {
                   </p>
                 </div>
 
-                <div className="mt-6">
-                  {/* <Link
+                {/* <div className="mt-6">
+                  <Link
                     to={service.link}
                     className="inline-flex items-center text-[#0B80DA] font-medium hover:underline transition-all"
                   >
                     Learn More
                     <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
-                  </Link> */}
-                </div>
+                  </Link>
+                </div> */}
               </div>
             ))}
           </div>
         </section>
       </div>
-      {/* technology we use */}
+
+      {/* ======= Technologies Section ======= */}
+
       <section className="bg-[#fff] py-6 ">
         <div className=" mx-auto px-4">
           {/* Title */}
@@ -266,16 +249,17 @@ function MobApp() {
             <div
               className={`${styles["techCard-track"]} ${styles["scroll-left"]}`}
             >
-              {[...firstRow, ...firstRow].map((item, index) => {
-                return (
+              {/* Repeat multiple times for seamless looping */}
+              {[...Array(3)].map((_, loopIndex) =>
+                firstRow.map((item, index) => (
                   <img
-                    key={`row1-${item.id}-${index}`}
+                    key={`row1-${loopIndex}-${item.id}-${index}`}
                     src={item.img}
                     alt=""
                     className={`${styles["techCard-img"]} filter grayscale hover:grayscale-0`}
                   />
-                );
-              })}
+                ))
+              )}
             </div>
           </div>
         </div>
@@ -283,7 +267,7 @@ function MobApp() {
 
       {/* stages section */}
       <section className="bg-white py-16 mt-12 ">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden lg:px-12">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row overflow-hidden lg:px-4">
           {steps.map((step) => (
             <div
               key={step.id}
@@ -336,11 +320,9 @@ function MobApp() {
         </div>
       </section>
 
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
 
-export default MobApp;
+export default CloudSolutionDevOps;

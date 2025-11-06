@@ -15,20 +15,20 @@ import footerLogo from "../../assets/footerLogo.svg";
 function Footer() {
   const quickLinks = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Services", path: "/service" },
-    { name: "Contact", path: "/consultation" }, // Contact ko Consultation page se link kiya
+    { name: "About Us", path: "/About" },
+    { name: "Services", path: "/Services" },
+    { name: "Contact", path: "/ContactUS" }, // Contact ko Consultation page se link kiya
   ];
 
   const services = [
     { name: "Web Development", path: "/WebDevelopment" },
-    { name: "E-Commerce Solutions", path: "/ECommerce" },
-    { name: "Digital Marketing (SEO)", path: "/DigitalMarket" },
-    { name: "UI/UX Design", path: "/OurUI" },
-    { name: "Mobile App Development", path: "/MobApp" },
-    { name: "Custom Software Development", path: "/SoftDev" },
-    { name: "IT Consultancy & Support", path: "/ITSupport" },
-    { name: "Cloud Solutions & DevOps", path: "/Cloud" },
+    { name: "E-Commerce Solutions", path: "/ECommerceSolution" },
+    { name: "Digital Marketing (SEO)", path: "/DigitalMarketing" },
+    { name: "UI/UX Design", path: "/UIUXDesign" },
+    { name: "Mobile App Development", path: "/MobileAppDevelopment" },
+    { name: "Custom Software Development", path: "/CustomSoftwareDevelopment" },
+    { name: "IT Consultancy & Support", path: "/ITConsultancySupport" },
+    { name: "Cloud Solutions & DevOps", path: "/CloudSolutionDevOps" },
   ];
 
   return (
@@ -46,7 +46,7 @@ function Footer() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pb-1">
             {/* Column 1 */}
             <div className="space-y-4">
-              <div className="flex pt-8 pb-8 items-center">
+              <div className="flex pt-2 pb-8 items-center">
                 <img src={footerLogo} alt="" />
               </div>
               <p className="text-[15px]">
@@ -94,7 +94,7 @@ function Footer() {
 
             {/* Column 2 - Quick Links */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-[#0b80da]">Quick Links</h3>
+              <h3 className="text-xl font-bold text-white">Quick Links</h3>
               <ul className="space-y-2">
                 {quickLinks.map((link, i) => (
                   <li key={i}>
@@ -111,7 +111,7 @@ function Footer() {
 
             {/* Column 3 - Services */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-[#0b80da]">Our Services</h3>
+              <h3 className="text-xl font-bold text-white ">Our Services</h3>
               <ul className="space-y-2">
                 {services.map((service, i) => (
                   <li key={i}>
@@ -128,7 +128,7 @@ function Footer() {
 
             {/* Column 4 - Contact */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-[#0b80da]">Contact Us</h3>
+              <h3 className="text-xl font-bold text-white">Contact Us</h3>
               <div className="text-[15px] space-y-2">
                 <div className="flex items-start gap-2">
                   <FaLocationDot className="mt-1" />

@@ -87,7 +87,7 @@ function OurProjects() {
 
   return (
     <section className="bg-gray-50 py-12">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         <h2 className="text-balance text-3xl font-[500] tracking-tight md:text-4xl lg:text-[48px] mb-10 text-center ">
           <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
             Our Recent Works

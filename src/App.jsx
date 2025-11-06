@@ -6,19 +6,20 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import NotFound from "./components/NotFound";
 import Projects from "./components/Projects/Projects";
-import Service from "./Service/Service";
-import Consultation from "./Consultation/Consultation";
+import Services from "./Service/Services";
+import ContactUS from "./contactUs/ContactUS";
 import WebDevelopment from "./Service/WebDevelopment";
-import MobApp from "./Service/MobApp";
+import MobileAppDevelopment from "./Service/MobileAppDevelopment";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import SoftDev from "./Service/SoftDev";
-import ECommerce from "./Service/ECommerce";
-import Cloud from "./Service/Cloud";
-import DigitalMarket from "./Service/DigitalMarket";
-import ITSupport from "./Service/ITSupport";
-import OurUI from "./Service/OurUI";
+import CustomSoftwareDevelopment from "./Service/CustomSoftwareDevelopment";
+import ECommerceSolution from "./Service/ECommerceSolution";
+import CloudSolutionDevOps from "./Service/CloudSolutionDevOps";
+import DigitalMarketing from "./Service/DigitalMarketing";
+import ITConsultancySupport from "./Service/ITConsultancySupport";
+import UIUXDesign from "./Service/UIUXDesign";
+
 function App() {
   useEffect(() => {
     AOS.init({
@@ -36,18 +37,30 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/service" element={<Service />} />
+          <Route path="/services" element={<Services />} />
           {/* Services sub menu  */}
           <Route path="/WebDevelopment" element={<WebDevelopment />} />
-          <Route path="/MobApp" element={<MobApp />} />
-          <Route path="/SoftDev" element={<SoftDev />} />
-          <Route path="/ECommerce" element={<ECommerce />} />
-          <Route path="/Consultation" element={<Consultation />} />
-          <Route path="/Cloud" element={<Cloud />} />
-          <Route path="/OurUI" element={<OurUI />} />
+          <Route
+            path="/MobileAppDevelopment"
+            element={<MobileAppDevelopment />}
+          />
+          <Route
+            path="/CustomSoftwareDevelopment"
+            element={<CustomSoftwareDevelopment />}
+          />
+          <Route path="/ECommerceSolution" element={<ECommerceSolution />} />
+          <Route path="/ContactUS" element={<ContactUS />} />
+          <Route
+            path="/CloudSolutionDevOps"
+            element={<CloudSolutionDevOps />}
+          />
+          <Route path="/UIUXDesign" element={<UIUXDesign />} />
 
-          <Route path="/DigitalMarket" element={<DigitalMarket />} />
-          <Route path="/ITSupport" element={<ITSupport />} />
+          <Route path="/DigitalMarketing" element={<DigitalMarketing />} />
+          <Route
+            path="/ITConsultancySupport"
+            element={<ITConsultancySupport />}
+          />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

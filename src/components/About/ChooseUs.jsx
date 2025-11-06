@@ -48,13 +48,13 @@ function ChooseUs() {
 
   return (
     <section className="bg-[#eceff4] py-12 px-6">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center  ">
         {/* right side image Section */}
         <div data-aos="fade-right">
           <img
             src={sideImg}
             alt="Why Choose Us"
-            className="w-full h-[700px] rounded-md shadow-md object-cover"
+            className="w-full h-[700px] rounded-md object-cover px-4 sm:px-1 md:px-1 lg:px-6 "
           />
         </div>
 

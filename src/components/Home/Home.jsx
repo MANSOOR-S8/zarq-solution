@@ -1,5 +1,5 @@
 import "../../App.css";
-import ContactUS from "../ContactUS/ContactUs";
+import ContactUS from "../Consultation/Consultation";
 import Footer from "../Footer/Footer";
 import OurServices from "../Our-Service/OurServices";
 import OurIntro from "../OurIntro/OutIntro";

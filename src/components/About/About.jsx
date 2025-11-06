@@ -36,7 +36,7 @@ function About() {
 
   return (
     <div className="bg-[#eceff4]">
-      <section className="relative flex items-center justify-center min-h-[90vh] w-full overflow-hidden px-3 sm:px-6 lg:px-12">
+      <section className="relative flex items-center justify-center min-h-[80vh] w-full overflow-auto px-3 sm:px-6 lg:px-12">
         {/* Background Gradient with Image */}
         <div
           className="absolute inset-0 py-20"
@@ -58,7 +58,7 @@ function About() {
           </h1>
 
           <p
-            className="text-white max-w-2xl text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed px-4 pb-8"
+            className="text-white max-w-2xl text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed px-4 pb-20"
             data-aos="fade-up"
             data-aos-delay="100"
           >
@@ -75,7 +75,7 @@ function About() {
         data-aos="fade-up"
       >
         {/* Cards */}
-        <div className=" -mt-[100px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+        <div className=" -mt-[85px] pt-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:px-1 md:px-1 lg:px-4 xl:px-6">
           {cards.map((card, index) => (
             <div
               key={index}

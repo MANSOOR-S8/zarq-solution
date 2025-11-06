@@ -32,6 +32,7 @@
 /* Smooth continuous scroll - LEFT to RIGHT */
 .scroll-left {
   animation: scroll-left 60s linear infinite;
+  width: max-content;
 }
 
 /* Smooth continuous scroll - RIGHT to LEFT */

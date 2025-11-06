@@ -7,7 +7,7 @@ import emailjs from "@emailjs/browser";
 import { MdEmail } from "react-icons/md";
 import { FaPhone, FaLocationDot } from "react-icons/fa6";
 
-function ContactUs() {
+function Consultation() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -269,4 +269,4 @@ function ContactUs() {
   );
 }
 
-export default ContactUs;
+export default Consultation;
